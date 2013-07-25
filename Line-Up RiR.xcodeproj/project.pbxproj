@@ -17,10 +17,8 @@
 		238795BE17A16EB0007CF23B /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 238795BD17A16EB0007CF23B /* Default@2x.png */; };
 		238795C017A16EB0007CF23B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 238795BF17A16EB0007CF23B /* Default-568h@2x.png */; };
 		238795C317A16EB0007CF23B /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 238795C117A16EB0007CF23B /* MainStoryboard.storyboard */; };
-		238795C617A16EB0007CF23B /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 238795C517A16EB0007CF23B /* FirstViewController.m */; };
 		238795C817A16EB0007CF23B /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = 238795C717A16EB0007CF23B /* first.png */; };
 		238795CA17A16EB0007CF23B /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 238795C917A16EB0007CF23B /* first@2x.png */; };
-		238795CD17A16EB0007CF23B /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 238795CC17A16EB0007CF23B /* SecondViewController.m */; };
 		238795CF17A16EB0007CF23B /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = 238795CE17A16EB0007CF23B /* second.png */; };
 		238795D117A16EB0007CF23B /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 238795D017A16EB0007CF23B /* second@2x.png */; };
 		AC4DDC8817A17972000BC5D9 /* libGoogleAdMobAds.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AC4DDC7617A17972000BC5D9 /* libGoogleAdMobAds.a */; };
@@ -89,6 +87,7 @@
 		AC4DDD9617A17A5C000BC5D9 /* tab-software.png in Resources */ = {isa = PBXBuildFile; fileRef = AC4DDD5617A17A5C000BC5D9 /* tab-software.png */; };
 		AC4DDD9717A17A5C000BC5D9 /* tab-software@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AC4DDD5717A17A5C000BC5D9 /* tab-software@2x.png */; };
 		AC4DDD9E17A17ECF000BC5D9 /* events.json in Resources */ = {isa = PBXBuildFile; fileRef = AC4DDD9D17A17ECF000BC5D9 /* events.json */; };
+		ACF196BA17A18C13003BE8CB /* LineUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACF196B917A18C13003BE8CB /* LineUpViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -106,12 +105,8 @@
 		238795BD17A16EB0007CF23B /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		238795BF17A16EB0007CF23B /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		238795C217A16EB0007CF23B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		238795C417A16EB0007CF23B /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		238795C517A16EB0007CF23B /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
 		238795C717A16EB0007CF23B /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
 		238795C917A16EB0007CF23B /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
-		238795CB17A16EB0007CF23B /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		238795CC17A16EB0007CF23B /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		238795CE17A16EB0007CF23B /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
 		238795D017A16EB0007CF23B /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
 		AC4DDC6D17A17972000BC5D9 /* GADAdMobExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADAdMobExtras.h; sourceTree = "<group>"; };
@@ -196,6 +191,8 @@
 		AC4DDD5617A17A5C000BC5D9 /* tab-software.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab-software.png"; sourceTree = "<group>"; };
 		AC4DDD5717A17A5C000BC5D9 /* tab-software@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab-software@2x.png"; sourceTree = "<group>"; };
 		AC4DDD9D17A17ECF000BC5D9 /* events.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = events.json; sourceTree = "<group>"; };
+		ACF196B817A18C13003BE8CB /* LineUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineUpViewController.h; sourceTree = "<group>"; };
+		ACF196B917A18C13003BE8CB /* LineUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineUpViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -247,15 +244,12 @@
 			isa = PBXGroup;
 			children = (
 				AC4DDD9A17A17E07000BC5D9 /* Classes */,
+				ACF196BB17A18C36003BE8CB /* Models */,
+				ACF196BC17A18C36003BE8CB /* Storyboards */,
 				238795B817A16EB0007CF23B /* AppDelegate.h */,
 				238795B917A16EB0007CF23B /* AppDelegate.m */,
-				238795C117A16EB0007CF23B /* MainStoryboard.storyboard */,
-				238795C417A16EB0007CF23B /* FirstViewController.h */,
-				238795C517A16EB0007CF23B /* FirstViewController.m */,
 				238795C717A16EB0007CF23B /* first.png */,
 				238795C917A16EB0007CF23B /* first@2x.png */,
-				238795CB17A16EB0007CF23B /* SecondViewController.h */,
-				238795CC17A16EB0007CF23B /* SecondViewController.m */,
 				238795CE17A16EB0007CF23B /* second.png */,
 				238795D017A16EB0007CF23B /* second@2x.png */,
 				238795B017A16EB0007CF23B /* Supporting Files */,
@@ -473,8 +467,25 @@
 		AC4DDD9C17A17E08000BC5D9 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				ACF196B817A18C13003BE8CB /* LineUpViewController.h */,
+				ACF196B917A18C13003BE8CB /* LineUpViewController.m */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		ACF196BB17A18C36003BE8CB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		ACF196BC17A18C36003BE8CB /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				238795C117A16EB0007CF23B /* MainStoryboard.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -610,10 +621,9 @@
 			files = (
 				238795B617A16EB0007CF23B /* main.m in Sources */,
 				238795BA17A16EB0007CF23B /* AppDelegate.m in Sources */,
-				238795C617A16EB0007CF23B /* FirstViewController.m in Sources */,
-				238795CD17A16EB0007CF23B /* SecondViewController.m in Sources */,
 				AC4DDC8D17A17972000BC5D9 /* JSONKit.m in Sources */,
 				AC4DDC8F17A17972000BC5D9 /* NSDate+HumanInterval.m in Sources */,
+				ACF196BA17A18C13003BE8CB /* LineUpViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -634,6 +644,7 @@
 				238795C217A16EB0007CF23B /* en */,
 			);
 			name = MainStoryboard.storyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
