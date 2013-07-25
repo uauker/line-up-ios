@@ -16,13 +16,13 @@
     if (self) {
         self.name = [dictionary objectForKey:@"name"];
         self.startAt = [dictionary objectForKey:@"startAt"];
-        self.musicians = [dictionary objectForKey:@"mainEvent"];
+        self.musicians = [dictionary objectForKey:@"musicians"];
     }
     
     return self;
 }
 
-+ (NSArray *)allMusiciansWithArray:(NSArray *)array {
++ (NSArray *)allPalcosWithArray:(NSArray *)array {
     NSMutableArray *allMusicians = [[NSMutableArray alloc] init];
 
     for (NSDictionary *item in array) {

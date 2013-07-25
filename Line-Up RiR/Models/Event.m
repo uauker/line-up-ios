@@ -17,6 +17,7 @@
         self.date = [dictionary objectForKey:@"date"];
         self.weekDay = [dictionary objectForKey:@"weekDay"];
         self.mainEvent = [dictionary objectForKey:@"mainEvent"];
+        self.palcos = [Palco allPalcosWithArray:[dictionary objectForKey:@"palcos"]];
     }
     
     return self;

@@ -8,13 +8,14 @@
 
 #import <Foundation/Foundation.h>
 #import "JSONKit.h"
+#import "Palco.h"
 
 @interface Event : NSObject
 
 @property (nonatomic, copy) NSString *date;
 @property (nonatomic, copy) NSString *weekDay;
 @property (nonatomic, copy) NSString *mainEvent;
-@property (nonatomic, copy) NSMutableArray *palcos;
+@property (nonatomic, copy) NSArray *palcos;
 
 - (id)initWithDictionary:(NSDictionary *)dictionary;
 

@@ -15,6 +15,6 @@
 @property (nonatomic, copy) NSMutableArray *musicians;
 
 - (id)initWithDictionary:(NSDictionary *)dictionary;
-+ (NSArray *)allMusiciansWithArray:(NSArray *)array;
++ (NSArray *)allPalcosWithArray:(NSArray *)array;
 
 @end
