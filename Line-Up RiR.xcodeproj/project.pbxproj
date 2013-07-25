@@ -23,6 +23,7 @@
 		23FA0E5817A19FEA00CA30CF /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23FA0E5717A19FEA00CA30CF /* CoreText.framework */; };
 		23FA0E5A17A19FFD00CA30CF /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23FA0E5917A19FFD00CA30CF /* ImageIO.framework */; };
 		23FA0E5C17A1A02100CA30CF /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23FA0E5B17A1A02100CA30CF /* QuartzCore.framework */; };
+		23FA0E5F17A1A1D000CA30CF /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23FA0E5E17A1A1D000CA30CF /* MenuViewController.m */; };
 		AC4DDD5B17A17A5C000BC5D9 /* pin-cinema.png in Resources */ = {isa = PBXBuildFile; fileRef = AC4DDD1717A17A5C000BC5D9 /* pin-cinema.png */; };
 		AC4DDD5C17A17A5C000BC5D9 /* pin-cinema@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AC4DDD1817A17A5C000BC5D9 /* pin-cinema@2x.png */; };
 		AC4DDD5D17A17A5C000BC5D9 /* back_button.png in Resources */ = {isa = PBXBuildFile; fileRef = AC4DDD1917A17A5C000BC5D9 /* back_button.png */; };
@@ -119,6 +120,8 @@
 		23FA0E5717A19FEA00CA30CF /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		23FA0E5917A19FFD00CA30CF /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		23FA0E5B17A1A02100CA30CF /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		23FA0E5D17A1A1D000CA30CF /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
+		23FA0E5E17A1A1D000CA30CF /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		AC4DDD1717A17A5C000BC5D9 /* pin-cinema.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pin-cinema.png"; sourceTree = "<group>"; };
 		AC4DDD1817A17A5C000BC5D9 /* pin-cinema@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pin-cinema@2x.png"; sourceTree = "<group>"; };
 		AC4DDD1917A17A5C000BC5D9 /* back_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back_button.png; sourceTree = "<group>"; };
@@ -439,6 +442,8 @@
 			children = (
 				ACF196B817A18C13003BE8CB /* LineUpViewController.h */,
 				ACF196B917A18C13003BE8CB /* LineUpViewController.m */,
+				23FA0E5D17A1A1D000CA30CF /* MenuViewController.h */,
+				23FA0E5E17A1A1D000CA30CF /* MenuViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -669,6 +674,7 @@
 				23FA0E5417A19E2A00CA30CF /* PKRevealController.m in Sources */,
 				23FA0E5517A19E2A00CA30CF /* PKRevealControllerContainerView.m in Sources */,
 				23FA0E5617A19E2A00CA30CF /* UIViewController+PKRevealController.m in Sources */,
+				23FA0E5F17A1A1D000CA30CF /* MenuViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
