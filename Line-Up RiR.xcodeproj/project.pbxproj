@@ -26,7 +26,7 @@
 		AC4DDC8A17A17972000BC5D9 /* libGoogleAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AC4DDC7E17A17972000BC5D9 /* libGoogleAnalytics.a */; };
 		AC4DDC8B17A17972000BC5D9 /* libGoogleAnalytics_debug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AC4DDC7F17A17972000BC5D9 /* libGoogleAnalytics_debug.a */; };
 		AC4DDC8C17A17972000BC5D9 /* CHANGELOG.md in Resources */ = {isa = PBXBuildFile; fileRef = AC4DDC8117A17972000BC5D9 /* CHANGELOG.md */; };
-		AC4DDC8D17A17972000BC5D9 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = AC4DDC8317A17972000BC5D9 /* JSONKit.m */; };
+		AC4DDC8D17A17972000BC5D9 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = AC4DDC8317A17972000BC5D9 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc -w"; }; };
 		AC4DDC8E17A17972000BC5D9 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = AC4DDC8417A17972000BC5D9 /* README.md */; };
 		AC4DDC8F17A17972000BC5D9 /* NSDate+HumanInterval.m in Sources */ = {isa = PBXBuildFile; fileRef = AC4DDC8717A17972000BC5D9 /* NSDate+HumanInterval.m */; };
 		AC4DDD5B17A17A5C000BC5D9 /* pin-cinema.png in Resources */ = {isa = PBXBuildFile; fileRef = AC4DDD1717A17A5C000BC5D9 /* pin-cinema.png */; };
