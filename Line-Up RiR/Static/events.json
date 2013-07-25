@@ -1,0 +1,504 @@
+{
+    "date": "2013-09-13T00: 00: 00Z",
+    "events": [
+               {
+               "date": "13/09",
+               "weekDay": "sexta",
+               "mainEvent": "Beyoncé",
+               "palcos": [
+                          {
+                          "name": "mundo",
+                          "startAt": "2013-09-13T17:00:00Z",
+                          "musicians": [
+                                        {
+                                        "name": "Beyoncé"
+                                        },
+                                        {
+                                        "name": "David Guetta"
+                                        },
+                                        {
+                                        "name": "Ivete Sangalo"
+                                        },
+                                        {
+                                        "name": "Cazuza - O poeta está vivo"
+                                        }
+                                        ]
+                          },
+                          {
+                          "name": "sunset",
+                          "startAt": "2013-09-13T14:40:00Z",
+                          "musicians": [
+                                        {
+                                        "name": "Living Colour + Angélique Kidjo"
+                                        },
+                                        {
+                                        "name": "Maria Rita e Selah Sue"
+                                        },
+                                        {
+                                        "name": "Vintage Trouble + Jesuton"
+                                        },
+                                        {
+                                        "name": "Flávio Renegado + Orelha Negra"
+                                        }
+                                        ]
+                          },
+                          {
+                          "name": "eletronica",
+                          "startAt": "2013-09-13T22:30:00Z",
+                          "musicians": [
+                                        {
+                                        "name": "Otto Knows"
+                                        },
+                                        {
+                                        "name": "Life is a loop"
+                                        },
+                                        {
+                                        "name": "Ask 2 quit"
+                                        },
+                                        {
+                                        "name": "Sweet Beats"
+                                        }
+                                        ]
+                          },
+                          {
+                          "name": "rock street",
+                          "startAt": "2013-09-13T14:00:00Z",
+                          "musicians": [
+                                        {
+                                        "name": "SAPATEADO IRLANDÊS, ROCK BRITÂNICO E MÚSICA CELTA. SUCESSOS DOS BEATLES COM A ROCK STREET BIG BAND. SERÃO MAIS DE 60 ARTISTAS POR DIA E VOCÊ VAI CURTIR MÁGICOS, CARICATURISTAS, GAITAS DE FOLE, MALABARES E BURLESQUE."
+                                        }
+                                        ]
+                          }
+                          ]
+               },
+               {
+               "date": "14/09",
+               "weekDay": "sábado",
+               "mainEvent": "Muse",
+               "palcos": [
+                          {
+                          "name": "mundo",
+                          "startAt": "2013-09-14T18:30:00Z",
+                          "musicians": [
+                                        {
+                                        "name": "Muse"
+                                        },
+                                        {
+                                        "name": "Florence and The Machine"
+                                        },
+                                        {
+                                        "name": "Thirty Seconds to Mars"
+                                        },
+                                        {
+                                        "name": "Capital Inicial"
+                                        }
+                                        ]
+                          },
+                          {
+                          "name": "sunset",
+                          "startAt": "2013-09-14T14:40:00Z",
+                          "musicians": [
+                                        {
+                                        "name": "The Offspring"
+                                        },
+                                        {
+                                        "name": "Viva Raul Seixas com Detonautas, Zeca Baleiro e Zélia Duncan"
+                                        },
+                                        {
+                                        "name": "Marky Ramone + Michale Graves"
+                                        },
+                                        {
+                                        "name": "Autoramas + Bnegão"
+                                        }
+                                        ]
+                          },
+                          {
+                          "name": "eletronica",
+                          "startAt": "2013-09-14T22:30:00Z",
+                          "musicians": [
+                                        {
+                                        "name": "Vitalic"
+                                        },
+                                        {
+                                        "name": "Anderson Noise"
+                                        },
+                                        {
+                                        "name": "Mau Mau"
+                                        },
+                                        {
+                                        "name": "Maurício Lopes"
+                                        },
+                                        {
+                                        "name": "Paula Chalup"
+                                        }
+                                        ]
+                          },
+                          {
+                          "name": "rock street",
+                          "startAt": "2013-09-14T14:00:00Z",
+                          "musicians": [
+                                        {
+                                        "name": "SAPATEADO IRLANDÊS, ROCK BRITÂNICO E MÚSICA CELTA. SUCESSOS DOS BEATLES COM A ROCK STREET BIG BAND. SERÃO MAIS DE 60 ARTISTAS POR DIA E VOCÊ VAI CURTIR MÁGICOS, CARICATURISTAS, GAITAS DE FOLE, MALABARES E BURLESQUE."
+                                        }
+                                        ]
+                          }
+                          ]
+               },
+               {
+               "date": "15/09",
+               "weekDay": "domingo",
+               "mainEvent": "Justin Timberlake",
+               "palcos": [
+                          {
+                          "name": "mundo",
+                          "startAt": "2013-09-15T18:30:00Z",
+                          "musicians": [
+                                        {
+                                        "name": "Justin Timberlake"
+                                        },
+                                        {
+                                        "name": "Alicia Keys"
+                                        },
+                                        {
+                                        "name": "Jessie J"
+                                        },
+                                        {
+                                        "name": "Jota Quest"
+                                        }
+                                        ]
+                          },
+                          {
+                          "name": "sunset",
+                          "startAt": "2013-09-15T14:40:00Z",
+                          "musicians": [
+                                        {
+                                        "name": "George Benson + Ivan Lins"
+                                        },
+                                        {
+                                        "name": "Kimbra + Olodum"
+                                        },
+                                        {
+                                        "name": "Nando Reis + Samuel Rosa"
+                                        },
+                                        {
+                                        "name": "Aurea+TheBlackMamba"
+                                        }
+                                        ]
+                          },
+                          {
+                          "name": "eletronica",
+                          "startAt": "2013-09-15T22: 30: 00Z",
+                          "musicians": [
+                                        {
+                                        "name": "DJHarvey"
+                                        },
+                                        {
+                                        "name": "dOP"
+                                        },
+                                        {
+                                        "name": "RenatoRatier"
+                                        },
+                                        {
+                                        "name": "Wehbba"
+                                        },
+                                        {
+                                        "name": "TripleCrown"
+                                        }
+                                        ]
+                          },
+                          {
+                          "name": "rockstreet",
+                          "startAt": "2013-09-15T14: 00: 00Z",
+                          "musicians": [
+                                        {
+                                        "name": "SAPATEADO IRLANDÊS, ROCK BRITÂNICO E MÚSICA CELTA. SUCESSOS DOS BEATLES COM A ROCK STREET BIG BAND. SERÃO MAIS DE 60 ARTISTAS POR DIA E VOCÊ VAI CURTIR MÁGICOS, CARICATURISTAS, GAITAS DE FOLE, MALABARES E BURLESQUE."
+                                        }
+                                        ]
+                          }
+                          ]
+               },
+               {
+               "date": "19/09",
+               "weekDay": "quinta",
+               "mainEvent": "Metalica",
+               "palcos": [
+                          {
+                          "name": "mundo",
+                          "startAt": "2013-09-19T18:30:00Z",
+                          "musicians": [
+                                        {
+                                        "name": "Metallica"
+                                        },
+                                        {
+                                        "name": "Alice in Chains"
+                                        },
+                                        {
+                                        "name": "Ghost B.C."
+                                        },
+                                        {
+                                        "name": "Sepultura + Tambours Du Bronx"
+                                        }
+                                        ]
+                          },
+                          {
+                          "name": "sunset",
+                          "startAt": "2013-09-19T14:40:00Z",
+                          "musicians": [
+                                        {
+                                        "name": "Rob Zombie"
+                                        },
+                                        {
+                                        "name": "Sebastian Bach"
+                                        },
+                                        {
+                                        "name": "Almah + Hibria"
+                                        },
+                                        {
+                                        "name": "República+Dr.Sin+RoyZ"
+                                        }
+                                        ]
+                          },
+                          {
+                          "name": "eletronica",
+                          "startAt": "2013-09-19T22: 30: 00Z",
+                          "musicians": [
+                                        {
+                                        "name": "Gesaffelstein"
+                                        },
+                                        {
+                                        "name": "Brodinski"
+                                        },
+                                        {
+                                        "name": "GaslampKiller"
+                                        },
+                                        {
+                                        "name": "DJRide"
+                                        }
+                                        ]
+                          },
+                          {
+                          "name": "rockstreet",
+                          "startAt": "2013-09-19T14: 00: 00Z",
+                          "musicians": [
+                                        {
+                                        "name": "SAPATEADO IRLANDÊS, ROCK BRITÂNICO E MÚSICA CELTA. SUCESSOS DOS BEATLES COM A ROCK STREET BIG BAND. SERÃO MAIS DE 60 ARTISTAS POR DIA E VOCÊ VAI CURTIR MÁGICOS, CARICATURISTAS, GAITAS DE FOLE, MALABARES E BURLESQUE."
+                                        }
+                                        ]
+                          }
+                          ]
+               },
+               {
+               "date": "20/09",
+               "weekDay": "sexta",
+               "mainEvent": "Bon Jovi",
+               "palcos": [
+                          {
+                          "name": "mundo",
+                          "startAt": "2013-09-20T18:30:00Z",
+                          "musicians": [
+                                        {
+                                        "name": "Bon Jovi"
+                                        },
+                                        {
+                                        "name": "Nickelback"
+                                        },
+                                        {
+                                        "name": "Matchbox Twenty"
+                                        },
+                                        {
+                                        "name": "Frejat"
+                                        }
+                                        ]
+                          },
+                          {
+                          "name": "sunset",
+                          "startAt": "2013-09-20T14:40:00Z",
+                          "musicians": [
+                                        {
+                                        "name": "Ben Harper + Charlie Musselwhite"
+                                        },
+                                        {
+                                        "name": "Grace Potter and The Nocturnals + Donavon Frankenreiter"
+                                        },
+                                        {
+                                        "name": "Mallu Magalhães + Banda Ouro Negro"
+                                        },
+                                        {
+                                        "name": "The Gift + Afroreggae"
+                                        }
+                                        ]
+                          },
+                          {
+                          "name": "eletronica",
+                          "startAt": "2013-09-20T22:30:00Z",
+                          "musicians": [
+                                        {
+                                        "name": "Paul Oakenfold"
+                                        },
+                                        {
+                                        "name": "Dexterz"
+                                        },
+                                        {
+                                        "name": "Rodrigo Vieira"
+                                        },
+                                        {
+                                        "name": "Ferris"
+                                        }
+                                        ]
+                          },
+                          {
+                          "name": "rock street",
+                          "startAt": "2013-09-20T14:00:00Z",
+                          "musicians": [
+                                        {
+                                        "name": "SAPATEADO IRLANDÊS, ROCK BRITÂNICO E MÚSICA CELTA. SUCESSOS DOS BEATLES COM A ROCK STREET BIG BAND. SERÃO MAIS DE 60 ARTISTAS POR DIA E VOCÊ VAI CURTIR MÁGICOS, CARICATURISTAS, GAITAS DE FOLE, MALABARES E BURLESQUE."
+                                        }
+                                        ]
+                          }
+                          ]
+               },
+               {
+               "date": "21/09",
+               "weekDay": "sábado",
+               "mainEvent": "Bruce Springsteen",
+               "palcos": [
+                          {
+                          "name": "mundo",
+                          "startAt": "2013-09-21T18:30:00Z",
+                          "musicians": [
+                                        {
+                                        "name": "Bruce Springsteen & The Street Band"
+                                        },
+                                        {
+                                        "name": "John Mayer"
+                                        },
+                                        {
+                                        "name": "Philip Philips"
+                                        },
+                                        {
+                                        "name": "Skank"
+                                        }
+                                        ]
+                          },
+                          {
+                          "name": "sunset",
+                          "startAt": "2013-09-21T14:40:00Z",
+                          "musicians": [
+                                        {
+                                        "name": "Gogol Bordello + Lenine"
+                                        },
+                                        {
+                                        "name": "Ivo Meirelles + Fernanda Abreu + Elba Ramalho"
+                                        },
+                                        {
+                                        "name": "Moraes Moreirax, Pepeu Gomes e Roberta Sá"
+                                        },
+                                        {
+                                        "name": "Orquestra Imperial + Jovanotti"
+                                        }
+                                        ]
+                          },
+                          {
+                          "name": "eletronica",
+                          "startAt": "2013-09-21T22:30:00Z",
+                          "musicians": [
+                                        {
+                                        "name": "Loco Dice"
+                                        },
+                                        {
+                                        "name": "DJ Vibe"
+                                        },
+                                        {
+                                        "name": "Guti"
+                                        },
+                                        {
+                                        "name": "Flow & Zeo"
+                                        }
+                                        ]
+                          },
+                          {
+                          "name": "rock street",
+                          "startAt": "2013-09-21T14:00:00Z",
+                          "musicians": [
+                                        {
+                                        "name": "SAPATEADO IRLANDÊS, ROCK BRITÂNICO E MÚSICA CELTA. SUCESSOS DOS BEATLES COM A ROCK STREET BIG BAND. SERÃO MAIS DE 60 ARTISTAS POR DIA E VOCÊ VAI CURTIR MÁGICOS, CARICATURISTAS, GAITAS DE FOLE, MALABARES E BURLESQUE."
+                                        }
+                                        ]
+                          }
+                          ]
+               },
+               {
+               "date": "22/09",
+               "weekDay": "domingo",
+               "mainEvent": "Iron Maiden",
+               "palcos": [
+                          {
+                          "name": "mundo",
+                          "startAt": "2013-09-22T18:30:00Z",
+                          "musicians": [
+                                        {
+                                        "name": "Iron Maiden"
+                                        },
+                                        {
+                                        "name": "Avenged Sevenfold"
+                                        },
+                                        {
+                                        "name": "Slayer"
+                                        },
+                                        {
+                                        "name": "Kiara Rocks"
+                                        }
+                                        ]
+                          },
+                          {
+                          "name": "sunset",
+                          "startAt": "2013-09-22T14:40:00Z",
+                          "musicians": [
+                                        {
+                                        "name": "Sepultura + Zé Ramalho"
+                                        },
+                                        {
+                                        "name": "Helloween + Kai Hansen"
+                                        },
+                                        {
+                                        "name": "Destruction + Krisiun"
+                                        },
+                                        {
+                                        "name": "André Matos + Viper"
+                                        }
+                                        ]
+                          },
+                          {
+                          "name": "eletronica",
+                          "startAt": "2013-09-22T22:30:00Z",
+                          "musicians": [
+                                        {
+                                        "name": "Tiga"
+                                        },
+                                        {
+                                        "name": "Felguk"
+                                        },
+                                        {
+                                        "name": "DJ Marky"
+                                        },
+                                        {
+                                        "name": "Maximum Headrum"
+                                        },
+                                        {
+                                        "name": "boTECOeletro"
+                                        }
+                                        ]
+                          },
+                          {
+                          "name": "rock street",
+                          "startAt": "2013-09-22T14:00:00Z",
+                          "musicians": [
+                                        {
+                                        "name": "SAPATEADO IRLANDÊS, ROCK BRITÂNICO E MÚSICA CELTA. SUCESSOS DOS BEATLES COM A ROCK STREET BIG BAND. SERÃO MAIS DE 60 ARTISTAS POR DIA E VOCÊ VAI CURTIR MÁGICOS, CARICATURISTAS, GAITAS DE FOLE, MALABARES E BURLESQUE."
+                                        }
+                                        ]
+                          }
+                          ]
+               }
+               ]
+}
