@@ -83,7 +83,15 @@
                                                         <constraint firstAttribute="height" constant="21" id="Pu8-os-2KG"/>
                                                         <constraint firstAttribute="width" constant="258" id="pTm-7X-Whs"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ibe-0j-z2K">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="17" id="0mZ-2o-N54"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
@@ -91,8 +99,11 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="iq3-Iz-G0a" firstAttribute="top" secondItem="qn2-Tu-1nm" secondAttribute="top" constant="25" id="dxB-ed-jzp"/>
+                                            <constraint firstAttribute="trailing" secondItem="ibe-0j-z2K" secondAttribute="trailing" constant="20" type="default" id="0qQ-g3-oex"/>
+                                            <constraint firstItem="iq3-Iz-G0a" firstAttribute="top" secondItem="qn2-Tu-1nm" secondAttribute="top" constant="22" id="Aoj-wd-LhJ"/>
+                                            <constraint firstItem="ibe-0j-z2K" firstAttribute="leading" secondItem="qn2-Tu-1nm" secondAttribute="leading" constant="20" type="default" id="bpR-jx-xox"/>
                                             <constraint firstItem="iq3-Iz-G0a" firstAttribute="leading" secondItem="qn2-Tu-1nm" secondAttribute="leading" constant="20" type="default" id="jmQ-z4-vQf"/>
+                                            <constraint firstAttribute="bottom" secondItem="ibe-0j-z2K" secondAttribute="bottom" constant="12" id="uvv-L8-jBh"/>
                                         </constraints>
                                     </tableViewCell>
                                 </prototypes>
