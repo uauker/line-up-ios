@@ -94,6 +94,8 @@
 		ACF196EA17A19657003BE8CB /* NSDate+HumanInterval.m in Sources */ = {isa = PBXBuildFile; fileRef = ACF196E217A19657003BE8CB /* NSDate+HumanInterval.m */; };
 		ACF196ED17A198CF003BE8CB /* Palco.m in Sources */ = {isa = PBXBuildFile; fileRef = ACF196EC17A198CF003BE8CB /* Palco.m */; };
 		ACF196F017A198E5003BE8CB /* Musician.m in Sources */ = {isa = PBXBuildFile; fileRef = ACF196EF17A198E5003BE8CB /* Musician.m */; };
+		CE7B04E417A1D56C009C6754 /* menu_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CE7B04E217A1D56C009C6754 /* menu_icon.png */; };
+		CE7B04E517A1D56C009C6754 /* menu_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE7B04E317A1D56C009C6754 /* menu_icon@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -214,6 +216,8 @@
 		ACF196EC17A198CF003BE8CB /* Palco.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Palco.m; sourceTree = "<group>"; };
 		ACF196EE17A198E5003BE8CB /* Musician.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Musician.h; sourceTree = "<group>"; };
 		ACF196EF17A198E5003BE8CB /* Musician.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Musician.m; sourceTree = "<group>"; };
+		CE7B04E217A1D56C009C6754 /* menu_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu_icon.png; sourceTree = "<group>"; };
+		CE7B04E317A1D56C009C6754 /* menu_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu_icon@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -312,6 +316,8 @@
 		AC4DDD1517A17A5C000BC5D9 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				CE7B04E217A1D56C009C6754 /* menu_icon.png */,
+				CE7B04E317A1D56C009C6754 /* menu_icon@2x.png */,
 				AC4DDD1617A17A5C000BC5D9 /* annotation */,
 				AC4DDD1917A17A5C000BC5D9 /* back_button.png */,
 				AC4DDD1A17A17A5C000BC5D9 /* back_button@2x.png */,
@@ -652,6 +658,8 @@
 				ACF196E417A19657003BE8CB /* README.txt in Resources */,
 				ACF196E717A19657003BE8CB /* CHANGELOG.md in Resources */,
 				ACF196E917A19657003BE8CB /* README.md in Resources */,
+				CE7B04E417A1D56C009C6754 /* menu_icon.png in Resources */,
+				CE7B04E517A1D56C009C6754 /* menu_icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
