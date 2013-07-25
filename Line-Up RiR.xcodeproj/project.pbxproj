@@ -84,6 +84,8 @@
 		AC4DDD9717A17A5C000BC5D9 /* tab-software@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AC4DDD5717A17A5C000BC5D9 /* tab-software@2x.png */; };
 		AC4DDD9E17A17ECF000BC5D9 /* events.json in Resources */ = {isa = PBXBuildFile; fileRef = AC4DDD9D17A17ECF000BC5D9 /* events.json */; };
 		ACF196BA17A18C13003BE8CB /* LineUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACF196B917A18C13003BE8CB /* LineUpViewController.m */; };
+		ACF196BF17A18ECA003BE8CB /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = ACF196BE17A18ECA003BE8CB /* Event.m */; };
+		ACF196C217A18F58003BE8CB /* Event+Parse.m in Sources */ = {isa = PBXBuildFile; fileRef = ACF196C117A18F58003BE8CB /* Event+Parse.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -185,6 +187,10 @@
 		AC4DDD9D17A17ECF000BC5D9 /* events.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = events.json; sourceTree = "<group>"; };
 		ACF196B817A18C13003BE8CB /* LineUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineUpViewController.h; sourceTree = "<group>"; };
 		ACF196B917A18C13003BE8CB /* LineUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineUpViewController.m; sourceTree = "<group>"; };
+		ACF196BD17A18ECA003BE8CB /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
+		ACF196BE17A18ECA003BE8CB /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
+		ACF196C017A18F58003BE8CB /* Event+Parse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Event+Parse.h"; sourceTree = "<group>"; };
+		ACF196C117A18F58003BE8CB /* Event+Parse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Event+Parse.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -237,6 +243,7 @@
 			children = (
 				AC4DDD9A17A17E07000BC5D9 /* Classes */,
 				ACF196BB17A18C36003BE8CB /* Models */,
+				AC4DDD9B17A17E08000BC5D9 /* Categories */,
 				ACF196BC17A18C36003BE8CB /* Storyboards */,
 				238795B817A16EB0007CF23B /* AppDelegate.h */,
 				238795B917A16EB0007CF23B /* AppDelegate.m */,
@@ -439,7 +446,6 @@
 		AC4DDD9A17A17E07000BC5D9 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				AC4DDD9B17A17E08000BC5D9 /* Categories */,
 				AC4DDD9C17A17E08000BC5D9 /* ViewControllers */,
 			);
 			path = Classes;
@@ -448,8 +454,11 @@
 		AC4DDD9B17A17E08000BC5D9 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				ACF196C017A18F58003BE8CB /* Event+Parse.h */,
+				ACF196C117A18F58003BE8CB /* Event+Parse.m */,
 			);
-			path = Categories;
+			name = Categories;
+			path = Classes/Categories;
 			sourceTree = "<group>";
 		};
 		AC4DDD9C17A17E08000BC5D9 /* ViewControllers */ = {
@@ -464,6 +473,8 @@
 		ACF196BB17A18C36003BE8CB /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				ACF196BD17A18ECA003BE8CB /* Event.h */,
+				ACF196BE17A18ECA003BE8CB /* Event.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -608,6 +619,8 @@
 				AC4DDC8D17A17972000BC5D9 /* JSONKit.m in Sources */,
 				AC4DDC8F17A17972000BC5D9 /* NSDate+HumanInterval.m in Sources */,
 				ACF196BA17A18C13003BE8CB /* LineUpViewController.m in Sources */,
+				ACF196BF17A18ECA003BE8CB /* Event.m in Sources */,
+				ACF196C217A18F58003BE8CB /* Event+Parse.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
