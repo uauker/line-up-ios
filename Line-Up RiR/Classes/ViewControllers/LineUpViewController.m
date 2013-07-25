@@ -18,8 +18,8 @@
 {
     [super viewDidLoad];
 	
-    RockInRio *rockInRio = [[RockInRio alloc] init];
-    
+    NSArray *allEvents = [[NSArray alloc] init];
+    allEvents = [RockInRio allEvents];
 }
 
 - (void)didReceiveMemoryWarning

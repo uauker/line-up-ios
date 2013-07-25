@@ -15,4 +15,6 @@
 @property (nonatomic, copy) NSString *date;
 @property (nonatomic, copy) NSMutableArray *events;
 
++ (NSArray *)allEvents;
+
 @end

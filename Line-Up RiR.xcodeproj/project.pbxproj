@@ -83,7 +83,7 @@
 		ACF196E517A19657003BE8CB /* libGoogleAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ACF196D917A19657003BE8CB /* libGoogleAnalytics.a */; };
 		ACF196E617A19657003BE8CB /* libGoogleAnalytics_debug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ACF196DA17A19657003BE8CB /* libGoogleAnalytics_debug.a */; };
 		ACF196E717A19657003BE8CB /* CHANGELOG.md in Resources */ = {isa = PBXBuildFile; fileRef = ACF196DC17A19657003BE8CB /* CHANGELOG.md */; };
-		ACF196E817A19657003BE8CB /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = ACF196DE17A19657003BE8CB /* JSONKit.m */; };
+		ACF196E817A19657003BE8CB /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = ACF196DE17A19657003BE8CB /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc -w"; }; };
 		ACF196E917A19657003BE8CB /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = ACF196DF17A19657003BE8CB /* README.md */; };
 		ACF196EA17A19657003BE8CB /* NSDate+HumanInterval.m in Sources */ = {isa = PBXBuildFile; fileRef = ACF196E217A19657003BE8CB /* NSDate+HumanInterval.m */; };
 /* End PBXBuildFile section */
