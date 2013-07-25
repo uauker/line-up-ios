@@ -8,7 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "RockInRio.h"
+#import "PKRevealController.h"
 
 @interface LineUpViewController : UIViewController
+
+- (IBAction)showLeftView:(id)sender;
 
 @end

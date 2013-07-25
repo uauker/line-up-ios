@@ -20,6 +20,21 @@
 	
     NSArray *allEvents = [[NSArray alloc] init];
     allEvents = [RockInRio allEvents];
+    
+}
+
+#pragma mark - Actions
+
+- (IBAction)showLeftView:(id)sender
+{
+    if (self.navigationController.revealController.focusedController == self.navigationController.revealController.leftViewController)
+    {
+        [self.navigationController.revealController showViewController:self.navigationController.revealController.frontViewController];
+    }
+    else
+    {
+        [self.navigationController.revealController showViewController:self.navigationController.revealController.leftViewController];
+    }
 }
 
 - (void)didReceiveMemoryWarning

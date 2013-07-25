@@ -36,7 +36,25 @@
                             <constraint firstItem="23" firstAttribute="top" secondItem="22" secondAttribute="bottom" constant="40" type="user" id="yUx-Ee-KEk"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Line Up" id="GvK-94-PjX"/>
+                    <navigationItem key="navigationItem" title="LINE-UP" id="GvK-94-PjX">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="cTN-Gi-Wzu">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="tlG-t9-2Od">
+                                <rect key="frame" x="5" y="0.0" width="42" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" image="menu_icon.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showLeftView:" destination="3" eventType="touchUpInside" id="gfS-nT-yXM"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="12" sceneMemberID="firstResponder"/>
             </objects>
@@ -93,15 +111,15 @@
             </objects>
             <point key="canvasLocation" x="241" y="884"/>
         </scene>
-        <!--Navigation Controller - Second-->
+        <!--Navigation Controller-->
         <scene sceneID="bsB-kQ-gHx">
             <objects>
                 <navigationController id="eYU-lg-kg5" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Second" image="second" id="6"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0sQ-w3-1Bg">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="blackOpaque" id="0sQ-w3-1Bg">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -114,11 +132,14 @@
         </scene>
     </scenes>
     <resources>
-        <image name="second" width="16" height="16"/>
+        <image name="menu_icon.png" width="25" height="19"/>
     </resources>
     <classes>
         <class className="LineUpViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/LineUpViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="showLeftView:"/>
+            </relationships>
         </class>
         <class className="MenuViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MenuViewController.h"/>
