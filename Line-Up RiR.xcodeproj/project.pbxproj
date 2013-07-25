@@ -85,7 +85,7 @@
 		AC4DDD9E17A17ECF000BC5D9 /* events.json in Resources */ = {isa = PBXBuildFile; fileRef = AC4DDD9D17A17ECF000BC5D9 /* events.json */; };
 		ACF196BA17A18C13003BE8CB /* LineUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACF196B917A18C13003BE8CB /* LineUpViewController.m */; };
 		ACF196BF17A18ECA003BE8CB /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = ACF196BE17A18ECA003BE8CB /* Event.m */; };
-		ACF196C217A18F58003BE8CB /* Event+Parse.m in Sources */ = {isa = PBXBuildFile; fileRef = ACF196C117A18F58003BE8CB /* Event+Parse.m */; };
+		ACF196C517A193BD003BE8CB /* RockInRio.m in Sources */ = {isa = PBXBuildFile; fileRef = ACF196C417A193BD003BE8CB /* RockInRio.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -189,8 +189,8 @@
 		ACF196B917A18C13003BE8CB /* LineUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineUpViewController.m; sourceTree = "<group>"; };
 		ACF196BD17A18ECA003BE8CB /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
 		ACF196BE17A18ECA003BE8CB /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
-		ACF196C017A18F58003BE8CB /* Event+Parse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Event+Parse.h"; sourceTree = "<group>"; };
-		ACF196C117A18F58003BE8CB /* Event+Parse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Event+Parse.m"; sourceTree = "<group>"; };
+		ACF196C317A193BD003BE8CB /* RockInRio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RockInRio.h; sourceTree = "<group>"; };
+		ACF196C417A193BD003BE8CB /* RockInRio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RockInRio.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -454,8 +454,6 @@
 		AC4DDD9B17A17E08000BC5D9 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
-				ACF196C017A18F58003BE8CB /* Event+Parse.h */,
-				ACF196C117A18F58003BE8CB /* Event+Parse.m */,
 			);
 			name = Categories;
 			path = Classes/Categories;
@@ -473,6 +471,8 @@
 		ACF196BB17A18C36003BE8CB /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				ACF196C317A193BD003BE8CB /* RockInRio.h */,
+				ACF196C417A193BD003BE8CB /* RockInRio.m */,
 				ACF196BD17A18ECA003BE8CB /* Event.h */,
 				ACF196BE17A18ECA003BE8CB /* Event.m */,
 			);
@@ -620,7 +620,7 @@
 				AC4DDC8F17A17972000BC5D9 /* NSDate+HumanInterval.m in Sources */,
 				ACF196BA17A18C13003BE8CB /* LineUpViewController.m in Sources */,
 				ACF196BF17A18ECA003BE8CB /* Event.m in Sources */,
-				ACF196C217A18F58003BE8CB /* Event+Parse.m in Sources */,
+				ACF196C517A193BD003BE8CB /* RockInRio.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

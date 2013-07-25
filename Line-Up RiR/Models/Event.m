@@ -10,4 +10,16 @@
 
 @implementation Event
 
+- (id)initWithDictionary:(NSDictionary *)dictionary {
+    self = [super init];
+    
+    if (self) {
+        self.date = [dictionary objectForKey:@"date"];
+        self.weekDay = [dictionary objectForKey:@"weekDay"];
+        self.mainEvent = [dictionary objectForKey:@"mainEvent"];
+    }
+    
+    return self;
+}
+
 @end
