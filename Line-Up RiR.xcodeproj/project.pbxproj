@@ -17,10 +17,6 @@
 		238795BE17A16EB0007CF23B /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 238795BD17A16EB0007CF23B /* Default@2x.png */; };
 		238795C017A16EB0007CF23B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 238795BF17A16EB0007CF23B /* Default-568h@2x.png */; };
 		238795C317A16EB0007CF23B /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 238795C117A16EB0007CF23B /* MainStoryboard.storyboard */; };
-		238795C817A16EB0007CF23B /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = 238795C717A16EB0007CF23B /* first.png */; };
-		238795CA17A16EB0007CF23B /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 238795C917A16EB0007CF23B /* first@2x.png */; };
-		238795CF17A16EB0007CF23B /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = 238795CE17A16EB0007CF23B /* second.png */; };
-		238795D117A16EB0007CF23B /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 238795D017A16EB0007CF23B /* second@2x.png */; };
 		AC4DDC8817A17972000BC5D9 /* libGoogleAdMobAds.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AC4DDC7617A17972000BC5D9 /* libGoogleAdMobAds.a */; };
 		AC4DDC8917A17972000BC5D9 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = AC4DDC7717A17972000BC5D9 /* README.txt */; };
 		AC4DDC8A17A17972000BC5D9 /* libGoogleAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AC4DDC7E17A17972000BC5D9 /* libGoogleAnalytics.a */; };
@@ -105,10 +101,6 @@
 		238795BD17A16EB0007CF23B /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		238795BF17A16EB0007CF23B /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		238795C217A16EB0007CF23B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		238795C717A16EB0007CF23B /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
-		238795C917A16EB0007CF23B /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
-		238795CE17A16EB0007CF23B /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
-		238795D017A16EB0007CF23B /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
 		AC4DDC6D17A17972000BC5D9 /* GADAdMobExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADAdMobExtras.h; sourceTree = "<group>"; };
 		AC4DDC6E17A17972000BC5D9 /* GADAdNetworkExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADAdNetworkExtras.h; sourceTree = "<group>"; };
 		AC4DDC6F17A17972000BC5D9 /* GADAdSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADAdSize.h; sourceTree = "<group>"; };
@@ -248,10 +240,6 @@
 				ACF196BC17A18C36003BE8CB /* Storyboards */,
 				238795B817A16EB0007CF23B /* AppDelegate.h */,
 				238795B917A16EB0007CF23B /* AppDelegate.m */,
-				238795C717A16EB0007CF23B /* first.png */,
-				238795C917A16EB0007CF23B /* first@2x.png */,
-				238795CE17A16EB0007CF23B /* second.png */,
-				238795D017A16EB0007CF23B /* second@2x.png */,
 				238795B017A16EB0007CF23B /* Supporting Files */,
 			);
 			path = "Line-Up RiR";
@@ -544,10 +532,6 @@
 				238795BE17A16EB0007CF23B /* Default@2x.png in Resources */,
 				238795C017A16EB0007CF23B /* Default-568h@2x.png in Resources */,
 				238795C317A16EB0007CF23B /* MainStoryboard.storyboard in Resources */,
-				238795C817A16EB0007CF23B /* first.png in Resources */,
-				238795CA17A16EB0007CF23B /* first@2x.png in Resources */,
-				238795CF17A16EB0007CF23B /* second.png in Resources */,
-				238795D117A16EB0007CF23B /* second@2x.png in Resources */,
 				AC4DDC8917A17972000BC5D9 /* README.txt in Resources */,
 				AC4DDC8C17A17972000BC5D9 /* CHANGELOG.md in Resources */,
 				AC4DDC8E17A17972000BC5D9 /* README.md in Resources */,
