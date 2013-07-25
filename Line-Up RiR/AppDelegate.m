@@ -12,7 +12,18 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+    LineUpViewController *lineUpViewController = [storyboard instantiateViewControllerWithIdentifier:@"LineUpViewController"];
+    MenuViewController *menuViewController = [storyboard instantiateViewControllerWithIdentifier:@"MenuViewController"];
+    
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:lineUpViewController];
+    
+    self.revealController = [PKRevealController revealControllerWithFrontViewController:navigationController leftViewController:menuViewController options:nil];
+    
+    self.window.rootViewController = self.revealController;
+    
+    [[self window] makeKeyAndVisible];
     return YES;
 }
 							

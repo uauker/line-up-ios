@@ -7,9 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PKRevealController.h"
+#import "MenuViewController.h"
+#import "LineUpViewController.h"
+
+@class PKRevealController;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
+@property (nonatomic, strong, readwrite) PKRevealController *revealController;
 @property (strong, nonatomic) UIWindow *window;
 
 @end
