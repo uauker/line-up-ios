@@ -10,4 +10,11 @@
 
 @interface Palco : NSObject
 
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, copy) NSString *startAt;
+@property (nonatomic, copy) NSMutableArray *musicians;
+
+- (id)initWithDictionary:(NSDictionary *)dictionary;
++ (NSArray *)allMusiciansWithArray:(NSArray *)array;
+
 @end
