@@ -124,6 +124,7 @@
 		23FA0E5B17A1A02100CA30CF /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		23FA0E5D17A1A1D000CA30CF /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		23FA0E5E17A1A1D000CA30CF /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
+		23FA0E6017A1E67F00CA30CF /* Global.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Global.h; sourceTree = "<group>"; };
 		AC4DDD1717A17A5C000BC5D9 /* pin-cinema.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pin-cinema.png"; sourceTree = "<group>"; };
 		AC4DDD1817A17A5C000BC5D9 /* pin-cinema@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pin-cinema@2x.png"; sourceTree = "<group>"; };
 		AC4DDD1917A17A5C000BC5D9 /* back_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back_button.png; sourceTree = "<group>"; };
@@ -280,6 +281,7 @@
 				238795B817A16EB0007CF23B /* AppDelegate.h */,
 				238795B917A16EB0007CF23B /* AppDelegate.m */,
 				238795B017A16EB0007CF23B /* Supporting Files */,
+				23FA0E6017A1E67F00CA30CF /* Global.h */,
 			);
 			path = "Line-Up RiR";
 			sourceTree = "<group>";
