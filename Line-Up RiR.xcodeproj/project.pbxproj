@@ -86,6 +86,8 @@
 		ACF196E817A19657003BE8CB /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = ACF196DE17A19657003BE8CB /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc -w"; }; };
 		ACF196E917A19657003BE8CB /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = ACF196DF17A19657003BE8CB /* README.md */; };
 		ACF196EA17A19657003BE8CB /* NSDate+HumanInterval.m in Sources */ = {isa = PBXBuildFile; fileRef = ACF196E217A19657003BE8CB /* NSDate+HumanInterval.m */; };
+		ACF196ED17A198CF003BE8CB /* Palco.m in Sources */ = {isa = PBXBuildFile; fileRef = ACF196EC17A198CF003BE8CB /* Palco.m */; };
+		ACF196F017A198E5003BE8CB /* Musician.m in Sources */ = {isa = PBXBuildFile; fileRef = ACF196EF17A198E5003BE8CB /* Musician.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -191,6 +193,10 @@
 		ACF196DF17A19657003BE8CB /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		ACF196E117A19657003BE8CB /* NSDate+HumanInterval.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+HumanInterval.h"; sourceTree = "<group>"; };
 		ACF196E217A19657003BE8CB /* NSDate+HumanInterval.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+HumanInterval.m"; sourceTree = "<group>"; };
+		ACF196EB17A198CF003BE8CB /* Palco.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Palco.h; sourceTree = "<group>"; };
+		ACF196EC17A198CF003BE8CB /* Palco.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Palco.m; sourceTree = "<group>"; };
+		ACF196EE17A198E5003BE8CB /* Musician.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Musician.h; sourceTree = "<group>"; };
+		ACF196EF17A198E5003BE8CB /* Musician.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Musician.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -412,6 +418,10 @@
 				ACF196C417A193BD003BE8CB /* RockInRio.m */,
 				ACF196BD17A18ECA003BE8CB /* Event.h */,
 				ACF196BE17A18ECA003BE8CB /* Event.m */,
+				ACF196EB17A198CF003BE8CB /* Palco.h */,
+				ACF196EC17A198CF003BE8CB /* Palco.m */,
+				ACF196EE17A198E5003BE8CB /* Musician.h */,
+				ACF196EF17A198E5003BE8CB /* Musician.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -621,6 +631,8 @@
 				ACF196C517A193BD003BE8CB /* RockInRio.m in Sources */,
 				ACF196E817A19657003BE8CB /* JSONKit.m in Sources */,
 				ACF196EA17A19657003BE8CB /* NSDate+HumanInterval.m in Sources */,
+				ACF196ED17A198CF003BE8CB /* Palco.m in Sources */,
+				ACF196F017A198E5003BE8CB /* Musician.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
