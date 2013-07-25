@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="eYU-lg-kg5">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -9,7 +9,7 @@
             <objects>
                 <viewController storyboardIdentifier="LineUpViewController" title="Second" id="3" customClass="LineUpViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="17">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="LineUp View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="22">
@@ -36,11 +36,11 @@
                             <constraint firstItem="23" firstAttribute="top" secondItem="22" secondAttribute="bottom" constant="40" type="user" id="yUx-Ee-KEk"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Second" image="second" id="6"/>
+                    <navigationItem key="navigationItem" title="Line Up" id="GvK-94-PjX"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="12" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="241" y="158"/>
+            <point key="canvasLocation" x="767" y="158"/>
         </scene>
         <!--Menu View Controller-->
         <scene sceneID="ra4-4j-bGZ">
@@ -50,22 +50,67 @@
                         <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Menu" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9w2-eD-mIv">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="73" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="GQs-UU-bDC">
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" rowHeight="73" id="qn2-Tu-1nm">
+                                        <rect key="frame" x="0.0" y="22" width="320" height="73"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="72"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Sexta 13/09" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iq3-Iz-G0a">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="Pu8-os-2KG"/>
+                                                        <constraint firstAttribute="width" constant="258" id="pTm-7X-Whs"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="iq3-Iz-G0a" firstAttribute="top" secondItem="qn2-Tu-1nm" secondAttribute="top" constant="25" id="dxB-ed-jzp"/>
+                                            <constraint firstItem="iq3-Iz-G0a" firstAttribute="leading" secondItem="qn2-Tu-1nm" secondAttribute="leading" constant="20" type="default" id="jmQ-z4-vQf"/>
+                                        </constraints>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="9w2-eD-mIv" firstAttribute="top" secondItem="Y3N-En-fJ2" secondAttribute="top" constant="263" id="nLR-WT-6E3"/>
-                            <constraint firstItem="9w2-eD-mIv" firstAttribute="centerX" secondItem="Y3N-En-fJ2" secondAttribute="centerX" type="default" id="uge-n2-bwk"/>
+                            <constraint firstItem="GQs-UU-bDC" firstAttribute="leading" secondItem="Y3N-En-fJ2" secondAttribute="leading" type="default" id="9NF-Xk-AnT"/>
+                            <constraint firstItem="GQs-UU-bDC" firstAttribute="top" secondItem="Y3N-En-fJ2" secondAttribute="top" type="default" id="SHp-ht-MUJ"/>
+                            <constraint firstItem="GQs-UU-bDC" firstAttribute="trailing" secondItem="Y3N-En-fJ2" secondAttribute="trailing" type="default" id="kJW-ey-kE8"/>
+                            <constraint firstItem="GQs-UU-bDC" firstAttribute="bottom" secondItem="Y3N-En-fJ2" secondAttribute="bottom" type="default" id="pca-h9-vE2"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7ah-Ks-3kh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="241" y="884"/>
+        </scene>
+        <!--Navigation Controller - Second-->
+        <scene sceneID="bsB-kQ-gHx">
+            <objects>
+                <navigationController id="eYU-lg-kg5" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Second" image="second" id="6"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0sQ-w3-1Bg">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="3" kind="relationship" relationship="rootViewController" id="g5c-WP-EHG"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yd3-9E-tpe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="241" y="158"/>
         </scene>
     </scenes>
     <resources>
