@@ -28,24 +28,41 @@
         self.musicians = [[[self.event palcos] objectAtIndex:0] musicians];
     }
     
-    if (!FBSession.activeSession.isOpen) {
-        [FBSession openActiveSessionWithReadPermissions:nil
-                                           allowLoginUI:YES
-                                      completionHandler:^(FBSession *session,
-                                                          FBSessionState status,
-                                                          NSError *error) {
-                                          
-                                          NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
-                                                                         @"160682260790269",@"id",
-                                                                         nil];
-                                          
-                                          [FBRequestConnection startWithGraphPath:@"events" parameters:params HTTPMethod:@"POST" completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
-                                              NSLog(@"error %@", [error description]);
-                                              NSLog(@"result %@", result);
-                                          }];
-                                          
-                                      }];
-    }
+//    if (!FBSession.activeSession.isOpen) {
+//        [FBSession openActiveSessionWithPublishPermissions:@[@"publish_stream", @"publish_actions", @"create_event", @"rsvp_event"] defaultAudience:FBSessionDefaultAudienceEveryone allowLoginUI:YES completionHandler:^(FBSession *session, FBSessionState status, NSError *error) {
+//            
+//NSLog(@"error %@", [error description]);
+//NSLog(@"a: %@",             [[session accessTokenData] accessToken]);
+//            
+//
+//            
+//            NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+//                                           [[session accessTokenData] accessToken], @"access_token",
+//                                           @"160682260790269", @"id",
+//                                           nil];
+//            
+//            [FBRequestConnection startWithGraphPath:@"events" parameters:params HTTPMethod:@"POST" completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+//                NSLog(@"error %@", [error description]);
+//                NSLog(@"result %@", result);
+//            }];
+//        }];
+//        [FBSession openActiveSessionWithReadPermissions:@[@"create_event"]
+//                                           allowLoginUI:YES
+//                                      completionHandler:^(FBSession *session,
+//                                                          FBSessionState status,
+//                                                          NSError *error) {
+//                                          
+//                                          NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+//                                                                         @"160682260790269",@"id",
+//                                                                         nil];
+//                                          
+//                                          [FBRequestConnection startWithGraphPath:@"events" parameters:params HTTPMethod:@"POST" completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+//                                              NSLog(@"error %@", [error description]);
+//                                              NSLog(@"result %@", result);
+//                                          }];
+//                                          
+//                                      }];
+//    }
     
     //    static NSString *PublishStreamPermission = @"user_events";
     //    [FBSession
