@@ -207,17 +207,18 @@
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="101" contentMode="left" text="Sexta 13/09" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iq3-Iz-G0a">
                                                     <constraints>
+                                                        <constraint firstAttribute="height" constant="28" id="WIl-No-ybp"/>
                                                         <constraint firstAttribute="width" constant="258" id="pTm-7X-Whs"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="22"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="26"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="102" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ibe-0j-z2K">
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="17" id="0mZ-2o-N54"/>
+                                                        <constraint firstAttribute="height" constant="17" id="6K9-de-DJp"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="12"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="14"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
@@ -226,8 +227,8 @@
                                         </view>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="ibe-0j-z2K" secondAttribute="trailing" constant="20" type="default" id="0qQ-g3-oex"/>
+                                            <constraint firstAttribute="bottom" secondItem="ibe-0j-z2K" secondAttribute="bottom" constant="7" id="BT7-iF-xe7"/>
                                             <constraint firstAttribute="bottom" secondItem="iq3-Iz-G0a" secondAttribute="bottom" constant="20" type="default" id="Ddh-fB-3o9"/>
-                                            <constraint firstAttribute="bottom" secondItem="ibe-0j-z2K" secondAttribute="bottom" constant="8" id="PbV-Md-N2V"/>
                                             <constraint firstItem="ibe-0j-z2K" firstAttribute="leading" secondItem="qn2-Tu-1nm" secondAttribute="leading" constant="20" type="default" id="bpR-jx-xox"/>
                                             <constraint firstItem="iq3-Iz-G0a" firstAttribute="leading" secondItem="qn2-Tu-1nm" secondAttribute="leading" constant="20" type="default" id="jmQ-z4-vQf"/>
                                         </constraints>
