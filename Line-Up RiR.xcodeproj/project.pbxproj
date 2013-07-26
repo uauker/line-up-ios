@@ -102,6 +102,7 @@
 		CE406DF917A2E86A00CF1FF8 /* ActionSheetDistancePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = CE406DF117A2E86A00CF1FF8 /* ActionSheetDistancePicker.m */; };
 		CE406DFA17A2E86A00CF1FF8 /* ActionSheetStringPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = CE406DF317A2E86A00CF1FF8 /* ActionSheetStringPicker.m */; };
 		CE406DFB17A2E86A00CF1FF8 /* DistancePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE406DF517A2E86A00CF1FF8 /* DistancePickerView.m */; };
+		CE406DFE17A324A200CF1FF8 /* MyScheduleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE406DFD17A324A200CF1FF8 /* MyScheduleViewController.m */; };
 		CE7B04E417A1D56C009C6754 /* menu_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CE7B04E217A1D56C009C6754 /* menu_icon.png */; };
 		CE7B04E517A1D56C009C6754 /* menu_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE7B04E317A1D56C009C6754 /* menu_icon@2x.png */; };
 /* End PBXBuildFile section */
@@ -240,6 +241,8 @@
 		CE406DF317A2E86A00CF1FF8 /* ActionSheetStringPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionSheetStringPicker.m; sourceTree = "<group>"; };
 		CE406DF417A2E86A00CF1FF8 /* DistancePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DistancePickerView.h; sourceTree = "<group>"; };
 		CE406DF517A2E86A00CF1FF8 /* DistancePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DistancePickerView.m; sourceTree = "<group>"; };
+		CE406DFC17A324A200CF1FF8 /* MyScheduleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyScheduleViewController.h; sourceTree = "<group>"; };
+		CE406DFD17A324A200CF1FF8 /* MyScheduleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyScheduleViewController.m; sourceTree = "<group>"; };
 		CE7B04E217A1D56C009C6754 /* menu_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu_icon.png; sourceTree = "<group>"; };
 		CE7B04E317A1D56C009C6754 /* menu_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu_icon@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -478,6 +481,8 @@
 				ACF196B917A18C13003BE8CB /* LineUpViewController.m */,
 				23FA0E5D17A1A1D000CA30CF /* MenuViewController.h */,
 				23FA0E5E17A1A1D000CA30CF /* MenuViewController.m */,
+				CE406DFC17A324A200CF1FF8 /* MyScheduleViewController.h */,
+				CE406DFD17A324A200CF1FF8 /* MyScheduleViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -739,6 +744,7 @@
 				CE406DF917A2E86A00CF1FF8 /* ActionSheetDistancePicker.m in Sources */,
 				CE406DFA17A2E86A00CF1FF8 /* ActionSheetStringPicker.m in Sources */,
 				CE406DFB17A2E86A00CF1FF8 /* DistancePickerView.m in Sources */,
+				CE406DFE17A324A200CF1FF8 /* MyScheduleViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

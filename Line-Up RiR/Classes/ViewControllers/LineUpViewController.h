@@ -24,10 +24,12 @@
 @property (nonatomic, copy) NSArray *musicians;
 @property (nonatomic, copy) NSArray *allEvents;
 
+@property (weak, nonatomic) IBOutlet UIView *viewRIRTimer;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIButton *palcoSelector;
 @property (weak, nonatomic) IBOutlet UILabel *palcoIndicator;
 @property (weak, nonatomic) IBOutlet UILabel *rirTimer;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *verticalPositionPalcoSelector;
 
 - (IBAction)showLeftView:(id)sender;
 - (IBAction)selectPalco:(id)sender;

@@ -26,8 +26,6 @@ NSDate *rirDate;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	
-    [self setTimer];
     
     self.allEvents = [RockInRio allEvents];
     
@@ -104,7 +102,15 @@ NSDate *rirDate;
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(updateLabels) userInfo:nil repeats:YES];
+    [self setTimer];
+    if ([self rirNotStarted]) {
+        [self.viewRIRTimer setHidden:NO];
+        [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(updateLabels) userInfo:nil repeats:YES];
+    } else {
+        [self.viewRIRTimer setHidden:YES];
+        self.verticalPositionPalcoSelector.constant = 0;
+    }
+    
 }
 
 
@@ -233,6 +239,23 @@ NSDate *rirDate;
     NSString *timer = [NSString stringWithFormat:@"%id %ih %im %is", daysFromMonth + components.day, components.hour, components.minute, components.second];
     
     self.rirTimer.text = timer;
+}
+
+- (BOOL)rirNotStarted {
+    switch ([rirDate compare:[NSDate date]]) {
+        case NSOrderedAscending:
+            // dateOne is earlier in time than dateTwo
+            return NO;
+            break;
+        case NSOrderedSame:
+            // The dates are the same
+            return YES;
+            break;
+        case NSOrderedDescending:
+            // dateOne is later in time than dateTwo
+            return YES;
+            break;
+    }
 }
 
 - (int)getDaysFromMonth:(int)month {
