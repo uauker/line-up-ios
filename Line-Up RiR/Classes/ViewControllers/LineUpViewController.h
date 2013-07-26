@@ -27,8 +27,10 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIButton *palcoSelector;
 @property (weak, nonatomic) IBOutlet UILabel *palcoIndicator;
+@property (weak, nonatomic) IBOutlet UILabel *rirTimer;
 
 - (IBAction)showLeftView:(id)sender;
 - (IBAction)selectPalco:(id)sender;
+- (int)getDaysFromMonth:(int)month;
 
 @end

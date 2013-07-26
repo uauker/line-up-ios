@@ -12,13 +12,13 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="contador" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aNO-am-1Bj">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="53d 14h 26m 31s" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aNO-am-1Bj">
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="gHy-dX-9xg"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="46" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="H2i-u4-ANN">
@@ -122,6 +122,7 @@
                     <connections>
                         <outlet property="palcoIndicator" destination="FV0-lb-GVS" id="11h-gN-uns"/>
                         <outlet property="palcoSelector" destination="pns-KF-gCG" id="Kpn-OU-UyL"/>
+                        <outlet property="rirTimer" destination="aNO-am-1Bj" id="D01-SI-4qo"/>
                         <outlet property="tableView" destination="H2i-u4-ANN" id="na2-6g-QD9"/>
                     </connections>
                 </viewController>
@@ -226,6 +227,8 @@
                 <relationship kind="action" name="showLeftView:"/>
                 <relationship kind="outlet" name="palcoIndicator" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="palcoSelector" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="rirTimer" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
             </relationships>
         </class>
         <class className="MenuViewController" superclassName="UIViewController">

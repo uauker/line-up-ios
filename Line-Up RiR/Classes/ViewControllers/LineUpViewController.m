@@ -14,10 +14,21 @@
 
 @implementation LineUpViewController
 
+#define RIR_YEAR 2013
+#define RIR_MONTH 9
+#define RIR_DAY 13
+#define RIR_HOUR 00
+#define RIR_MINUTE 00
+#define RIR_SECOND 00
+
+NSDate *rirDate;
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	
+    [self setTimer];
+    
     self.allEvents = [RockInRio allEvents];
     
     if (self.event == nil) {
@@ -76,9 +87,11 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-
+    [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(updateLabels) userInfo:nil repeats:YES];
 }
 
+
+#pragma ###################################################################################################################
 #pragma mark - Actions
 
 - (IBAction)showLeftView:(id)sender
@@ -170,6 +183,84 @@
     self.palcoIndicator.text = [K_ARRAY_PALCOS objectAtIndex:[selectedIndex intValue]];
     self.musicians = [[self.palcos objectAtIndex:([selectedIndex intValue])] musicians];
     [self.tableView reloadData];
+}
+
+
+#pragma ###################################################################################################################
+#pragma mark - Internal Methods
+
+- (void)setTimer {
+    NSDateComponents *comps = [[NSDateComponents alloc] init];
+    [comps setYear:RIR_YEAR];
+    [comps setMonth:RIR_MONTH];
+    [comps setDay:RIR_DAY];
+    [comps setHour:RIR_HOUR];
+    [comps setMinute:RIR_MINUTE];
+    [comps setSecond:RIR_SECOND];
+    
+    [comps setTimeZone:[NSTimeZone defaultTimeZone]];
+    
+    NSCalendar *cal = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    rirDate = [cal dateFromComponents:comps];
+}
+
+- (void)updateLabels {
+    NSCalendar *currentCalendar = [NSCalendar currentCalendar];
+    
+    NSDateComponents *components = [currentCalendar components:(NSMonthCalendarUnit | NSDayCalendarUnit |
+                                                                NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit |
+                                                                NSTimeZoneCalendarUnit) fromDate:[NSDate date] toDate:rirDate options:0];
+    
+    
+    int daysFromMonth = [self getDaysFromMonth:components.month];
+    NSString *timer = [NSString stringWithFormat:@"%id %ih %im %is", daysFromMonth + components.day, components.hour, components.minute, components.second];
+    
+    self.rirTimer.text = timer;
+}
+
+- (int)getDaysFromMonth:(int)month {
+    switch (month) {
+        case 1:
+            return 31;
+            break;
+        case 2:
+            return 29;
+            break;
+        case 3:
+            return 31;
+            break;
+        case 4:
+            return 30;
+            break;
+        case 5:
+            return 31;
+            break;
+        case 6:
+            return 30;
+            break;
+        case 7:
+            return 31;
+            break;
+        case 8:
+            return 31;
+            break;
+        case 9:
+            return 30;
+            break;
+        case 10:
+            return 31;
+            break;
+        case 11:
+            return 30;
+            break;
+        case 12:
+            return 31;
+            break;
+            
+        default:
+            return 0;
+            break;
+    }
 }
 
 @end
