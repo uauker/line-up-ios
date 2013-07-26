@@ -24,6 +24,8 @@
 		23FA0E5A17A19FFD00CA30CF /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23FA0E5917A19FFD00CA30CF /* ImageIO.framework */; };
 		23FA0E5C17A1A02100CA30CF /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23FA0E5B17A1A02100CA30CF /* QuartzCore.framework */; };
 		23FA0E5F17A1A1D000CA30CF /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23FA0E5E17A1A1D000CA30CF /* MenuViewController.m */; };
+		23FA0E6217A2BEA900CA30CF /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23FA0E6117A2BEA900CA30CF /* Social.framework */; };
+		23FA0E6417A2C1F000CA30CF /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23FA0E6317A2C1F000CA30CF /* FacebookSDK.framework */; };
 		AC4DDD5B17A17A5C000BC5D9 /* pin-cinema.png in Resources */ = {isa = PBXBuildFile; fileRef = AC4DDD1717A17A5C000BC5D9 /* pin-cinema.png */; };
 		AC4DDD5C17A17A5C000BC5D9 /* pin-cinema@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AC4DDD1817A17A5C000BC5D9 /* pin-cinema@2x.png */; };
 		AC4DDD5D17A17A5C000BC5D9 /* back_button.png in Resources */ = {isa = PBXBuildFile; fileRef = AC4DDD1917A17A5C000BC5D9 /* back_button.png */; };
@@ -125,6 +127,8 @@
 		23FA0E5D17A1A1D000CA30CF /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		23FA0E5E17A1A1D000CA30CF /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		23FA0E6017A1E67F00CA30CF /* Global.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Global.h; sourceTree = "<group>"; };
+		23FA0E6117A2BEA900CA30CF /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		23FA0E6317A2C1F000CA30CF /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		AC4DDD1717A17A5C000BC5D9 /* pin-cinema.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pin-cinema.png"; sourceTree = "<group>"; };
 		AC4DDD1817A17A5C000BC5D9 /* pin-cinema@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pin-cinema@2x.png"; sourceTree = "<group>"; };
 		AC4DDD1917A17A5C000BC5D9 /* back_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back_button.png; sourceTree = "<group>"; };
@@ -226,6 +230,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23FA0E6217A2BEA900CA30CF /* Social.framework in Frameworks */,
 				23FA0E5C17A1A02100CA30CF /* QuartzCore.framework in Frameworks */,
 				23FA0E5A17A19FFD00CA30CF /* ImageIO.framework in Frameworks */,
 				23FA0E5817A19FEA00CA30CF /* CoreText.framework in Frameworks */,
@@ -234,6 +239,7 @@
 				238795AE17A16EB0007CF23B /* CoreGraphics.framework in Frameworks */,
 				ACF196E317A19657003BE8CB /* libGoogleAdMobAds.a in Frameworks */,
 				ACF196E517A19657003BE8CB /* libGoogleAnalytics.a in Frameworks */,
+				23FA0E6417A2C1F000CA30CF /* FacebookSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,6 +267,7 @@
 		238795A817A16EB0007CF23B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				23FA0E6117A2BEA900CA30CF /* Social.framework */,
 				23FA0E5917A19FFD00CA30CF /* ImageIO.framework */,
 				23FA0E5717A19FEA00CA30CF /* CoreText.framework */,
 				23FA0E5B17A1A02100CA30CF /* QuartzCore.framework */,
@@ -482,6 +489,7 @@
 		ACF196C617A19657003BE8CB /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				23FA0E6317A2C1F000CA30CF /* FacebookSDK.framework */,
 				23FA0E4D17A19E2A00CA30CF /* PKRevealController */,
 				ACF196C717A19657003BE8CB /* GoogleAdMobAdsSdkiOS-6.4.1 */,
 				ACF196D317A19657003BE8CB /* GoogleAnalyticsiOS-2.0b3 */,
@@ -770,6 +778,10 @@
 		238795D517A16EB0007CF23B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Libraries\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Line-Up RiR/Line-Up RiR-Prefix.pch";
 				INFOPLIST_FILE = "Line-Up RiR/Line-Up RiR-Info.plist";
@@ -787,6 +799,10 @@
 		238795D617A16EB0007CF23B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Libraries\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Line-Up RiR/Line-Up RiR-Prefix.pch";
 				INFOPLIST_FILE = "Line-Up RiR/Line-Up RiR-Info.plist";
