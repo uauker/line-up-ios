@@ -7,3 +7,5 @@
 //
 
 #define K_ARRAY_EVENTS [NSArray arrayWithObjects:@"SEXTA 13/09", @"SÁBADO 14/09", @"DOMINGO 15/09", @"QUINTA 19/09", @"SEXTA 20/09", @"SÁBADO 21/09", @"DOMINGO 22/09", nil]
+
+#define K_ARRAY_PALCOS [NSArray arrayWithObjects:@"PALCO MUNDO", @"PALCO SUNSET", @"ELETRÔNICA", @"ROCK STREET", nil]
