@@ -20,9 +20,6 @@
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="46" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="H2i-u4-ANN">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="417" id="HdB-gb-hk1"/>
-                                </constraints>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="lineUpCell" rowHeight="46" id="QoE-w4-YbW">
                                         <rect key="frame" x="0.0" y="22" width="320" height="46"/>
@@ -63,6 +60,7 @@
                             <constraint firstItem="H2i-u4-ANN" firstAttribute="bottom" secondItem="17" secondAttribute="bottom" type="default" id="Kuw-Xp-uQ1"/>
                             <constraint firstItem="aNO-am-1Bj" firstAttribute="leading" secondItem="17" secondAttribute="leading" type="default" id="eAJ-4Q-6l9"/>
                             <constraint firstItem="H2i-u4-ANN" firstAttribute="trailing" secondItem="17" secondAttribute="trailing" type="default" id="moa-X8-Vol"/>
+                            <constraint firstItem="H2i-u4-ANN" firstAttribute="top" secondItem="17" secondAttribute="top" constant="20" symbolic="YES" type="default" id="qyX-VF-V6W"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="LINE-UP" id="GvK-94-PjX">
@@ -160,7 +158,7 @@
             <objects>
                 <navigationController id="eYU-lg-kg5" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="blackOpaque" id="0sQ-w3-1Bg">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0sQ-w3-1Bg">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>

@@ -14,28 +14,25 @@
 
 @implementation LineUpViewController
 
-- (id)initWithArray:(NSArray *)array
-{
-    self = [super init];
-    
-    if (self != nil)
-    {
-        self.musicians = array;
-    }
-    return self;
-}
-
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	
     self.allEvents = [RockInRio allEvents];
     
-    if (self.musicians == nil) {
-        self.musicians = [[[[self.allEvents objectAtIndex:0] palcos] objectAtIndex:0] musicians];
+    if (self.event == nil) {
+        self.event = [self.allEvents objectAtIndex:0];
     }
     
+    if (self.musicians == nil) {
+        self.musicians = [[[self.event palcos] objectAtIndex:0] musicians];
+    }
+    
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+
 }
 
 #pragma mark - Actions
