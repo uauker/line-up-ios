@@ -11,6 +11,7 @@
 #import "PKRevealController.h"
 #import "Musician.h"
 #import "Event.h"
+#import <FacebookSDK/FacebookSDK.h>
 
 @interface LineUpViewController : PKRevealController <UITableViewDataSource, UITableViewDelegate>
 

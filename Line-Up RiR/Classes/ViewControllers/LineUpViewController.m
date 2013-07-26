@@ -28,6 +28,48 @@
         self.musicians = [[[self.event palcos] objectAtIndex:0] musicians];
     }
     
+    if (!FBSession.activeSession.isOpen) {
+        [FBSession openActiveSessionWithReadPermissions:nil
+                                           allowLoginUI:YES
+                                      completionHandler:^(FBSession *session,
+                                                          FBSessionState status,
+                                                          NSError *error) {
+                                          
+                                          NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+                                                                         @"160682260790269",@"id",
+                                                                         nil];
+                                          
+                                          [FBRequestConnection startWithGraphPath:@"events" parameters:params HTTPMethod:@"POST" completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+                                              NSLog(@"error %@", [error description]);
+                                              NSLog(@"result %@", result);
+                                          }];
+                                          
+                                      }];
+    }
+    
+    //    static NSString *PublishStreamPermission = @"user_events";
+    //    [FBSession
+    //     openActiveSessionWithPublishPermissions:@[PublishStreamPermission]
+    //     defaultAudience:FBSessionDefaultAudienceEveryone allowLoginUI:YES
+    //     completionHandler:^(FBSession *session, FBSessionState status, NSError *error) {
+    //         if ([session state] != FBSessionStateOpen) {
+    //             // failed to open a valid session
+    //             NSLog(@"failed to open a valid session");
+    //         } else if ([[session permissions] containsObject:PublishStreamPermission]) {
+    //             // session opened, permissions granted, now you can post
+    //              NSLog(@"session opened, permissions granted, now you can post");
+    //         } else {
+    //             // session opened, but requested permissions not granted
+    //             NSLog(@"session opened, but requested permissions not granted");
+    //         }
+    //     }];
+    
+    //    FBRequestConnection *newConnection = [[FBRequestConnection alloc] init];
+    //
+    //    FBRequest *request = [[FBRequest alloc] initWithSession:FBSession.activeSession
+    //                                                  graphPath:@"me/events"];
+    //    
+    //    [request sta];
 }
 
 - (void)viewWillAppear:(BOOL)animated
