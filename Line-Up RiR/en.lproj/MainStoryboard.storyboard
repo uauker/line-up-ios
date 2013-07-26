@@ -14,12 +14,18 @@
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="contador" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aNO-am-1Bj">
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="gHy-dX-9xg"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="46" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="H2i-u4-ANN">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="432" type="user" id="CkX-kP-2Ib"/>
+                                </constraints>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="lineUpCell" rowHeight="46" id="QoE-w4-YbW">
                                         <rect key="frame" x="0.0" y="22" width="320" height="46"/>
@@ -51,16 +57,47 @@
                                     <outlet property="delegate" destination="3" id="4wD-tl-B5Z"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pns-KF-gCG">
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="95x-ae-92F"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="selectPalco:" destination="3" eventType="touchUpInside" id="3bZ-Y3-C0l"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="PALCO MUNDO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FV0-lb-GVS">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="IPK-UM-0Rh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="aNO-am-1Bj" firstAttribute="trailing" secondItem="17" secondAttribute="trailing" type="default" id="2P0-7V-tck"/>
+                            <constraint firstItem="H2i-u4-ANN" firstAttribute="top" secondItem="17" secondAttribute="top" constant="72" type="user" id="4kZ-7a-qof"/>
+                            <constraint firstItem="pns-KF-gCG" firstAttribute="top" secondItem="17" secondAttribute="top" constant="44" id="6PS-H3-t6L"/>
+                            <constraint firstItem="pns-KF-gCG" firstAttribute="leading" secondItem="17" secondAttribute="leading" type="default" id="AAS-H2-DhY"/>
                             <constraint firstItem="H2i-u4-ANN" firstAttribute="leading" secondItem="17" secondAttribute="leading" type="default" id="IDk-Y4-2h7"/>
                             <constraint firstItem="aNO-am-1Bj" firstAttribute="top" secondItem="17" secondAttribute="top" type="default" id="JbE-Is-HKV"/>
-                            <constraint firstItem="H2i-u4-ANN" firstAttribute="bottom" secondItem="17" secondAttribute="bottom" type="default" id="Kuw-Xp-uQ1"/>
+                            <constraint firstAttribute="trailing" secondItem="FV0-lb-GVS" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Jz4-HB-9CK"/>
+                            <constraint firstItem="H2i-u4-ANN" firstAttribute="bottom" secondItem="17" secondAttribute="bottom" type="user" id="Kuw-Xp-uQ1"/>
+                            <constraint firstItem="FV0-lb-GVS" firstAttribute="top" secondItem="17" secondAttribute="top" constant="48" id="Tfi-Ox-BCP"/>
                             <constraint firstItem="aNO-am-1Bj" firstAttribute="leading" secondItem="17" secondAttribute="leading" type="default" id="eAJ-4Q-6l9"/>
+                            <constraint firstItem="pns-KF-gCG" firstAttribute="trailing" secondItem="17" secondAttribute="trailing" type="default" id="g2t-YG-CLn"/>
                             <constraint firstItem="H2i-u4-ANN" firstAttribute="trailing" secondItem="17" secondAttribute="trailing" type="default" id="moa-X8-Vol"/>
-                            <constraint firstItem="H2i-u4-ANN" firstAttribute="top" secondItem="17" secondAttribute="top" constant="20" symbolic="YES" type="default" id="qyX-VF-V6W"/>
+                            <constraint firstItem="FV0-lb-GVS" firstAttribute="leading" secondItem="17" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="qZX-23-SXX"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="LINE-UP" id="GvK-94-PjX">
@@ -82,6 +119,11 @@
                             </button>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="palcoIndicator" destination="FV0-lb-GVS" id="11h-gN-uns"/>
+                        <outlet property="palcoSelector" destination="pns-KF-gCG" id="Kpn-OU-UyL"/>
+                        <outlet property="tableView" destination="H2i-u4-ANN" id="na2-6g-QD9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="12" sceneMemberID="firstResponder"/>
             </objects>
@@ -177,10 +219,13 @@
         <image name="menu_icon.png" width="25" height="19"/>
     </resources>
     <classes>
-        <class className="LineUpViewController" superclassName="UIViewController">
+        <class className="LineUpViewController" superclassName="PKRevealController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/LineUpViewController.h"/>
             <relationships>
+                <relationship kind="action" name="selectPalco:"/>
                 <relationship kind="action" name="showLeftView:"/>
+                <relationship kind="outlet" name="palcoIndicator" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="palcoSelector" candidateClass="UIButton"/>
             </relationships>
         </class>
         <class className="MenuViewController" superclassName="UIViewController">
@@ -188,6 +233,9 @@
         </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="PKRevealController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PKRevealController.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
