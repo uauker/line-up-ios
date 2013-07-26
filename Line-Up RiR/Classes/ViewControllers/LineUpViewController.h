@@ -11,15 +11,24 @@
 #import "PKRevealController.h"
 #import "Musician.h"
 #import "Event.h"
+#import "Palco.h"
+#import "Global.h"
+#import "ActionSheetStringPicker.h"
 #import <FacebookSDK/FacebookSDK.h>
 
-@interface LineUpViewController : PKRevealController <UITableViewDataSource, UITableViewDelegate>
+@interface LineUpViewController : PKRevealController <UITableViewDataSource, UITableViewDelegate, UIActionSheetDelegate>
 
 @property (nonatomic, strong) Event *event;
+@property (nonatomic, strong) Palco *palco;
 @property (nonatomic, copy) NSArray *palcos;
 @property (nonatomic, copy) NSArray *musicians;
 @property (nonatomic, copy) NSArray *allEvents;
 
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UIButton *palcoSelector;
+@property (weak, nonatomic) IBOutlet UILabel *palcoIndicator;
+
 - (IBAction)showLeftView:(id)sender;
+- (IBAction)selectPalco:(id)sender;
 
 @end

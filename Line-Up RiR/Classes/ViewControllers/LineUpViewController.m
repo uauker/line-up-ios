@@ -22,10 +22,12 @@
     
     if (self.event == nil) {
         self.event = [self.allEvents objectAtIndex:0];
+        self.palcos = [self.event palcos];
+        self.musicians = [[[self.event palcos] objectAtIndex:0] musicians];
     }
     
-    if (self.musicians == nil) {
-        self.musicians = [[[self.event palcos] objectAtIndex:0] musicians];
+    if (self.palco == nil) {
+        self.palco = [self.palcos objectAtIndex:0];
     }
     
 //    if (!FBSession.activeSession.isOpen) {
@@ -162,5 +164,29 @@
     [self.revealController showViewController:self.revealController.frontViewController];
 }
 
+
+- (IBAction)selectPalco:(id)sender {
+    NSInteger initialSelection = 0;
+    
+    for (int i = 0; i < [self.palcos count]; i++) {
+        if ([[self.palco name] isEqualToString:[[self.palcos objectAtIndex:i] name]]) {
+            initialSelection = i;
+        }
+    }
+    
+    [ActionSheetStringPicker showPickerWithTitle:nil
+                                            rows:K_ARRAY_PALCOS
+                                initialSelection:initialSelection
+                                          target:self
+                                   successAction:@selector(selectedPalco:element:)
+                                    cancelAction:nil
+                                          origin:sender];
+}
+
+- (void)selectedPalco:(NSNumber *)selectedIndex element:(id)element {
+    self.palcoIndicator.text = [K_ARRAY_PALCOS objectAtIndex:[selectedIndex intValue]];
+    self.musicians = [[self.palcos objectAtIndex:([selectedIndex intValue])] musicians];
+    [self.tableView reloadData];
+}
 
 @end
