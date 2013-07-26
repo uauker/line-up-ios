@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "RockInRio.h"
 #import "Global.h"
+#import "PKRevealController.h"
 
 @interface MenuViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 

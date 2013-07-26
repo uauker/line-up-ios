@@ -52,6 +52,7 @@
             break;
             
         default:
+            return [UIColor colorWithRed:(0/255.f) green:(0/255.f) blue:(0/255.f) alpha:1.0];
             break;
     }
 }
@@ -104,6 +105,8 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:[tableView indexPathForSelectedRow] animated:NO];
+    
+    [self.revealController showViewController:self.revealController.frontViewController];
 }
 
 
