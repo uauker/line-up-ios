@@ -236,19 +236,9 @@ NSDate *rirDate;
     
     
     int daysFromMonth = [self getDaysFromMonth:components.month];
-    int daysToStart = daysFromMonth + components.day;
     
-    NSString *timer = @"";
-    
-    if (daysToStart > 0) {
-        timer = [NSString stringWithFormat:@"%id %ih %im %is", daysFromMonth + components.day, components.hour, components.minute, components.second];    
-    } else if (components.hour > 0) {
-        timer = [NSString stringWithFormat:@"%ih %im %is", components.hour, components.minute, components.second];
-    } else {
-        timer = [NSString stringWithFormat:@"%im %is", components.minute, components.second];
-    }
-    
-    
+    NSString *timer = [NSString stringWithFormat:@"%.2id %.2ih %.2im %.2is", daysFromMonth + components.day, components.hour, components.minute, components.second];;
+
     self.rirTimer.text = timer;
 }
 
