@@ -20,4 +20,6 @@
 - (id)initWithDictionary:(NSDictionary *)dictionary;
 - (NSString *)name;
 
+- (NSArray *)allPalcosWithArray:(NSArray *)array;
+
 @end

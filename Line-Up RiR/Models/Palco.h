@@ -7,14 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Musician.h"
 
 @interface Palco : NSObject
 
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *startAt;
-@property (nonatomic, copy) NSMutableArray *musicians;
+@property (nonatomic, copy) NSArray *musicians;
 
 - (id)initWithDictionary:(NSDictionary *)dictionary;
-+ (NSArray *)allPalcosWithArray:(NSArray *)array;
+- (NSArray *)allMusiciansWithArray:(NSArray *)array;
 
 @end

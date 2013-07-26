@@ -14,12 +14,27 @@
 
 @implementation LineUpViewController
 
+- (id)initWithArray:(NSArray *)array
+{
+    self = [super init];
+    
+    if (self != nil)
+    {
+        self.musicians = array;
+    }
+    return self;
+}
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	
-    NSArray *allEvents = [[NSArray alloc] init];
-    allEvents = [RockInRio allEvents];
+    self.allEvents = [RockInRio allEvents];
+    
+    if (self.musicians == nil) {
+        self.musicians = [[[[self.allEvents objectAtIndex:0] palcos] objectAtIndex:0] musicians];
+    }
     
 }
 
@@ -42,5 +57,54 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+#pragma ###################################################################################################################
+#pragma mark - UITableViewDataSource
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return [self.musicians count];
+}
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    static NSString *cellIdentifier = @"lineUpCell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
+    }
+    
+    cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    
+    Musician *musician = [self.musicians objectAtIndex:[indexPath row]];
+    
+    UILabel *eventName = (UILabel *)[cell viewWithTag:121];
+        
+    eventName.text = [musician name];
+    
+    return cell;
+}
+
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 60;
+}
+
+
+#pragma ###################################################################################################################
+#pragma mark - UITableViewDelegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:[tableView indexPathForSelectedRow] animated:NO];
+    
+    [self.revealController showViewController:self.revealController.frontViewController];
+}
+
 
 @end

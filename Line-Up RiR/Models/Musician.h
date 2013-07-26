@@ -10,4 +10,8 @@
 
 @interface Musician : NSObject
 
+@property (nonatomic, copy) NSString *name;
+
+- (id)initWithDictionary:(NSDictionary *)dictionary;
+
 @end

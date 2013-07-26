@@ -16,18 +16,18 @@
     if (self) {
         self.name = [dictionary objectForKey:@"name"];
         self.startAt = [dictionary objectForKey:@"startAt"];
-        self.musicians = [dictionary objectForKey:@"musicians"];
+        self.musicians = [self allMusiciansWithArray:[dictionary objectForKey:@"musicians"]];
     }
     
     return self;
 }
 
-+ (NSArray *)allPalcosWithArray:(NSArray *)array {
+- (NSArray *)allMusiciansWithArray:(NSArray *)array {
     NSMutableArray *allMusicians = [[NSMutableArray alloc] init];
-
+    
     for (NSDictionary *item in array) {
-        Palco *palco = [[Palco alloc] initWithDictionary:item];
-        [allMusicians addObject:palco];
+        Musician *musician = [[Musician alloc] initWithDictionary:item];
+        [allMusicians addObject:musician];
     }
     
     return allMusicians;

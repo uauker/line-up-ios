@@ -17,7 +17,7 @@
         self.date = [dictionary objectForKey:@"date"];
         self.weekDay = [dictionary objectForKey:@"weekDay"];
         self.mainEvent = [dictionary objectForKey:@"mainEvent"];
-        self.palcos = [Palco allPalcosWithArray:[dictionary objectForKey:@"palcos"]];
+        self.palcos = [self allPalcosWithArray:[dictionary objectForKey:@"palcos"]];
     }
     
     return self;
@@ -27,6 +27,17 @@
     NSString *name = [[NSString alloc] init];
     name = [NSString stringWithFormat:@"%@ %@", [self.weekDay uppercaseString], self.date];
     return name;
+}
+
+- (NSArray *)allPalcosWithArray:(NSArray *)array {
+    NSMutableArray *allPalcos = [[NSMutableArray alloc] init];
+    
+    for (NSDictionary *item in array) {
+        Palco *palco = [[Palco alloc] initWithDictionary:item];
+        [allPalcos addObject:palco];
+    }
+    
+    return allPalcos;
 }
 
 @end
