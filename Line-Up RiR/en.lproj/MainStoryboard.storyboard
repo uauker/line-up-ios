@@ -16,27 +16,26 @@
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="FALTAM" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aNO-am-1Bj">
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="17"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="28" id="dHy-1i-hS2"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="22"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="23P-Jp-mrN">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="53d 19h 53m 21s" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="23P-Jp-mrN">
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="167" id="CZS-Wl-4rA"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="20"/>
                                         <color key="textColor" red="0.792156862745098" green="0.30196078431372547" blue="0.25490196078431371" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="23P-Jp-mrN" firstAttribute="baseline" secondItem="aNO-am-1Bj" secondAttribute="baseline" type="default" id="UCx-IL-Cq6"/>
-                                    <constraint firstItem="23P-Jp-mrN" firstAttribute="leading" secondItem="u0l-lY-P8P" secondAttribute="leading" constant="118" id="bcb-em-KgE"/>
+                                    <constraint firstItem="23P-Jp-mrN" firstAttribute="centerY" secondItem="u0l-lY-P8P" secondAttribute="centerY" type="default" id="196-vO-19P"/>
+                                    <constraint firstItem="aNO-am-1Bj" firstAttribute="leading" secondItem="u0l-lY-P8P" secondAttribute="leading" constant="51" id="F9x-M5-2BV"/>
+                                    <constraint firstItem="23P-Jp-mrN" firstAttribute="leading" secondItem="u0l-lY-P8P" secondAttribute="leading" constant="127" id="JGv-ku-Cro"/>
                                     <constraint firstItem="23P-Jp-mrN" firstAttribute="top" secondItem="aNO-am-1Bj" secondAttribute="top" type="default" id="mqw-wO-2xW"/>
-                                    <constraint firstItem="aNO-am-1Bj" firstAttribute="leading" secondItem="u0l-lY-P8P" secondAttribute="leading" constant="35" id="o5v-WM-Tzd"/>
-                                    <constraint firstItem="23P-Jp-mrN" firstAttribute="centerY" secondItem="u0l-lY-P8P" secondAttribute="centerY" type="default" id="ofU-3k-sb9"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pns-KF-gCG">
@@ -60,7 +59,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" type="user" id="IPK-UM-0Rh"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="AvenirNextCondensed-DemiBold" family="Avenir Next Condensed" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -78,7 +77,7 @@
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="KHt-j3-e7M"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="15"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNextCondensed-DemiBold" family="Avenir Next Condensed" pointSize="20"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
