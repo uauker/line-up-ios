@@ -10,13 +10,15 @@
 #import "RockInRio.h"
 #import "PKRevealController.h"
 #import "Musician.h"
+#import "Event.h"
 
-@interface LineUpViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface LineUpViewController : PKRevealController <UITableViewDataSource, UITableViewDelegate>
 
+@property (nonatomic, strong) Event *event;
+@property (nonatomic, copy) NSArray *palcos;
 @property (nonatomic, copy) NSArray *musicians;
 @property (nonatomic, copy) NSArray *allEvents;
 
-- (id)initWithArray:(NSArray *)array;
 - (IBAction)showLeftView:(id)sender;
 
 @end

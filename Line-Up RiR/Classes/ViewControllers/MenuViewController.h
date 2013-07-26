@@ -10,6 +10,7 @@
 #import "RockInRio.h"
 #import "Global.h"
 #import "PKRevealController.h"
+#import "LineUpViewController.h"
 
 @interface MenuViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
