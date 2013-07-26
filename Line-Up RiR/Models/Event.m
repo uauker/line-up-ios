@@ -23,4 +23,10 @@
     return self;
 }
 
+- (NSString *)name {
+    NSString *name = [[NSString alloc] init];
+    name = [NSString stringWithFormat:@"%@ %@", [self.weekDay uppercaseString], self.date];
+    return name;
+}
+
 @end

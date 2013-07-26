@@ -18,5 +18,6 @@
 @property (nonatomic, copy) NSArray *palcos;
 
 - (id)initWithDictionary:(NSDictionary *)dictionary;
+- (NSString *)name;
 
 @end

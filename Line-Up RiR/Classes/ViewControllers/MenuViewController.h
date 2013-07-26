@@ -8,7 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "RockInRio.h"
+#import "Global.h"
 
-@interface MenuViewController : UIViewController
+@interface MenuViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+
+@property (nonatomic, copy) NSArray *events;
+
+- (UIColor *)getEventColorFromPosition:(int)position;
 
 @end
