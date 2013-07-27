@@ -29,6 +29,8 @@ NSDate *rirDate;
     
     self.hasToOpenMenu = YES;
     
+    self.buttonToSelectPalco.titleLabel.text = @"PALCO MUNDO";
+    
     self.allEvents = [RockInRio allEvents];
     
     if (self.event == nil) {
