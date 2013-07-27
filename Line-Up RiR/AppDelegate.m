@@ -64,6 +64,13 @@
     UIImage *navigationPortraitBackground = [[UIImage imageNamed:@"navbar-portrait.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
     
     [[UINavigationBar appearance] setBackgroundImage:navigationPortraitBackground forBarMetrics:UIBarMetricsDefault];
+    
+    [[UINavigationBar appearance] setTitleTextAttributes: @{
+                                UITextAttributeTextColor: [UIColor whiteColor],
+//                          UITextAttributeTextShadowColor: [UIColor redColor],
+                         UITextAttributeTextShadowOffset: [NSValue valueWithUIOffset:UIOffsetMake(0.0f, 1.0f)],
+                                     UITextAttributeFont: [UIFont fontWithName:@"Avenir-Black" size:20.0f]
+     }];
 }
 
 @end

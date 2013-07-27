@@ -84,7 +84,7 @@
                             <constraint firstItem="u0l-lY-P8P" firstAttribute="trailing" secondItem="17" secondAttribute="trailing" type="default" id="qO6-eK-ScX"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="GvK-94-PjX">
+                    <navigationItem key="navigationItem" title="13/09" id="GvK-94-PjX">
                         <barButtonItem key="leftBarButtonItem" style="plain" id="cTN-Gi-Wzu">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="tlG-t9-2Od">
                                 <rect key="frame" x="5" y="0.0" width="42" height="44"/>

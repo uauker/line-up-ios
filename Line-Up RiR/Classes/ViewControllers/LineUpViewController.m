@@ -37,6 +37,8 @@ NSDate *rirDate;
         self.event = [self.allEvents objectAtIndex:0];
     }
     
+    self.title = [self.event date];
+    
     self.palcos = [self.event palcos];
     self.palco = [self.palcos objectAtIndex:0];
     self.musicians = [[[self.event palcos] objectAtIndex:0] musicians];
