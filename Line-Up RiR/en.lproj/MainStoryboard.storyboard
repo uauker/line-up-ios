@@ -232,7 +232,7 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.15294117647058825" green="0.15294117647058825" blue="0.15294117647058825" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="GQs-UU-bDC" firstAttribute="bottom" secondItem="Y3N-En-fJ2" secondAttribute="bottom" type="default" id="3Za-Ns-E9x"/>
                             <constraint firstItem="GQs-UU-bDC" firstAttribute="leading" secondItem="Y3N-En-fJ2" secondAttribute="leading" type="default" id="9NF-Xk-AnT"/>

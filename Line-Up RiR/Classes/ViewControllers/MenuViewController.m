@@ -41,7 +41,7 @@
             return [UIColor colorWithRed:(230/255.f) green:(197/255.f) blue:(16/255.f) alpha:1.0];
             break;
         case 2:
-            return [UIColor colorWithRed:(99/255.f) green:(189/255.f) blue:(224/255.f) alpha:1.0];
+            return [UIColor colorWithRed:(58/255.f) green:(163/255.f) blue:(248/255.f) alpha:1.0];
             break;
         case 3:
             return [UIColor colorWithRed:(233/255.f) green:(26/255.f) blue:(26/255.f) alpha:1.0];
