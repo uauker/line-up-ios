@@ -105,13 +105,13 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:[tableView indexPathForSelectedRow] animated:NO];
-        
-    NSArray *palcos = [[self.events objectAtIndex:[indexPath row]] palcos];
+    
+    Event *event = [self.events objectAtIndex:[indexPath row]];
         
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
     
     LineUpViewController *lineUpViewController = [storyboard instantiateViewControllerWithIdentifier:@"LineUpViewController"];
-    lineUpViewController.musicians = [[palcos objectAtIndex:0] musicians];
+    lineUpViewController.event = event;
         
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:lineUpViewController];
     

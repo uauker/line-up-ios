@@ -13,6 +13,7 @@
 #import "Event.h"
 #import "Palco.h"
 #import "Global.h"
+#import "KxMenu.h"
 #import "ActionSheetStringPicker.h"
 #import <FacebookSDK/FacebookSDK.h>
 
@@ -23,6 +24,7 @@
 @property (nonatomic, copy) NSArray *palcos;
 @property (nonatomic, copy) NSArray *musicians;
 @property (nonatomic, copy) NSArray *allEvents;
+@property (nonatomic, assign) BOOL hasToOpenMenu;
 
 @property (weak, nonatomic) IBOutlet UIView *viewRIRTimer;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -30,6 +32,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *palcoIndicator;
 @property (weak, nonatomic) IBOutlet UILabel *rirTimer;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *verticalPositionPalcoSelector;
+@property (weak, nonatomic) IBOutlet UIButton *buttonToSelectPalco;
 
 - (IBAction)showLeftView:(id)sender;
 - (IBAction)selectPalco:(id)sender;

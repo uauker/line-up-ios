@@ -51,9 +51,6 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <action selector="selectPalco:" destination="3" eventType="touchUpInside" id="3bZ-Y3-C0l"/>
-                                </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="PALCO MUNDO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FV0-lb-GVS">
                                 <constraints>
@@ -116,7 +113,8 @@
                             <constraint firstItem="pns-KF-gCG" firstAttribute="top" secondItem="u0l-lY-P8P" secondAttribute="bottom" type="user" id="u3f-mT-DNN"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="LINE-UP" id="GvK-94-PjX">
+                    <navigationItem key="navigationItem" id="GvK-94-PjX">
+                        <nil key="title"/>
                         <barButtonItem key="leftBarButtonItem" style="plain" id="cTN-Gi-Wzu">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="tlG-t9-2Od">
                                 <rect key="frame" x="5" y="0.0" width="42" height="44"/>
@@ -134,10 +132,24 @@
                                 </connections>
                             </button>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="YpF-7f-i8x">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="5rE-H7-5TY">
+                                <rect key="frame" x="228" y="11" width="87" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="AvenirNextCondensed-DemiBold" family="Avenir Next Condensed" pointSize="15"/>
+                                <state key="normal" title="PALCO MUNDO">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="buttonToSelectPalco" destination="5rE-H7-5TY" id="shH-gg-lhg"/>
                         <outlet property="palcoIndicator" destination="FV0-lb-GVS" id="11h-gN-uns"/>
-                        <outlet property="palcoSelector" destination="pns-KF-gCG" id="Kpn-OU-UyL"/>
                         <outlet property="rirTimer" destination="23P-Jp-mrN" id="XhW-yf-25p"/>
                         <outlet property="tableView" destination="H2i-u4-ANN" id="na2-6g-QD9"/>
                         <outlet property="verticalPositionPalcoSelector" destination="5pT-OI-7nB" id="lqQ-gw-zin"/>
@@ -282,6 +294,7 @@
             <relationships>
                 <relationship kind="action" name="selectPalco:"/>
                 <relationship kind="action" name="showLeftView:"/>
+                <relationship kind="outlet" name="buttonToSelectPalco" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="palcoIndicator" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="palcoSelector" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="rirTimer" candidateClass="UILabel"/>

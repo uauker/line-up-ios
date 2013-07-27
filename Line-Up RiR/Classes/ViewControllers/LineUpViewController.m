@@ -27,17 +27,21 @@ NSDate *rirDate;
 {
     [super viewDidLoad];
     
+    self.hasToOpenMenu = YES;
+    
     self.allEvents = [RockInRio allEvents];
     
     if (self.event == nil) {
         self.event = [self.allEvents objectAtIndex:0];
-        self.palcos = [self.event palcos];
-        self.musicians = [[[self.event palcos] objectAtIndex:0] musicians];
     }
     
-    if (self.palco == nil) {
-        self.palco = [self.palcos objectAtIndex:0];
-    }
+    self.palcos = [self.event palcos];
+    self.palco = [self.palcos objectAtIndex:0];
+    self.musicians = [[[self.event palcos] objectAtIndex:0] musicians];
+    
+    [self.buttonToSelectPalco addTarget:self action:@selector(showPalcoOptions:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.palcoSelector addTarget:self action:@selector(showPalcoOptions:) forControlEvents:UIControlEventTouchUpInside];
     
 //    if (!FBSession.activeSession.isOpen) {
 //        [FBSession openActiveSessionWithPublishPermissions:@[@"publish_stream", @"publish_actions", @"create_event", @"rsvp_event"] defaultAudience:FBSessionDefaultAudienceEveryone allowLoginUI:YES completionHandler:^(FBSession *session, FBSessionState status, NSError *error) {
@@ -110,7 +114,12 @@ NSDate *rirDate;
         [self.viewRIRTimer setHidden:YES];
         self.verticalPositionPalcoSelector.constant = 0;
     }
-    
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 
@@ -129,11 +138,67 @@ NSDate *rirDate;
     }
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (IBAction)selectPalco:(id)sender {
+    NSInteger initialSelection = 0;
+    
+    for (int i = 0; i < [self.palcos count]; i++) {
+        if ([[self.palco name] isEqualToString:[[self.palcos objectAtIndex:i] name]]) {
+            initialSelection = i;
+        }
+    }
+    
+    [ActionSheetStringPicker showPickerWithTitle:nil
+                                            rows:K_ARRAY_PALCOS
+                                initialSelection:initialSelection
+                                          target:self
+                                   successAction:@selector(selectedPalco:element:)
+                                    cancelAction:nil
+                                          origin:sender];
 }
+
+- (void)showPalcoOptions:(UIButton *)sender
+{        
+    NSArray *menuItems =
+    @[
+      
+      
+      [KxMenuItem menuItem:@"PALCO MUNDO"
+                     image:[UIImage imageNamed:@"action_icon"]
+                    target:self
+                    action:@selector(selectOtherPalco:)],
+      
+      [KxMenuItem menuItem:@"PALCO SUNSET"
+                     image:[UIImage imageNamed:@"check_icon"]
+                    target:self
+                    action:@selector(selectOtherPalco:)],
+      
+      [KxMenuItem menuItem:@"ELETRÔNICA"
+                     image:[UIImage imageNamed:@"reload"]
+                    target:self
+                    action:@selector(selectOtherPalco:)],
+      
+      [KxMenuItem menuItem:@"ROCK STREET"
+                     image:[UIImage imageNamed:@"search_icon"]
+                    target:self
+                    action:@selector(selectOtherPalco:)],
+      ];
+    
+//    KxMenuItem *first = menuItems[0];
+//    first.foreColor = [UIColor colorWithRed:47/255.0f green:112/255.0f blue:225/255.0f alpha:1.0];
+//    first.alignment = NSTextAlignmentCenter;
+        
+    [KxMenu showMenuInView:self.view
+                  fromRect:CGRectMake(228, -15, 87, 21)
+                 menuItems:menuItems];
+    
+    if (self.hasToOpenMenu) {
+        self.hasToOpenMenu = NO;
+    } else {
+        [KxMenu dismissMenu];
+        self.hasToOpenMenu = YES;
+    }
+}
+
 
 #pragma ###################################################################################################################
 #pragma mark - UITableViewDataSource
@@ -184,23 +249,8 @@ NSDate *rirDate;
 }
 
 
-- (IBAction)selectPalco:(id)sender {
-    NSInteger initialSelection = 0;
-    
-    for (int i = 0; i < [self.palcos count]; i++) {
-        if ([[self.palco name] isEqualToString:[[self.palcos objectAtIndex:i] name]]) {
-            initialSelection = i;
-        }
-    }
-    
-    [ActionSheetStringPicker showPickerWithTitle:nil
-                                            rows:K_ARRAY_PALCOS
-                                initialSelection:initialSelection
-                                          target:self
-                                   successAction:@selector(selectedPalco:element:)
-                                    cancelAction:nil
-                                          origin:sender];
-}
+#pragma ###################################################################################################################
+#pragma mark - Internal Methods
 
 - (void)selectedPalco:(NSNumber *)selectedIndex element:(id)element {
     self.palcoIndicator.text = [K_ARRAY_PALCOS objectAtIndex:[selectedIndex intValue]];
@@ -208,9 +258,17 @@ NSDate *rirDate;
     [self.tableView reloadData];
 }
 
-
-#pragma ###################################################################################################################
-#pragma mark - Internal Methods
+- (void)selectOtherPalco:(KxMenuItem *)sender {
+    
+    self.buttonToSelectPalco.titleLabel.text = sender.title;
+    
+    int index = [K_ARRAY_PALCOS indexOfObject:sender.title];
+    
+    self.musicians = [[self.palcos objectAtIndex:index] musicians];
+    [self.tableView reloadData];
+    
+    self.hasToOpenMenu = YES;
+}
 
 - (void)setTimer {
     NSDateComponents *comps = [[NSDateComponents alloc] init];
@@ -240,6 +298,11 @@ NSDate *rirDate;
     NSString *timer = [NSString stringWithFormat:@"%.2id %.2ih %.2im %.2is", daysFromMonth + components.day, components.hour, components.minute, components.second];;
 
     self.rirTimer.text = timer;
+}
+
+- (void) pushMenuItem:(id)sender
+{
+    NSLog(@"%@", sender);
 }
 
 - (BOOL)rirNotStarted {
