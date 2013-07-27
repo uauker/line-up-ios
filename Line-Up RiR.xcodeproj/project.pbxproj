@@ -103,6 +103,7 @@
 		CE406DFA17A2E86A00CF1FF8 /* ActionSheetStringPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = CE406DF317A2E86A00CF1FF8 /* ActionSheetStringPicker.m */; };
 		CE406DFB17A2E86A00CF1FF8 /* DistancePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE406DF517A2E86A00CF1FF8 /* DistancePickerView.m */; };
 		CE406DFE17A324A200CF1FF8 /* MyScheduleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE406DFD17A324A200CF1FF8 /* MyScheduleViewController.m */; };
+		CE406E0217A378D200CF1FF8 /* KxMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = CE406E0117A378D200CF1FF8 /* KxMenu.m */; };
 		CE7B04E417A1D56C009C6754 /* menu_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CE7B04E217A1D56C009C6754 /* menu_icon.png */; };
 		CE7B04E517A1D56C009C6754 /* menu_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE7B04E317A1D56C009C6754 /* menu_icon@2x.png */; };
 /* End PBXBuildFile section */
@@ -243,6 +244,8 @@
 		CE406DF517A2E86A00CF1FF8 /* DistancePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DistancePickerView.m; sourceTree = "<group>"; };
 		CE406DFC17A324A200CF1FF8 /* MyScheduleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyScheduleViewController.h; sourceTree = "<group>"; };
 		CE406DFD17A324A200CF1FF8 /* MyScheduleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyScheduleViewController.m; sourceTree = "<group>"; };
+		CE406E0017A378D200CF1FF8 /* KxMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KxMenu.h; sourceTree = "<group>"; };
+		CE406E0117A378D200CF1FF8 /* KxMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KxMenu.m; sourceTree = "<group>"; };
 		CE7B04E217A1D56C009C6754 /* menu_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu_icon.png; sourceTree = "<group>"; };
 		CE7B04E317A1D56C009C6754 /* menu_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu_icon@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -513,6 +516,7 @@
 		ACF196C617A19657003BE8CB /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				CE406DFF17A378D200CF1FF8 /* KxMenu */,
 				CE406DE817A2E86A00CF1FF8 /* Pickers */,
 				23FA0E6317A2C1F000CA30CF /* FacebookSDK.framework */,
 				23FA0E4D17A19E2A00CA30CF /* PKRevealController */,
@@ -594,6 +598,15 @@
 				CE406DF517A2E86A00CF1FF8 /* DistancePickerView.m */,
 			);
 			path = Pickers;
+			sourceTree = "<group>";
+		};
+		CE406DFF17A378D200CF1FF8 /* KxMenu */ = {
+			isa = PBXGroup;
+			children = (
+				CE406E0017A378D200CF1FF8 /* KxMenu.h */,
+				CE406E0117A378D200CF1FF8 /* KxMenu.m */,
+			);
+			path = KxMenu;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -745,6 +758,7 @@
 				CE406DFA17A2E86A00CF1FF8 /* ActionSheetStringPicker.m in Sources */,
 				CE406DFB17A2E86A00CF1FF8 /* DistancePickerView.m in Sources */,
 				CE406DFE17A324A200CF1FF8 /* MyScheduleViewController.m in Sources */,
+				CE406E0217A378D200CF1FF8 /* KxMenu.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
