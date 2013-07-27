@@ -27,6 +27,11 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [self.tableView reloadData];
+}
+
 - (UIColor *)getEventColorFromPosition:(int)position {
     switch (position) {
         case 0:
@@ -57,6 +62,7 @@
     }
 }
 
+
 #pragma ###################################################################################################################
 #pragma mark - UITableViewDataSource
 
@@ -78,22 +84,31 @@
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
     }
-    
+        
     cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    UIColor *eventColor = [self getEventColorFromPosition:[indexPath row]];
     
     Event *event = [self.events objectAtIndex:[indexPath row]];
     
     UILabel *eventName = (UILabel *)[cell viewWithTag:101];
     UILabel *mainEvent = (UILabel *)[cell viewWithTag:102];
     
-    eventName.textColor = [self getEventColorFromPosition:[indexPath row]];
+    eventName.textColor = eventColor;
     
     eventName.text = [event name];
     mainEvent.text = [event mainEvent];
     
-    return cell;
+    if ([indexPath row] == self.selectedIndex) {
+        [cell setBackgroundColor:eventColor];
+        eventName.textColor = [UIColor whiteColor];
+    }
 }
-
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 60;
@@ -105,6 +120,8 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:[tableView indexPathForSelectedRow] animated:NO];
+    
+    self.selectedIndex = [indexPath row];
     
     Event *event = [self.events objectAtIndex:[indexPath row]];
         

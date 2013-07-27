@@ -15,6 +15,9 @@
 @interface MenuViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, copy) NSArray *events;
+@property int selectedIndex;
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 - (UIColor *)getEventColorFromPosition:(int)position;
 
