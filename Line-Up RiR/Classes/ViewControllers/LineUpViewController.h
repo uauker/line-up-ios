@@ -33,6 +33,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *rirTimer;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *verticalPositionTableView;
 @property (weak, nonatomic) IBOutlet UIButton *buttonToSelectPalco;
+@property (weak, nonatomic) IBOutlet UILabel *labelRockStreet;
 
 - (IBAction)showLeftView:(id)sender;
 - (IBAction)selectPalco:(id)sender;

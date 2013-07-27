@@ -268,8 +268,15 @@ NSDate *rirDate;
     
     int index = [K_ARRAY_PALCOS indexOfObject:sender.title];
     
-    self.musicians = [[self.palcos objectAtIndex:index] musicians];
-    [self.tableView reloadData];
+    if (index == 3) {
+        [self.tableView setHidden:YES];
+        [self.labelRockStreet setHidden:NO];
+    } else {
+        [self.tableView setHidden:NO];
+        [self.labelRockStreet setHidden:YES];
+        self.musicians = [[self.palcos objectAtIndex:index] musicians];
+        [self.tableView reloadData];
+    }
     
     self.hasToOpenMenu = YES;
 }
