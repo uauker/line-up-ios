@@ -31,7 +31,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *palcoSelector;
 @property (weak, nonatomic) IBOutlet UILabel *palcoIndicator;
 @property (weak, nonatomic) IBOutlet UILabel *rirTimer;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *verticalPositionPalcoSelector;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *verticalPositionTableView;
 @property (weak, nonatomic) IBOutlet UIButton *buttonToSelectPalco;
 
 - (IBAction)showLeftView:(id)sender;

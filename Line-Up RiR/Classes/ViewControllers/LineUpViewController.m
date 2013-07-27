@@ -114,7 +114,7 @@ NSDate *rirDate;
         [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(updateLabels) userInfo:nil repeats:YES];
     } else {
         [self.viewRIRTimer setHidden:YES];
-        self.verticalPositionPalcoSelector.constant = 0;
+        self.verticalPositionTableView.constant = 0;
     }
 }
 
