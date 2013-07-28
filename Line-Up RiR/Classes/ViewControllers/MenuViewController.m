@@ -35,25 +35,25 @@
 - (UIColor *)getEventColorFromPosition:(int)position {
     switch (position) {
         case 0:
-            return [UIColor colorWithRed:(226/255.f) green:(155/255.f) blue:(196/255.f) alpha:1.0];
+            return [UIColor colorWithRed:(255/255.f) green:(105/255.f) blue:(180/255.f) alpha:1.0];
             break;
         case 1:
-            return [UIColor colorWithRed:(230/255.f) green:(197/255.f) blue:(16/255.f) alpha:1.0];
+            return [UIColor colorWithRed:(236/255.f) green:(176/255.f) blue:(16/255.f) alpha:1.0];
             break;
         case 2:
-            return [UIColor colorWithRed:(58/255.f) green:(163/255.f) blue:(248/255.f) alpha:1.0];
+            return [UIColor colorWithRed:(12/255.f) green:(183/255.f) blue:(226/255.f) alpha:1.0];
             break;
         case 3:
-            return [UIColor colorWithRed:(233/255.f) green:(26/255.f) blue:(26/255.f) alpha:1.0];
+            return [UIColor colorWithRed:(228/255.f) green:(0/255.f) blue:(0/255.f) alpha:1.0];
             break;
         case 4:
-            return [UIColor colorWithRed:(216/255.f) green:(158/255.f) blue:(44/255.f) alpha:1.0];
+            return [UIColor colorWithRed:(255/255.f) green:(114/255.f) blue:(0/255.f) alpha:1.0];
             break;
         case 5:
-            return [UIColor colorWithRed:(98/255.f) green:(82/255.f) blue:(147/255.f) alpha:1.0];
+            return [UIColor colorWithRed:(138/255.f) green:(43/255.f) blue:(226/255.f) alpha:1.0];
             break;
         case 6:
-            return [UIColor colorWithRed:(137/255.f) green:(184/255.f) blue:(66/255.f) alpha:1.0];
+            return [UIColor colorWithRed:(50/255.f) green:(205/255.f) blue:(50/255.f) alpha:1.0];
             break;
             
         default:
