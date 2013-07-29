@@ -46,6 +46,43 @@ NSDate *rirDate;
     [self.buttonToSelectPalco addTarget:self action:@selector(showPalcoOptions:) forControlEvents:UIControlEventTouchUpInside];
     
     [self.palcoSelector addTarget:self action:@selector(showPalcoOptions:) forControlEvents:UIControlEventTouchUpInside];
+
+    if (!FBSession.activeSession.isOpen) {
+        NSDictionary *dic = [@{
+         @"link" : @"https://developers.facebook.com/ios",
+         @"picture" : @"https://developers.facebook.com/attachment/iossdk_logo.png",
+         @"name" : @"Facebook SDK for iOS",
+         @"caption" : @"Build great social apps and get more installs.",
+         @"description" : @"The Facebook SDK for iOS makes it easier and faster to develop Facebook integrated iOS apps."
+         } mutableCopy];
+        
+        [FBSession openActiveSessionWithPublishPermissions:@[@"publish_stream"] defaultAudience:FBSessionDefaultAudienceEveryone allowLoginUI:YES completionHandler:^(FBSession *session, FBSessionState status, NSError *error) {
+            
+//            [FBRequestConnection startWithGraphPath:@"me/feed" parameters:dic HTTPMethod:@"POST" completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+//                
+//                NSLog(@"r %@", [result description]);
+//                
+//                
+//                NSString *alertText;
+//                if (error) {
+//                    alertText = [NSString stringWithFormat:
+//                                 @"error: domain = %@, code = %d",
+//                                 error.domain, error.code];
+//                } else {
+//                    alertText = [NSString stringWithFormat:
+//                                 @"Posted action, id: %@",
+//                                 result[@"id"]];
+//                }
+//                // Show the result in an alert
+//                [[[UIAlertView alloc] initWithTitle:@"Result"
+//                                            message:alertText
+//                                           delegate:self
+//                                  cancelButtonTitle:@"OK!"
+//                                  otherButtonTitles:nil]
+//                 show];
+//            }];
+        }];
+    }
     
 //    if (!FBSession.activeSession.isOpen) {
 //        [FBSession openActiveSessionWithPublishPermissions:@[@"publish_stream", @"publish_actions", @"create_event", @"rsvp_event"] defaultAudience:FBSessionDefaultAudienceEveryone allowLoginUI:YES completionHandler:^(FBSession *session, FBSessionState status, NSError *error) {
