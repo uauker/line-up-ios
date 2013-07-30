@@ -15,8 +15,7 @@
 #import "Global.h"
 #import "KxMenu.h"
 #import "ActionSheetStringPicker.h"
-#import <FacebookSDK/FacebookSDK.h>
-#import "AFHTTPRequestOperation.h"
+#import "FacebookHelper.h"
 
 @interface LineUpViewController : PKRevealController <UITableViewDataSource, UITableViewDelegate, UIActionSheetDelegate>
 

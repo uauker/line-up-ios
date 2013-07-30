@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		230262E617A8748A00C1950D /* FacebookHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 230262E517A8748A00C1950D /* FacebookHelper.m */; };
 		238795AA17A16EB0007CF23B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 238795A917A16EB0007CF23B /* UIKit.framework */; };
 		238795AC17A16EB0007CF23B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 238795AB17A16EB0007CF23B /* Foundation.framework */; };
 		238795AE17A16EB0007CF23B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 238795AD17A16EB0007CF23B /* CoreGraphics.framework */; };
@@ -121,6 +122,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		230262E417A8748A00C1950D /* FacebookHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacebookHelper.h; sourceTree = "<group>"; };
+		230262E517A8748A00C1950D /* FacebookHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacebookHelper.m; sourceTree = "<group>"; };
 		238795A617A16EB0007CF23B /* Line-Up RiR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Line-Up RiR.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		238795A917A16EB0007CF23B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		238795AB17A16EB0007CF23B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -306,6 +309,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		230262E317A8741200C1950D /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				230262E417A8748A00C1950D /* FacebookHelper.h */,
+				230262E517A8748A00C1950D /* FacebookHelper.m */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		2387959D17A16EB0007CF23B = {
 			isa = PBXGroup;
 			children = (
@@ -352,6 +364,7 @@
 				238795B917A16EB0007CF23B /* AppDelegate.m */,
 				238795B017A16EB0007CF23B /* Supporting Files */,
 				23FA0E6017A1E67F00CA30CF /* Global.h */,
+				230262E317A8741200C1950D /* Helpers */,
 			);
 			path = "Line-Up RiR";
 			sourceTree = "<group>";
@@ -835,6 +848,7 @@
 				23BF38A817A742C000844118 /* AFURLConnectionOperation.m in Sources */,
 				23BF38A917A742C000844118 /* AFXMLRequestOperation.m in Sources */,
 				23BF38AA17A742C000844118 /* UIImageView+AFNetworking.m in Sources */,
+				230262E617A8748A00C1950D /* FacebookHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
