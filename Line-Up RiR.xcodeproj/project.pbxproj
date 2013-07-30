@@ -26,6 +26,7 @@
 		23BF38A817A742C000844118 /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 23BF389D17A742C000844118 /* AFURLConnectionOperation.m */; };
 		23BF38A917A742C000844118 /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 23BF389F17A742C000844118 /* AFXMLRequestOperation.m */; };
 		23BF38AA17A742C000844118 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 23BF38A117A742C000844118 /* UIImageView+AFNetworking.m */; };
+		23BF38AC17A7441200844118 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23BF38AB17A7441200844118 /* Security.framework */; };
 		23FA0E5417A19E2A00CA30CF /* PKRevealController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23FA0E4F17A19E2A00CA30CF /* PKRevealController.m */; };
 		23FA0E5517A19E2A00CA30CF /* PKRevealControllerContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 23FA0E5117A19E2A00CA30CF /* PKRevealControllerContainerView.m */; };
 		23FA0E5617A19E2A00CA30CF /* UIViewController+PKRevealController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23FA0E5317A19E2A00CA30CF /* UIViewController+PKRevealController.m */; };
@@ -153,6 +154,7 @@
 		23BF389F17A742C000844118 /* AFXMLRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFXMLRequestOperation.m; sourceTree = "<group>"; };
 		23BF38A017A742C000844118 /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
 		23BF38A117A742C000844118 /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
+		23BF38AB17A7441200844118 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		23FA0E4E17A19E2A00CA30CF /* PKRevealController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKRevealController.h; sourceTree = "<group>"; };
 		23FA0E4F17A19E2A00CA30CF /* PKRevealController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKRevealController.m; sourceTree = "<group>"; };
 		23FA0E5017A19E2A00CA30CF /* PKRevealControllerContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKRevealControllerContainerView.h; sourceTree = "<group>"; };
@@ -287,6 +289,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23BF38AC17A7441200844118 /* Security.framework in Frameworks */,
 				23FA0E6217A2BEA900CA30CF /* Social.framework in Frameworks */,
 				23FA0E5C17A1A02100CA30CF /* QuartzCore.framework in Frameworks */,
 				23FA0E5A17A19FFD00CA30CF /* ImageIO.framework in Frameworks */,
@@ -326,6 +329,7 @@
 		238795A817A16EB0007CF23B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				23BF38AB17A7441200844118 /* Security.framework */,
 				23FA0E6117A2BEA900CA30CF /* Social.framework */,
 				23FA0E5917A19FFD00CA30CF /* ImageIO.framework */,
 				23FA0E5717A19FEA00CA30CF /* CoreText.framework */,
