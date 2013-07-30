@@ -67,28 +67,61 @@ NSDate *rirDate;
     }
     
     if (FBSession.activeSession.isOpen) {
-        [FBRequestConnection startWithGraphPath:@"me/feed" parameters:dic HTTPMethod:@"POST" completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
-                NSString *alertText = @"a";
-            
-                if (error) {
-                    //TODO: error ao marcar que o usuario vai no dia
+        [FBRequestConnection startWithGraphPath:@"me" parameters:nil HTTPMethod:@"GET" completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+            if (error) {
+                //TODO: error ao marcar que o usuario vai no dia
+            }
+            else {
+                NSLog(@"%@", [result description]);
+                NSString *UserAndPostID = [result objectForKey:@"id"];
+                NSString *userID = [[UserAndPostID componentsSeparatedByString:@"_"] objectAtIndex:0];
+                
+                NSString *name = [[result objectForKey:@"name"] stringByAddingPercentEscapesUsingEncoding:
+                           NSASCIIStringEncoding];
+                
+                NSString *urlString = [NSString stringWithFormat:@"http://line-up-rails.herokuapp.com/api/facebook/v1/events/new?facebook_user_id=%@&event_date=2013-01-31&facebook_name=%@", userID, name];
+                NSLog(@"%@", urlString);
+                NSURL *url = [NSURL URLWithString:urlString];
+                NSURLRequest *request = [NSURLRequest requestWithURL:url];
+                
+                AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc]initWithRequest:request];
+                
+                [operation  setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+                    NSLog(@"success: %@", operation.responseString);
                 }
-                else {
-                    NSString *UserAndPostID = [result objectForKey:@"id"];
-                    
-                    NSString *userID = [[UserAndPostID componentsSeparatedByString:@"_"] objectAtIndex:0];
-                    alertText = userID;
-                }
-            
-     
-                // Show the result in an alert
-                [[[UIAlertView alloc] initWithTitle:@"Result"
-                                            message:alertText
-                                           delegate:self
-                                  cancelButtonTitle:@"OK!"
-                                  otherButtonTitles:nil]
-                 show];
-            }];
+                failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                    NSLog(@"error: %@",  operation.responseString);
+                }];
+                
+                [operation start];
+            }
+        }];
+        
+//        [FBRequestConnection startWithGraphPath:@"me/feed" parameters:dic HTTPMethod:@"POST" completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+//                if (error) {
+//                    //TODO: error ao marcar que o usuario vai no dia
+//                }
+//                else {
+//                    NSString *UserAndPostID = [result objectForKey:@"id"];
+//                    NSString *userID = [[UserAndPostID componentsSeparatedByString:@"_"] objectAtIndex:0];
+//                    
+//                    NSString *urlString = [NSString stringWithFormat:@"http://line-up-rails.herokuapp.com/api/facebook/v1/events/new?facebook_user_id=%@&event_date=2013-01-31&facebook_name=Paulo+Guilherme", userID];
+//                    NSLog(@"%@", urlString);
+//                    NSURL *url = [NSURL URLWithString:urlString];
+//                    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+//                    
+//                    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc]initWithRequest:request];
+//                    
+//                    [operation  setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+//                        NSLog(@"success: %@", operation.responseString);
+//                    } 
+//                    failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+//                        NSLog(@"error: %@",  operation.responseString);
+//                    }];
+//                    
+//                    [operation start];
+//                }
+//            }];
     }
 }
 
