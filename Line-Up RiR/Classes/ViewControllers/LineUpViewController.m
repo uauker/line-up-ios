@@ -67,7 +67,10 @@ NSDate *rirDate;
     }
     
     if (FBSession.activeSession.isOpen) {
-        [FBRequestConnection startWithGraphPath:@"me" parameters:nil HTTPMethod:@"GET" completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+        NSDictionary *params = [NSDictionary dictionaryWithObject:@"id,name,username" forKey:@"fields"];
+//        https://developers.facebook.com/docs/reference/api/using-pictures/
+        
+        [FBRequestConnection startWithGraphPath:@"me" parameters:params HTTPMethod:@"GET" completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
             if (error) {
                 //TODO: error ao marcar que o usuario vai no dia
             }
