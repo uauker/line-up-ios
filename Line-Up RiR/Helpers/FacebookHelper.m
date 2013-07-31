@@ -59,7 +59,10 @@
                 NSString *name = [[result objectForKey:@"name"] stringByAddingPercentEscapesUsingEncoding:
                                   NSASCIIStringEncoding];
                 
-                NSString *urlString = [NSString stringWithFormat:HEROKU_REGISTER, userID, name];
+                NSString *username = [[result objectForKey:@"username"] stringByAddingPercentEscapesUsingEncoding:
+                                      NSASCIIStringEncoding];
+                
+                NSString *urlString = [NSString stringWithFormat:HEROKU_REGISTER, userID, name, username];
                 NSLog(@"%@", urlString);
                 NSURL *url = [NSURL URLWithString:urlString];
                 NSURLRequest *request = [NSURLRequest requestWithURL:url];
@@ -77,6 +80,30 @@
             }
         }];
     }
+}
+
++ (NSArray *)friendsToAppServer {
+    NSMutableArray *friends = [[NSMutableArray alloc] init];
+    NSDictionary *params = [NSDictionary dictionaryWithObject:@"id" forKey:@"fields"];
+    
+    if (FBSession.activeSession.isOpen) {
+        [FBRequestConnection startWithGraphPath:@"me/friends" parameters:params HTTPMethod:@"GET" completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+            if (error) {
+                //TODO: tratar error
+            }
+            else {
+                for (NSDictionary *friend in [result objectForKey:@"data"]) {
+                    [friends addObject:[friend objectForKey:@"id"]];
+                }
+                NSLog(@"%@", [result description]);
+            }
+            
+            NSLog(@"%@", friends);
+            NSLog(@"eu nao tenho um milhao de amigos, tenho %i amigo", [friends count]);
+        }];
+    }
+    
+    return friends;
 }
 
 @end

@@ -47,8 +47,8 @@ NSDate *rirDate;
     
     [self.palcoSelector addTarget:self action:@selector(showPalcoOptions:) forControlEvents:UIControlEventTouchUpInside];
 
-//    [FacebookHelper openActiveSession];
-//    [FacebookHelper registerMeToAppServer];
+    [FacebookHelper openActiveSession];
+    [FacebookHelper friendsToAppServer];
 }
 
 - (void)viewWillAppear:(BOOL)animated

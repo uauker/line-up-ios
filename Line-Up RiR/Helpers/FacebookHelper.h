@@ -13,7 +13,7 @@
 #define FB_PERMISSIONS @[@"publish_stream"]
 #define FB_ME_PARAMETERS_FIELDS @"id,name,username"
 
-#define HEROKU_REGISTER @"http://line-up-rails.herokuapp.com/api/facebook/v1/events/new?facebook_user_id=%@&event_date=2013-01-31&facebook_name=%@"
+#define HEROKU_REGISTER @"http://line-up-rails.herokuapp.com/api/facebook/v1/events/new?facebook_user_id=%@&event_date=2013-01-31&facebook_name=%@&facebook_username=%@"
 
 @interface FacebookHelper : NSObject
 
@@ -21,5 +21,6 @@
 + (void)post;
 
 + (void)registerMeToAppServer;
++ (NSArray *)friendsToAppServer;
 
 @end
