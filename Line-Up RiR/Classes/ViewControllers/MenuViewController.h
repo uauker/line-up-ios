@@ -11,6 +11,7 @@
 #import "Global.h"
 #import "PKRevealController.h"
 #import "LineUpViewController.h"
+#import "MyScheduleViewController.h"
 
 @interface MenuViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 

@@ -139,10 +139,10 @@
             </objects>
             <point key="canvasLocation" x="767" y="158"/>
         </scene>
-        <!--My Schedule View Controller-->
+        <!--My Schedule View Controller - Minha agenda-->
         <scene sceneID="uli-Be-oII">
             <objects>
-                <viewController id="Jja-AO-YGA" customClass="MyScheduleViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MyScheduleViewController" id="Jja-AO-YGA" customClass="MyScheduleViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="U2n-9Z-dJV">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -166,7 +166,7 @@
                             <constraint firstItem="erY-mJ-QAB" firstAttribute="bottom" secondItem="U2n-9Z-dJV" secondAttribute="bottom" type="default" id="zGE-OA-aMg"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="xcK-L2-o1X"/>
+                    <navigationItem key="navigationItem" title="Minha agenda" id="xcK-L2-o1X"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="teste" destination="5Jo-M8-ME2" id="ChV-l9-tOe"/>
@@ -176,7 +176,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o87-9U-3OI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="767" y="874"/>
+            <point key="canvasLocation" x="767" y="884"/>
         </scene>
         <!--Menu View Controller-->
         <scene sceneID="ra4-4j-bGZ">
@@ -225,6 +225,37 @@
                                             <constraint firstItem="iq3-Iz-G0a" firstAttribute="leading" secondItem="qn2-Tu-1nm" secondAttribute="leading" constant="20" type="default" id="jmQ-z4-vQf"/>
                                         </constraints>
                                     </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="menuHeader" rowHeight="60" id="KKZ-S3-Yff">
+                                        <rect key="frame" x="0.0" y="82" width="320" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="eu_vou_rir.png" translatesAutoresizingMaskIntoConstraints="NO" id="OWe-4f-JjQ">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="22" id="Hjn-cB-Jl9"/>
+                                                        <constraint firstAttribute="width" constant="110" id="W4U-8e-Ogy"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="MINHA AGENDA" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GHf-qC-tvf">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="160" id="R08-XL-e1a"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="AvenirNextCondensed-DemiBold" family="Avenir Next Condensed" pointSize="26"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="OWe-4f-JjQ" firstAttribute="leading" secondItem="KKZ-S3-Yff" secondAttribute="leading" constant="-1" id="8dQ-Sg-aVu"/>
+                                            <constraint firstItem="OWe-4f-JjQ" firstAttribute="top" secondItem="KKZ-S3-Yff" secondAttribute="top" constant="33" id="Fqx-W4-RTK"/>
+                                            <constraint firstItem="GHf-qC-tvf" firstAttribute="top" secondItem="KKZ-S3-Yff" secondAttribute="top" constant="5" id="W8g-oH-o31"/>
+                                            <constraint firstItem="GHf-qC-tvf" firstAttribute="leading" secondItem="KKZ-S3-Yff" secondAttribute="leading" constant="20" type="default" id="cXS-Iu-muZ"/>
+                                        </constraints>
+                                    </tableViewCell>
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="v2l-Sf-L9R" id="ywN-Xe-yHr"/>
@@ -269,6 +300,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="eu_vou_rir.png" width="320" height="60"/>
         <image name="menu_icon.png" width="25" height="19"/>
     </resources>
     <classes>

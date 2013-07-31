@@ -72,13 +72,20 @@
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self.events count];
+    return [self.events count]+1;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    static NSString *cellIdentifier = @"menuCell";
+    NSString *cellIdentifier = [[NSString alloc] init];
+    
+    if ([indexPath row] > 0) {
+        cellIdentifier = @"menuCell";
+    } else {
+        cellIdentifier = @"menuHeader";
+    }
+    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     
     if (!cell) {
@@ -92,21 +99,23 @@
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    UIColor *eventColor = [self getEventColorFromPosition:[indexPath row]];
-    
-    Event *event = [self.events objectAtIndex:[indexPath row]];
-    
-    UILabel *eventName = (UILabel *)[cell viewWithTag:101];
-    UILabel *mainEvent = (UILabel *)[cell viewWithTag:102];
-    
-    eventName.textColor = eventColor;
-    
-    eventName.text = [event name];
-    mainEvent.text = [event mainEvent];
-    
-    if ([indexPath row] == self.selectedIndex) {
-        [cell setBackgroundColor:eventColor];
-        eventName.textColor = [UIColor whiteColor];
+    if ([indexPath row] > 0) {
+        UIColor *eventColor = [self getEventColorFromPosition:[indexPath row]-1];
+        
+        Event *event = [self.events objectAtIndex:[indexPath row]-1];
+        
+        UILabel *eventName = (UILabel *)[cell viewWithTag:101];
+        UILabel *mainEvent = (UILabel *)[cell viewWithTag:102];
+        
+        eventName.textColor = eventColor;
+        
+        eventName.text = [event name];
+        mainEvent.text = [event mainEvent];
+        
+        if ([indexPath row] == self.selectedIndex) {
+            [cell setBackgroundColor:eventColor];
+            eventName.textColor = [UIColor whiteColor];
+        }
     }
 }
 
@@ -127,12 +136,18 @@
         
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
     
+    MyScheduleViewController *myScheduleViewController = [storyboard instantiateViewControllerWithIdentifier:@"MyScheduleViewController"];
+    
     LineUpViewController *lineUpViewController = [storyboard instantiateViewControllerWithIdentifier:@"LineUpViewController"];
     lineUpViewController.event = event;
         
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:lineUpViewController];
     
-    [self.revealController setFrontViewController:navigationController];
+    if ([indexPath row] > 0) {
+        [self.revealController setFrontViewController:navigationController];
+    } else {
+        [self.revealController setFrontViewController:myScheduleViewController];
+    }
     
     [self.revealController showViewController:self.revealController.frontViewController];
 }
