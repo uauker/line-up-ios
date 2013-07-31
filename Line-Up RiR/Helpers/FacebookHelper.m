@@ -95,7 +95,24 @@
                 for (NSDictionary *friend in [result objectForKey:@"data"]) {
                     [friends addObject:[friend objectForKey:@"id"]];
                 }
-                NSLog(@"%@", [result description]);
+                
+                NSArray *f = [NSArray arrayWithArray:friends];
+
+                NSString *urlString = [NSString stringWithFormat:HEROKU_FRIENDS, @"0", [f componentsJoinedByString:@","]];
+                NSLog(@"%@", urlString);
+                NSURL *url = [NSURL URLWithString:urlString];
+                NSURLRequest *request = [NSURLRequest requestWithURL:url];
+                
+                AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc]initWithRequest:request];
+                
+                [operation  setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+                    //Conseguiu registrar
+                }
+                                                  failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                                                      //erro ao registrar no nosso host
+                                                  }];
+                
+                [operation start];
             }
             
             NSLog(@"%@", friends);
