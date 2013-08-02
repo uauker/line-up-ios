@@ -132,7 +132,11 @@
     
     self.selectedIndex = [indexPath row];
     
-    Event *event = [self.events objectAtIndex:[indexPath row]];
+    Event *event = [[Event alloc] init];
+    
+    if (self.selectedIndex > 0) {
+        event = [self.events objectAtIndex:[indexPath row]-1];
+    }
         
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
     
@@ -140,13 +144,13 @@
     
     LineUpViewController *lineUpViewController = [storyboard instantiateViewControllerWithIdentifier:@"LineUpViewController"];
     lineUpViewController.event = event;
-        
-    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:lineUpViewController];
     
     if ([indexPath row] > 0) {
-        [self.revealController setFrontViewController:navigationController];
+        UINavigationController *navigationLineUpController = [[UINavigationController alloc] initWithRootViewController:lineUpViewController];
+        [self.revealController setFrontViewController:navigationLineUpController];
     } else {
-        [self.revealController setFrontViewController:myScheduleViewController];
+        UINavigationController *navigationMyScheduleController = [[UINavigationController alloc] initWithRootViewController:myScheduleViewController];
+        [self.revealController setFrontViewController:navigationMyScheduleController];
     }
     
     [self.revealController showViewController:self.revealController.frontViewController];

@@ -105,7 +105,7 @@ NSDate *rirDate;
 
 - (void)showPalcoOptions:(UIButton *)sender
 {        
-    NSArray *menuItems =
+    NSArray *filterItems =
     @[
       
       
@@ -136,7 +136,7 @@ NSDate *rirDate;
         
     [KxMenu showMenuInView:self.view
                   fromRect:CGRectMake(228, -15, 87, 21)
-                 menuItems:menuItems];
+                 menuItems:filterItems];
     
     if (self.hasToOpenMenu) {
         self.hasToOpenMenu = NO;

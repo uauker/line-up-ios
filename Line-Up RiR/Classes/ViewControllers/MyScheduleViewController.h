@@ -7,11 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PKRevealController.h"
+#import "FacebookHelper.h"
 
-@interface MyScheduleViewController : UIViewController
+@interface MyScheduleViewController : PKRevealController <UITableViewDataSource, UITableViewDelegate>
 
-@property (weak, nonatomic) IBOutlet UIView *view1;
-@property (weak, nonatomic) IBOutlet UIView *view2;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *teste;
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+
+- (IBAction)showLeftView:(id)sender;
 
 @end
