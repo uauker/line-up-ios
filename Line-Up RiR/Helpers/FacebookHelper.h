@@ -13,6 +13,7 @@
 #define FB_PERMISSIONS @[@"publish_stream"]
 #define FB_ME_PARAMETERS_FIELDS @"id,name,username"
 
+#define HEROKU_SUBSCRIBE @"http://line-up-rails.herokuapp.com/api/facebook/v1/events/subscribe"
 #define HEROKU_REGISTER @"http://line-up-rails.herokuapp.com/api/facebook/v1/events/new?facebook_user_id=%@&event_date=2013-01-31&facebook_name=%@&facebook_username=%@"
 #define HEROKU_FRIENDS @"http://line-up-rails.herokuapp.com/api/facebook/v1/events/%@?facebook_users_id=%@&event_date=2013-01-31"
 

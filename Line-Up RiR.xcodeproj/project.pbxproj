@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		230262E617A8748A00C1950D /* FacebookHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 230262E517A8748A00C1950D /* FacebookHelper.m */; };
 		230262EC17A892DB00C1950D /* FBUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 230262EB17A892DB00C1950D /* FBUser.m */; };
+		2330ADEC17ADA8A800EC7019 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2330ADEB17ADA8A800EC7019 /* CFNetwork.framework */; };
 		238795AA17A16EB0007CF23B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 238795A917A16EB0007CF23B /* UIKit.framework */; };
 		238795AC17A16EB0007CF23B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 238795AB17A16EB0007CF23B /* Foundation.framework */; };
 		238795AE17A16EB0007CF23B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 238795AD17A16EB0007CF23B /* CoreGraphics.framework */; };
@@ -129,6 +130,7 @@
 		230262E517A8748A00C1950D /* FacebookHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacebookHelper.m; sourceTree = "<group>"; };
 		230262EA17A892DB00C1950D /* FBUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBUser.h; sourceTree = "<group>"; };
 		230262EB17A892DB00C1950D /* FBUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBUser.m; sourceTree = "<group>"; };
+		2330ADEB17ADA8A800EC7019 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		238795A617A16EB0007CF23B /* Line-Up RiR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Line-Up RiR.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		238795A917A16EB0007CF23B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		238795AB17A16EB0007CF23B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -299,6 +301,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2330ADEC17ADA8A800EC7019 /* CFNetwork.framework in Frameworks */,
 				23BF38AC17A7441200844118 /* Security.framework in Frameworks */,
 				23FA0E6217A2BEA900CA30CF /* Social.framework in Frameworks */,
 				23FA0E5C17A1A02100CA30CF /* QuartzCore.framework in Frameworks */,
@@ -604,6 +607,7 @@
 		ACF196C617A19657003BE8CB /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				2330ADEB17ADA8A800EC7019 /* CFNetwork.framework */,
 				23BF388E17A742C000844118 /* AFNetworking */,
 				CE406DFF17A378D200CF1FF8 /* KxMenu */,
 				CE406DE817A2E86A00CF1FF8 /* Pickers */,

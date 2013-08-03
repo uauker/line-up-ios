@@ -62,18 +62,24 @@
                 NSString *username = [[result objectForKey:@"username"] stringByAddingPercentEscapesUsingEncoding:
                                       NSASCIIStringEncoding];
                 
-                NSString *urlString = [NSString stringWithFormat:HEROKU_REGISTER, userID, name, username];
-                NSLog(@"%@", urlString);
-                NSURL *url = [NSURL URLWithString:urlString];
-                NSURLRequest *request = [NSURLRequest requestWithURL:url];
+                NSString *json = [NSString stringWithFormat:@"{\"facebook_user_id\":\"%@\",\"event_date\":\"2013-01-31\",\"facebook_name\":\"%@\",\"facebook_username\":\"%@\"}", userID, name, username];
+                
+                NSURL *url = [NSURL URLWithString:HEROKU_SUBSCRIBE];
+                NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+                [request setHTTPMethod:@"POST"];
+                [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+                [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+                [request setHTTPBody:[json dataUsingEncoding:NSUTF8StringEncoding]];
                 
                 AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc]initWithRequest:request];
                 
                 [operation  setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
                     //Conseguiu registrar
+                    NSLog(@"SUCESSO");
                 }
                 failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                     //erro ao registrar no nosso host
+                    NSLog(@"Deu merda, %@", [error description]);
                 }];
                 
                 [operation start];
