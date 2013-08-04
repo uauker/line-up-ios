@@ -10,6 +10,8 @@
 
 @interface LineUpViewController ()
 
+@property (nonatomic) NSUserDefaults *userPreferences;
+
 @end
 
 @implementation LineUpViewController
@@ -27,8 +29,8 @@ NSDate *rirDate;
 {
     [super viewDidLoad];
     
-    self.eventIsInMySchedule = NO;
-    
+    self.userPreferences = [NSUserDefaults standardUserDefaults];
+        
     self.hasToOpenMenu = YES;
     
     self.buttonToSelectPalco.titleLabel.text = @"PALCO MUNDO";
@@ -38,6 +40,8 @@ NSDate *rirDate;
     if (self.event == nil) {
         self.event = [self.allEvents objectAtIndex:0];
     }
+    
+    [self setRiRButtonBackground];
     
     self.title = [self.event date];
     
@@ -69,98 +73,6 @@ NSDate *rirDate;
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-
-#pragma ###################################################################################################################
-#pragma mark - Actions
-
-- (IBAction)addToMySchedule:(id)sender {
-    if (self.eventIsInMySchedule) {
-        self.eventIsInMySchedule = NO;
-        [self.buttonRirEuVou setBackgroundImage:[UIImage imageNamed:@"rir_eu_vou_clicked.png"]
-                                       forState:UIControlStateNormal];
-    } else {
-        self.eventIsInMySchedule = YES;
-        [self.buttonRirEuVou setBackgroundImage:[UIImage imageNamed:@"rir_eu_vou.png"]
-                                       forState:UIControlStateNormal];
-    }
-
-    
-    
-}
-
-- (IBAction)showLeftView:(id)sender
-{
-    if (self.navigationController.revealController.focusedController == self.navigationController.revealController.leftViewController)
-    {
-        [self.navigationController.revealController showViewController:self.navigationController.revealController.frontViewController];
-    }
-    else
-    {
-        [self.navigationController.revealController showViewController:self.navigationController.revealController.leftViewController];
-    }
-}
-
-- (IBAction)selectPalco:(id)sender {
-    NSInteger initialSelection = 0;
-    
-    for (int i = 0; i < [self.palcos count]; i++) {
-        if ([[self.palco name] isEqualToString:[[self.palcos objectAtIndex:i] name]]) {
-            initialSelection = i;
-        }
-    }
-    
-    [ActionSheetStringPicker showPickerWithTitle:nil
-                                            rows:K_ARRAY_PALCOS
-                                initialSelection:initialSelection
-                                          target:self
-                                   successAction:@selector(selectedPalco:element:)
-                                    cancelAction:nil
-                                          origin:sender];
-}
-
-- (void)showPalcoOptions:(UIButton *)sender
-{        
-    NSArray *filterItems =
-    @[
-      
-      
-      [KxMenuItem menuItem:@"PALCO MUNDO"
-                     image:[UIImage imageNamed:@"action_icon"]
-                    target:self
-                    action:@selector(selectOtherPalco:)],
-      
-      [KxMenuItem menuItem:@"PALCO SUNSET"
-                     image:[UIImage imageNamed:@"check_icon"]
-                    target:self
-                    action:@selector(selectOtherPalco:)],
-      
-      [KxMenuItem menuItem:@"ELETRÔNICA"
-                     image:[UIImage imageNamed:@"reload"]
-                    target:self
-                    action:@selector(selectOtherPalco:)],
-      
-      [KxMenuItem menuItem:@"ROCK STREET"
-                     image:[UIImage imageNamed:@"search_icon"]
-                    target:self
-                    action:@selector(selectOtherPalco:)],
-      ];
-    
-//    KxMenuItem *first = menuItems[0];
-//    first.foreColor = [UIColor colorWithRed:47/255.0f green:112/255.0f blue:225/255.0f alpha:1.0];
-//    first.alignment = NSTextAlignmentCenter;
-        
-    [KxMenu showMenuInView:self.view
-                  fromRect:CGRectMake(228, -15, 87, 21)
-                 menuItems:filterItems];
-    
-    if (self.hasToOpenMenu) {
-        self.hasToOpenMenu = NO;
-    } else {
-        [KxMenu dismissMenu];
-        self.hasToOpenMenu = YES;
-    }
 }
 
 
@@ -214,7 +126,116 @@ NSDate *rirDate;
 
 
 #pragma ###################################################################################################################
+#pragma mark - Actions
+
+- (IBAction)addToMySchedule:(id)sender {
+    [self checkIfEventIsInMySchedule];
+    if (self.eventIsInMySchedule) {
+        [self.userPreferences setBool:NO forKey:[self.event date]];
+        [self.buttonRirEuVou setBackgroundImage:[UIImage imageNamed:@"rir_eu_vou_clicked.png"]
+                                       forState:UIControlStateNormal];
+    } else {
+        [self.userPreferences setBool:true forKey:[self.event date]];
+        [self.buttonRirEuVou setBackgroundImage:[UIImage imageNamed:@"rir_eu_vou.png"]
+                                       forState:UIControlStateNormal];
+    }
+}
+
+- (IBAction)showLeftView:(id)sender
+{
+    if (self.navigationController.revealController.focusedController == self.navigationController.revealController.leftViewController)
+    {
+        [self.navigationController.revealController showViewController:self.navigationController.revealController.frontViewController];
+    }
+    else
+    {
+        [self.navigationController.revealController showViewController:self.navigationController.revealController.leftViewController];
+    }
+}
+
+- (IBAction)selectPalco:(id)sender {
+    NSInteger initialSelection = 0;
+    
+    for (int i = 0; i < [self.palcos count]; i++) {
+        if ([[self.palco name] isEqualToString:[[self.palcos objectAtIndex:i] name]]) {
+            initialSelection = i;
+        }
+    }
+    
+    [ActionSheetStringPicker showPickerWithTitle:nil
+                                            rows:K_ARRAY_PALCOS
+                                initialSelection:initialSelection
+                                          target:self
+                                   successAction:@selector(selectedPalco:element:)
+                                    cancelAction:nil
+                                          origin:sender];
+}
+
+- (void)showPalcoOptions:(UIButton *)sender
+{
+    NSArray *filterItems =
+    @[
+      
+      
+      [KxMenuItem menuItem:@"PALCO MUNDO"
+                     image:[UIImage imageNamed:@"action_icon"]
+                    target:self
+                    action:@selector(selectOtherPalco:)],
+      
+      [KxMenuItem menuItem:@"PALCO SUNSET"
+                     image:[UIImage imageNamed:@"check_icon"]
+                    target:self
+                    action:@selector(selectOtherPalco:)],
+      
+      [KxMenuItem menuItem:@"ELETRÔNICA"
+                     image:[UIImage imageNamed:@"reload"]
+                    target:self
+                    action:@selector(selectOtherPalco:)],
+      
+      [KxMenuItem menuItem:@"ROCK STREET"
+                     image:[UIImage imageNamed:@"search_icon"]
+                    target:self
+                    action:@selector(selectOtherPalco:)],
+      ];
+    
+    //    KxMenuItem *first = menuItems[0];
+    //    first.foreColor = [UIColor colorWithRed:47/255.0f green:112/255.0f blue:225/255.0f alpha:1.0];
+    //    first.alignment = NSTextAlignmentCenter;
+    
+    [KxMenu showMenuInView:self.view
+                  fromRect:CGRectMake(228, -15, 87, 21)
+                 menuItems:filterItems];
+    
+    if (self.hasToOpenMenu) {
+        self.hasToOpenMenu = NO;
+    } else {
+        [KxMenu dismissMenu];
+        self.hasToOpenMenu = YES;
+    }
+}
+
+
+#pragma ###################################################################################################################
 #pragma mark - Internal Methods
+
+
+- (void)setRiRButtonBackground {
+    [self checkIfEventIsInMySchedule];
+    if (self.eventIsInMySchedule) {
+        [self.buttonRirEuVou setBackgroundImage:[UIImage imageNamed:@"rir_eu_vou_clicked.png"]
+                                       forState:UIControlStateNormal];
+    } else {
+        [self.buttonRirEuVou setBackgroundImage:[UIImage imageNamed:@"rir_eu_vou.png"]
+                                       forState:UIControlStateNormal];
+    }
+}
+
+- (void)checkIfEventIsInMySchedule {
+    self.eventIsInMySchedule = [self.userPreferences boolForKey:self.event.date];
+    if (!self.eventIsInMySchedule) {
+        self.eventIsInMySchedule = NO;
+    }
+}
 
 - (void)selectedPalco:(NSNumber *)selectedIndex element:(id)element {
     self.palcoIndicator.text = [K_ARRAY_PALCOS objectAtIndex:[selectedIndex intValue]];
