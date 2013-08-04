@@ -74,7 +74,7 @@
     }
 }
 
-+ (void)subscribeToAppServer {
++ (void)subscribeToAppServerWithEventDate:(NSString *)eventDate {
     if (FBSession.activeSession.isOpen) {
         NSDictionary *params = [NSDictionary dictionaryWithObject:FB_ME_PARAMETERS_FIELDS forKey:@"fields"];
         //        https://developers.facebook.com/docs/reference/api/using-pictures/
@@ -93,7 +93,7 @@
                 NSString *username = [[result objectForKey:@"username"] stringByAddingPercentEscapesUsingEncoding:
                                       NSASCIIStringEncoding];
                 
-                NSString *json = [NSString stringWithFormat:@"{\"facebook_user_id\":\"%@\",\"event_date\":\"2013-01-31\",\"facebook_name\":\"%@\",\"facebook_username\":\"%@\"}", userID, name, username];
+                NSString *json = [NSString stringWithFormat:@"{\"facebook_user_id\":\"%@\",\"event_date\":\"%@\",\"facebook_name\":\"%@\",\"facebook_username\":\"%@\"}", userID, eventDate, name, username];
 
                 NSURLRequest *request = [self requestWithUrl:HEROKU_SUBSCRIBE body:json];
                 
@@ -114,7 +114,7 @@
     }
 }
 
-+ (void)unsubscribeToAppServer {
++ (void)unsubscribeToAppServerWithEventDate:(NSString *)eventDate {
     if (FBSession.activeSession.isOpen) {
         NSDictionary *params = [NSDictionary dictionaryWithObject:FB_ME_PARAMETERS_FIELDS forKey:@"fields"];
         
@@ -123,7 +123,7 @@
                 //TODO: error ao marcar que o usuario vai no dia
             }
             else {
-                NSString *json = [NSString stringWithFormat:@"{\"facebook_user_id\":\"%@\",\"event_date\":\"2013-01-31\"}", [result objectForKey:@"id"]];
+                NSString *json = [NSString stringWithFormat:@"{\"facebook_user_id\":\"%@\",\"event_date\":\"%@\"}", [result objectForKey:@"id"], eventDate];
                 
                 NSURLRequest *request = [self requestWithUrl:HEROKU_UNSUBSCRIBE body:json];
                 
@@ -144,7 +144,7 @@
     }
 }
 
-+ (NSArray *)friendsToAppServer {
++ (NSArray *)friendsToAppServerWithEventDate:(NSString *)eventDate {
     NSMutableArray *friends = [[NSMutableArray alloc] init];
     NSDictionary *params = [NSDictionary dictionaryWithObject:@"id" forKey:@"fields"];
     
@@ -160,7 +160,7 @@
                 
                 NSArray *f = [NSArray arrayWithArray:friends];
 
-                NSString *json = [NSString stringWithFormat:@"{\"facebook_users_id\":\"%@\",\"event_date\":\"2013-01-31\"}", [f componentsJoinedByString:@","]];
+                NSString *json = [NSString stringWithFormat:@"{\"facebook_users_id\":\"%@\",\"event_date\":\"%@\"}", [f componentsJoinedByString:@","], eventDate];
                 NSLog(@"%@", json);
                 
                 NSURLRequest *request = [self requestWithUrl:HEROKU_FRIENDS body:json];
