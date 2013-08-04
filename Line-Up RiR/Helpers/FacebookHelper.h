@@ -14,6 +14,7 @@
 #define FB_ME_PARAMETERS_FIELDS @"id,name,username"
 
 #define HEROKU_SUBSCRIBE @"http://line-up-rails.herokuapp.com/api/facebook/v1/events/subscribe"
+#define HEROKU_UNSUBSCRIBE @"http://line-up-rails.herokuapp.com/api/facebook/v1/events/unsubscribe"
 #define HEROKU_FRIENDS @"http://line-up-rails.herokuapp.com/api/facebook/v1/events/friends"
 
 @interface FacebookHelper : NSObject
@@ -21,7 +22,8 @@
 + (void)openActiveSession;
 + (void)post;
 
-+ (void)registerMeToAppServer;
++ (void)subscribeToAppServer;
++ (void)unsubscribeToAppServer;
 + (NSArray *)friendsToAppServer;
 
 @end
