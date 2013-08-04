@@ -3,6 +3,7 @@
     "events": [
                {
                "date": "13/09",
+               "startAt": "2013-09-13",
                "weekDay": "sexta",
                "mainEvent": "Beyoncé",
                "palcos": [
@@ -73,6 +74,7 @@
                },
                {
                "date": "14/09",
+               "startAt": "2013-09-14",               
                "weekDay": "sábado",
                "mainEvent": "Muse",
                "palcos": [
@@ -146,6 +148,7 @@
                },
                {
                "date": "15/09",
+               "startAt": "2013-09-15",               
                "weekDay": "domingo",
                "mainEvent": "Justin Timberlake",
                "palcos": [
@@ -219,6 +222,7 @@
                },
                {
                "date": "19/09",
+               "startAt": "2013-09-19",               
                "weekDay": "quinta",
                "mainEvent": "Metalica",
                "palcos": [
@@ -289,6 +293,7 @@
                },
                {
                "date": "20/09",
+               "startAt": "2013-09-20",               
                "weekDay": "sexta",
                "mainEvent": "Bon Jovi",
                "palcos": [
@@ -359,6 +364,7 @@
                },
                {
                "date": "21/09",
+               "startAt": "2013-09-21",               
                "weekDay": "sábado",
                "mainEvent": "Bruce Springsteen",
                "palcos": [
@@ -429,6 +435,7 @@
                },
                {
                "date": "22/09",
+               "startAt": "2013-09-22",               
                "weekDay": "domingo",
                "mainEvent": "Iron Maiden",
                "palcos": [
