@@ -25,6 +25,7 @@
 @property (nonatomic, copy) NSArray *musicians;
 @property (nonatomic, copy) NSArray *allEvents;
 @property (nonatomic, assign) BOOL hasToOpenMenu;
+@property (nonatomic, assign) BOOL eventIsInMySchedule;
 
 @property (weak, nonatomic) IBOutlet UIView *viewRIRTimer;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -35,6 +36,9 @@
 @property (weak, nonatomic) IBOutlet UIButton *buttonToSelectPalco;
 @property (weak, nonatomic) IBOutlet UILabel *labelRockStreet;
 
+@property (weak, nonatomic) IBOutlet UIButton *buttonRirEuVou;
+
+- (IBAction)addToMySchedule:(id)sender;
 - (IBAction)showLeftView:(id)sender;
 - (IBAction)selectPalco:(id)sender;
 - (int)getDaysFromMonth:(int)month;
