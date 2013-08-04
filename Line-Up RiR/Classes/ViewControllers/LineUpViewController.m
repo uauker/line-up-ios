@@ -221,17 +221,16 @@ NSDate *rirDate;
 
 - (void)setRiRButtonBackground {
     [self checkIfEventIsInMySchedule];
-    if (self.eventIsInMySchedule) {
-        [self.buttonRirEuVou setBackgroundImage:[UIImage imageNamed:@"rir_eu_vou.png"]
-                                       forState:UIControlStateNormal];
-    } else {
-        [self.buttonRirEuVou setBackgroundImage:[UIImage imageNamed:@"rir_eu_vou_clicked.png"]
-                                       forState:UIControlStateNormal];
-    }
+    
+    NSString *imgName = (self.eventIsInMySchedule) ? @"rir_eu_vou.png" : @"rir_eu_vou_clicked.png";
+    
+    [self.buttonRirEuVou setBackgroundImage:[UIImage imageNamed:imgName]
+                                   forState:UIControlStateNormal];
 }
 
 - (void)checkIfEventIsInMySchedule {
     self.eventIsInMySchedule = [self.userPreferences boolForKey:self.event.date];
+    
     if (!self.eventIsInMySchedule) {
         self.eventIsInMySchedule = NO;
     }
