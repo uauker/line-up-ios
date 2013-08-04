@@ -87,11 +87,8 @@
                 NSString *UserAndPostID = [result objectForKey:@"id"];
                 NSString *userID = [[UserAndPostID componentsSeparatedByString:@"_"] objectAtIndex:0];
                 
-                NSString *name = [[result objectForKey:@"name"] stringByAddingPercentEscapesUsingEncoding:
-                                  NSASCIIStringEncoding];
-                
-                NSString *username = [[result objectForKey:@"username"] stringByAddingPercentEscapesUsingEncoding:
-                                      NSASCIIStringEncoding];
+                NSString *name = [result objectForKey:@"name"];
+                NSString *username = [result objectForKey:@"username"];
                 
                 NSString *json = [NSString stringWithFormat:@"{\"facebook_user_id\":\"%@\",\"event_date\":\"%@\",\"facebook_name\":\"%@\",\"facebook_username\":\"%@\"}", userID, eventDate, name, username];
 
