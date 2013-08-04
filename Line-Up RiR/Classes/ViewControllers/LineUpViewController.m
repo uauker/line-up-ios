@@ -27,6 +27,8 @@ NSDate *rirDate;
 {
     [super viewDidLoad];
     
+    self.eventIsInMySchedule = NO;
+    
     self.hasToOpenMenu = YES;
     
     self.buttonToSelectPalco.titleLabel.text = @"PALCO MUNDO";
@@ -74,7 +76,16 @@ NSDate *rirDate;
 #pragma mark - Actions
 
 - (IBAction)addToMySchedule:(id)sender {
-    
+    if (self.eventIsInMySchedule) {
+        self.eventIsInMySchedule = NO;
+        [self.buttonRirEuVou setBackgroundImage:[UIImage imageNamed:@"rir_eu_vou_clicked.png"]
+                                       forState:UIControlStateNormal];
+    } else {
+        self.eventIsInMySchedule = YES;
+        [self.buttonRirEuVou setBackgroundImage:[UIImage imageNamed:@"rir_eu_vou.png"]
+                                       forState:UIControlStateNormal];
+    }
+
     
     
 }

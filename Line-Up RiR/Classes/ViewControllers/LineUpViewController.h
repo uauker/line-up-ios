@@ -25,6 +25,7 @@
 @property (nonatomic, copy) NSArray *musicians;
 @property (nonatomic, copy) NSArray *allEvents;
 @property (nonatomic, assign) BOOL hasToOpenMenu;
+@property (nonatomic, assign) BOOL eventIsInMySchedule;
 
 @property (weak, nonatomic) IBOutlet UIView *viewRIRTimer;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
