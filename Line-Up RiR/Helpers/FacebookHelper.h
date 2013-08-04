@@ -24,8 +24,8 @@
 + (void)post;
 
 + (void)meToAppServer;
-+ (void)subscribeToAppServer;
-+ (void)unsubscribeToAppServer;
-+ (NSArray *)friendsToAppServer;
++ (void)subscribeToAppServerWithEventDate:(NSString *)eventDate;
++ (void)unsubscribeToAppServerWithEventDate:(NSString *)eventDate;
++ (NSArray *)friendsToAppServerWithEventDate:(NSString *)eventDate;
 
 @end
