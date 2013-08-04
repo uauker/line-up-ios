@@ -226,10 +226,12 @@ NSDate *rirDate;
 - (void)setRiRButtonBackground {
     [self checkIfEventIsInMySchedule];
     
-    NSString *imgName = (self.eventIsInMySchedule) ? @"rir_eu_vou.png" : @"rir_eu_vou_clicked.png";
-    
-    [self.buttonRirEuVou setBackgroundImage:[UIImage imageNamed:imgName]
+    [self.buttonRirEuVou setBackgroundImage:[UIImage imageNamed:@"rir_eu_vou.png"]
                                    forState:UIControlStateNormal];
+    [self.buttonRirEuVou setBackgroundImage:[UIImage imageNamed:@"rir_eu_vou_clicked.png"]
+                                   forState:UIControlStateSelected];
+    
+    [self.buttonRirEuVou setSelected:(self.eventIsInMySchedule)];
 }
 
 - (void)checkIfEventIsInMySchedule {
