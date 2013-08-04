@@ -19,6 +19,10 @@
     [super viewDidLoad];
 	
     self.events = [RockInRio allEvents];
+    
+    if (!self.selectedIndex) {
+        self.selectedIndex = 1;
+    }
 }
 
 - (void)didReceiveMemoryWarning
