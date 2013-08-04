@@ -73,6 +73,12 @@ NSDate *rirDate;
 #pragma ###################################################################################################################
 #pragma mark - Actions
 
+- (IBAction)addToMySchedule:(id)sender {
+    
+    
+    
+}
+
 - (IBAction)showLeftView:(id)sender
 {
     if (self.navigationController.revealController.focusedController == self.navigationController.revealController.leftViewController)

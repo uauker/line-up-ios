@@ -35,6 +35,9 @@
 @property (weak, nonatomic) IBOutlet UIButton *buttonToSelectPalco;
 @property (weak, nonatomic) IBOutlet UILabel *labelRockStreet;
 
+@property (weak, nonatomic) IBOutlet UIButton *buttonRirEuVou;
+
+- (IBAction)addToMySchedule:(id)sender;
 - (IBAction)showLeftView:(id)sender;
 - (IBAction)selectPalco:(id)sender;
 - (int)getDaysFromMonth:(int)month;
