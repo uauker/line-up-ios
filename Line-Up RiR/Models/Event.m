@@ -18,10 +18,7 @@
         self.weekDay = [dictionary objectForKey:@"weekDay"];
         self.mainEvent = [dictionary objectForKey:@"mainEvent"];
         self.palcos = [self allPalcosWithArray:[dictionary objectForKey:@"palcos"]];
-        
-        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-        [dateFormatter setDateFormat:@"yyyy-MM-dd"];
-        self.startAt = [dateFormatter dateFromString:[dictionary objectForKey:@"startAt"]];
+        self.startAt = [dictionary objectForKey:@"startAt"];
     }
     
     return self;

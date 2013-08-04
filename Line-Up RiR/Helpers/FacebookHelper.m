@@ -124,7 +124,7 @@
             }
             else {
                 NSString *json = [NSString stringWithFormat:@"{\"facebook_user_id\":\"%@\",\"event_date\":\"%@\"}", [result objectForKey:@"id"], eventDate];
-                
+
                 NSURLRequest *request = [self requestWithUrl:HEROKU_UNSUBSCRIBE body:json];
                 
                 AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc]initWithRequest:request];
