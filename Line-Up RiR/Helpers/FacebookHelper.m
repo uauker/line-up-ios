@@ -63,13 +63,8 @@
                                       NSASCIIStringEncoding];
                 
                 NSString *json = [NSString stringWithFormat:@"{\"facebook_user_id\":\"%@\",\"event_date\":\"2013-01-31\",\"facebook_name\":\"%@\",\"facebook_username\":\"%@\"}", userID, name, username];
-                
-                NSURL *url = [NSURL URLWithString:HEROKU_SUBSCRIBE];
-                NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
-                [request setHTTPMethod:@"POST"];
-                [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
-                [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-                [request setHTTPBody:[json dataUsingEncoding:NSUTF8StringEncoding]];
+
+                NSURLRequest *request = [self requestWithUrl:HEROKU_SUBSCRIBE body:json];
                 
                 AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc]initWithRequest:request];
                 
@@ -79,7 +74,7 @@
                 }
                 failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                     //erro ao registrar no nosso host
-                    NSLog(@"Deu merda, %@", [error description]);
+                    NSLog(@"ERRO, %@", [error description]);
                 }];
                 
                 [operation start];
@@ -104,19 +99,21 @@
                 
                 NSArray *f = [NSArray arrayWithArray:friends];
 
-                NSString *urlString = [NSString stringWithFormat:HEROKU_FRIENDS, @"0", [f componentsJoinedByString:@","]];
-                NSLog(@"%@", urlString);
-                NSURL *url = [NSURL URLWithString:urlString];
-                NSURLRequest *request = [NSURLRequest requestWithURL:url];
+                NSString *json = [NSString stringWithFormat:@"{\"facebook_users_id\":\"%@\",\"event_date\":\"2013-01-31\"}", [f componentsJoinedByString:@","]];
+                NSLog(@"%@", json);
+                
+                NSURLRequest *request = [self requestWithUrl:HEROKU_FRIENDS body:json];
                 
                 AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc]initWithRequest:request];
                 
                 [operation  setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
                     //Conseguiu registrar
+                    NSLog(@"SUCESSO: %@", operation.responseString);
                 }
-                                                  failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                                                      //erro ao registrar no nosso host
-                                                  }];
+                failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                    //erro ao registrar no nosso host
+                    NSLog(@"ERRO %@", [error description]);
+                }];
                 
                 [operation start];
             }
@@ -127,6 +124,18 @@
     }
     
     return friends;
+}
+
++ (NSURLRequest *)requestWithUrl:(NSString *)urlString body:(NSString *)body {
+    NSURL *url = [NSURL URLWithString:urlString];
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    [request setHTTPMethod:@"POST"];
+    [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [request setHTTPBody:[body dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    return request;
 }
 
 @end
