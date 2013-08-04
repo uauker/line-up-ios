@@ -43,6 +43,37 @@
     }
 }
 
++ (void)meToAppServer {
+    if (FBSession.activeSession.isOpen) {
+        NSDictionary *params = [NSDictionary dictionaryWithObject:FB_ME_PARAMETERS_FIELDS forKey:@"fields"];
+        //        https://developers.facebook.com/docs/reference/api/using-pictures/
+        
+        [FBRequestConnection startWithGraphPath:@"me" parameters:params HTTPMethod:@"GET" completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+            if (error) {
+                //TODO: error ao marcar que o usuario vai no dia
+            }
+            else {
+                NSString *urlString = [NSString stringWithFormat:HEROKU_ME, [result objectForKey:@"id"]];
+                
+                NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:urlString]];
+                
+                AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc]initWithRequest:request];
+                
+                [operation  setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+                    //Conseguiu registrar
+                    NSLog(@"SUCESSO");
+                }
+                failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                    //erro ao registrar no nosso host
+                    NSLog(@"ERRO, %@", [error description]);
+                }];
+                
+                [operation start];
+            }
+        }];
+    }
+}
+
 + (void)subscribeToAppServer {
     if (FBSession.activeSession.isOpen) {
         NSDictionary *params = [NSDictionary dictionaryWithObject:FB_ME_PARAMETERS_FIELDS forKey:@"fields"];
@@ -163,7 +194,10 @@
     [request setHTTPMethod:@"POST"];
     [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
     [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-    [request setHTTPBody:[body dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    if (body) {
+        [request setHTTPBody:[body dataUsingEncoding:NSUTF8StringEncoding]];
+    }
     
     return request;
 }
