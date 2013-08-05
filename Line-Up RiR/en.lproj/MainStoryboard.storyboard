@@ -9,7 +9,7 @@
             <objects>
                 <viewController storyboardIdentifier="LineUpViewController" title="Second" id="3" customClass="LineUpViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="17">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u0l-lY-P8P">
@@ -164,13 +164,13 @@
             <objects>
                 <viewController storyboardIdentifier="MyScheduleViewController" id="Jja-AO-YGA" customClass="MyScheduleViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="U2n-9Z-dJV">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="69" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="TA9-gA-4gq">
-                                <color key="backgroundColor" red="0.27058823529999998" green="0.29803921570000003" blue="0.32156862749999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="440" id="rgu-Un-8cD"/>
+                                    <constraint firstAttribute="height" constant="440" type="user" id="rgu-Un-8cD"/>
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="myScheduleCell" rowHeight="70" id="Kza-q4-Vb7">
@@ -202,14 +202,14 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.27058823529999998" green="0.29803921570000003" blue="0.32156862749999998" alpha="1" colorSpace="calibratedRGB"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="Xl5-Hb-xRj" firstAttribute="centerX" secondItem="TA9-gA-4gq" secondAttribute="centerX" type="default" id="8dc-qg-nmv"/>
-                            <constraint firstItem="TA9-gA-4gq" firstAttribute="bottom" secondItem="U2n-9Z-dJV" secondAttribute="bottom" type="default" id="bbF-Da-GRW"/>
                             <constraint firstItem="TA9-gA-4gq" firstAttribute="leading" secondItem="U2n-9Z-dJV" secondAttribute="leading" type="default" id="gt5-TT-yur"/>
-                            <constraint firstItem="Xl5-Hb-xRj" firstAttribute="top" secondItem="U2n-9Z-dJV" secondAttribute="top" constant="13" id="nvu-jf-J8X"/>
+                            <constraint firstItem="Xl5-Hb-xRj" firstAttribute="top" secondItem="U2n-9Z-dJV" secondAttribute="top" constant="13" type="user" id="nvu-jf-J8X"/>
                             <constraint firstItem="TA9-gA-4gq" firstAttribute="trailing" secondItem="U2n-9Z-dJV" secondAttribute="trailing" type="default" id="qRF-pO-6Aw"/>
+                            <constraint firstItem="TA9-gA-4gq" firstAttribute="top" secondItem="Xl5-Hb-xRj" secondAttribute="bottom" constant="12" type="user" id="sTu-eU-yGw"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="VRZ-8P-wV0" appends="YES" id="r2c-nB-oRM"/>
@@ -249,7 +249,7 @@
             <objects>
                 <viewController storyboardIdentifier="MenuViewController" id="v2l-Sf-L9R" customClass="MenuViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Y3N-En-fJ2">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="73" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="GQs-UU-bDC">
@@ -431,6 +431,6 @@
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
+        <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
 </document>
