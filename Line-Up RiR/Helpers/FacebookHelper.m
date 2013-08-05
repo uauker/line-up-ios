@@ -43,6 +43,38 @@
     }
 }
 
++ (void)shareFromViewController:(UIViewController *)viewController withText:(NSString *)shareText {
+    BOOL displayedNativeDialog = [FBDialogs presentOSIntegratedShareDialogModallyFrom:viewController initialText:shareText image:[UIImage imageNamed:@"icon"] url:[NSURL URLWithString:K_URL_APPSTORE] handler:^(FBOSIntegratedShareDialogResult result, NSError *error) {
+        
+        // TODO: Tratar erro ao tentar compartilhar um evento no facebook!!
+        NSString *alertText = @"";
+        if ([[error userInfo][FBErrorDialogReasonKey] isEqualToString:FBErrorDialogNotSupported]) {
+            alertText = @"iOS Share Sheet not supported.";
+        } else if (error) {
+            alertText = [NSString stringWithFormat:@"error: domain = %@, code = %d", error.domain, error.code];
+        } else if (result == FBNativeDialogResultSucceeded) {
+            alertText = @"Posted successfully.";
+        }
+        
+        if (![alertText isEqualToString:@""]) {
+            // Show the result in an alert
+            [[[UIAlertView alloc] initWithTitle:@"Result"
+                                        message:alertText
+                                       delegate:self
+                              cancelButtonTitle:@"OK!"
+                              otherButtonTitles:nil]
+             show];
+        }
+    }];
+    
+    if (!displayedNativeDialog) {
+        /*
+         Fallback to web-based Feed dialog:
+         https://developers.facebook.com/docs/howtos/feed-dialog-using-ios-sdk/
+         */
+    }
+}
+
 + (void)meToAppServer {
     if (FBSession.activeSession.isOpen) {
         NSDictionary *params = [NSDictionary dictionaryWithObject:FB_ME_PARAMETERS_FIELDS forKey:@"fields"];

@@ -22,6 +22,7 @@
 
 + (void)openActiveSession;
 + (void)post;
++ (void)shareFromViewController:(UIViewController *)viewController withText:(NSString *)shareText;
 
 + (void)meToAppServer;
 + (void)subscribeToAppServerWithEventDate:(NSString *)eventDate;

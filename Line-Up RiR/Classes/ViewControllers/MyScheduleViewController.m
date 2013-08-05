@@ -10,6 +10,8 @@
 
 @interface MyScheduleViewController ()
 
+#define SHARE_MY_SCHEDULE_ON_FACEBOOK @"Essa é a minha agenda de eventos no aplicativo Line Up - Rock in Rio 2013:\n"
+
 @end
 
 @implementation MyScheduleViewController
