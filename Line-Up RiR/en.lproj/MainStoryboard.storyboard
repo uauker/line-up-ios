@@ -169,6 +169,9 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="69" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="TA9-gA-4gq">
                                 <color key="backgroundColor" red="0.27058823529999998" green="0.29803921570000003" blue="0.32156862749999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="440" id="rgu-Un-8cD"/>
+                                </constraints>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="myScheduleCell" rowHeight="70" id="Kza-q4-Vb7">
                                         <rect key="frame" x="0.0" y="22" width="320" height="70"/>
@@ -185,14 +188,28 @@
                                     <outlet property="delegate" destination="Jja-AO-YGA" id="i6e-bY-gWP"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xl5-Hb-xRj">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" backgroundImage="bt_compartilhar_agenda_normal.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="shareMySchedule:" destination="Jja-AO-YGA" eventType="touchUpInside" id="AtW-6n-rPF"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="TA9-gA-4gq" firstAttribute="top" secondItem="U2n-9Z-dJV" secondAttribute="top" type="default" id="G9J-za-7pc"/>
+                            <constraint firstItem="Xl5-Hb-xRj" firstAttribute="centerX" secondItem="TA9-gA-4gq" secondAttribute="centerX" type="default" id="8dc-qg-nmv"/>
+                            <constraint firstItem="TA9-gA-4gq" firstAttribute="bottom" secondItem="U2n-9Z-dJV" secondAttribute="bottom" type="default" id="bbF-Da-GRW"/>
                             <constraint firstItem="TA9-gA-4gq" firstAttribute="leading" secondItem="U2n-9Z-dJV" secondAttribute="leading" type="default" id="gt5-TT-yur"/>
+                            <constraint firstItem="Xl5-Hb-xRj" firstAttribute="top" secondItem="U2n-9Z-dJV" secondAttribute="top" constant="13" id="nvu-jf-J8X"/>
                             <constraint firstItem="TA9-gA-4gq" firstAttribute="trailing" secondItem="U2n-9Z-dJV" secondAttribute="trailing" type="default" id="qRF-pO-6Aw"/>
-                            <constraint firstItem="TA9-gA-4gq" firstAttribute="bottom" secondItem="U2n-9Z-dJV" secondAttribute="bottom" type="default" id="rKa-WO-gOy"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="VRZ-8P-wV0" appends="YES" id="r2c-nB-oRM"/>
@@ -367,6 +384,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="bt_compartilhar_agenda_normal.png" width="201" height="39"/>
         <image name="menu_icon.png" width="25" height="19"/>
         <image name="rir_eu_vou.png" width="320" height="60"/>
         <image name="rir_eu_vou_clicked.png" width="320" height="60"/>
@@ -398,6 +416,7 @@
         <class className="MyScheduleViewController" superclassName="PKRevealController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MyScheduleViewController.h"/>
             <relationships>
+                <relationship kind="action" name="shareMySchedule:"/>
                 <relationship kind="action" name="showLeftView:"/>
                 <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
             </relationships>

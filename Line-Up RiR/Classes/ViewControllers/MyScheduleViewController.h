@@ -16,5 +16,6 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 - (IBAction)showLeftView:(id)sender;
+- (IBAction)shareMySchedule:(id)sender;
 
 @end
