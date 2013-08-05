@@ -128,8 +128,6 @@ NSDate *rirDate;
 - (IBAction)addToMySchedule:(id)sender {
     [self checkIfEventIsInMySchedule];
     
-    [FacebookHelper openActiveSession];
-    
     if (self.eventIsInMySchedule) {
         [self.userPreferences setBool:NO forKey:[self.event date]];
         [self.buttonRirEuVou setBackgroundImage:[UIImage imageNamed:@"rir_eu_vou_clicked.png"]
@@ -226,12 +224,9 @@ NSDate *rirDate;
 - (void)setRiRButtonBackground {
     [self checkIfEventIsInMySchedule];
     
-    [self.buttonRirEuVou setBackgroundImage:[UIImage imageNamed:@"rir_eu_vou.png"]
-                                   forState:UIControlStateNormal];
-    [self.buttonRirEuVou setBackgroundImage:[UIImage imageNamed:@"rir_eu_vou_clicked.png"]
-                                   forState:UIControlStateSelected];
+    NSString *imgName = (self.eventIsInMySchedule) ? @"rir_eu_vou.png" : @"rir_eu_vou_clicked.png";
     
-    [self.buttonRirEuVou setSelected:(self.eventIsInMySchedule)];
+    [self.buttonRirEuVou setBackgroundImage:[UIImage imageNamed:imgName] forState:UIControlStateNormal];
 }
 
 - (void)checkIfEventIsInMySchedule {

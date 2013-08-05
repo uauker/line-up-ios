@@ -19,8 +19,9 @@
 {
     [super viewDidLoad];
     
-    [FacebookHelper meToAppServer];
+    [FacebookHelper openActiveSession];
     
+    [FacebookHelper meToAppServer];
 }
 
 - (void)didReceiveMemoryWarning
@@ -89,6 +90,7 @@
 }
 
 - (IBAction)shareMySchedule:(id)sender {
+    [FacebookHelper post];
 }
 
 @end
