@@ -22,6 +22,8 @@
 #define RIR_HOUR 00
 #define RIR_MINUTE 00
 #define RIR_SECOND 00
+#define ALERT_TITLE_SHARE_EVENT_ON_FACEBOOK @"Deseja compartilhar com seus amigos do Facebook?"
+#define SHARE_EVENT_ON_FACEBOOK @"Acabei de adicionar o dia %@1 na minha agenda do aplicativo Line Up - Rock in Rio 2013.\n\n"
 
 NSDate *rirDate;
 
@@ -123,6 +125,16 @@ NSDate *rirDate;
 
 
 #pragma ###################################################################################################################
+#pragma mark - UIAlertViewDelegate
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 1) {
+        [self shareEventOnFacebook];
+    }
+}
+
+
+#pragma ###################################################################################################################
 #pragma mark - Actions
 
 - (IBAction)addToMySchedule:(id)sender {
@@ -140,6 +152,13 @@ NSDate *rirDate;
                                        forState:UIControlStateNormal];
         
         [FacebookHelper subscribeToAppServerWithEventDate:self.event.startAt];
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:ALERT_TITLE_SHARE_EVENT_ON_FACEBOOK
+                                                        message:nil
+                                                       delegate:self
+                                              cancelButtonTitle:@"Cancelar"
+                                              otherButtonTitles:@"Compartilhar", nil];
+        [alert show];
     }
 }
 
@@ -220,6 +239,41 @@ NSDate *rirDate;
 #pragma ###################################################################################################################
 #pragma mark - Internal Methods
 
+
+- (void)shareEventOnFacebook {
+    
+    NSString *shareText = [SHARE_EVENT_ON_FACEBOOK stringByReplacingOccurrencesOfString:@"%@1" withString:[self.event date]];
+    
+    BOOL displayedNativeDialog = [FBDialogs presentOSIntegratedShareDialogModallyFrom:self initialText:shareText image:[UIImage imageNamed:@"icon"] url:[NSURL URLWithString:K_URL_APPSTORE] handler:^(FBOSIntegratedShareDialogResult result, NSError *error) {
+        
+        // TODO: Tratar erro ao tentar compartilhar um evento no facebook!!
+        NSString *alertText = @"";
+        if ([[error userInfo][FBErrorDialogReasonKey] isEqualToString:FBErrorDialogNotSupported]) {
+            alertText = @"iOS Share Sheet not supported.";
+        } else if (error) {
+            alertText = [NSString stringWithFormat:@"error: domain = %@, code = %d", error.domain, error.code];
+        } else if (result == FBNativeDialogResultSucceeded) {
+            alertText = @"Posted successfully.";
+        }
+        
+        if (![alertText isEqualToString:@""]) {
+            // Show the result in an alert
+            [[[UIAlertView alloc] initWithTitle:@"Result"
+                                        message:alertText
+                                       delegate:self
+                              cancelButtonTitle:@"OK!"
+                              otherButtonTitles:nil]
+             show];
+        }
+    }];
+    
+    if (!displayedNativeDialog) {
+        /* 
+         Fallback to web-based Feed dialog:
+         https://developers.facebook.com/docs/howtos/feed-dialog-using-ios-sdk/
+         */
+    }
+}
 
 - (void)setRiRButtonBackground {
     [self checkIfEventIsInMySchedule];

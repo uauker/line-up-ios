@@ -17,7 +17,7 @@
 #import "ActionSheetStringPicker.h"
 #import "FacebookHelper.h"
 
-@interface LineUpViewController : PKRevealController <UITableViewDataSource, UITableViewDelegate>
+@interface LineUpViewController : PKRevealController <UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate>
 
 @property (nonatomic, strong) Event *event;
 @property (nonatomic, strong) Palco *palco;
