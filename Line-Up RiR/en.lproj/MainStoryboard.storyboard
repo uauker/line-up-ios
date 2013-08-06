@@ -179,8 +179,23 @@
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="69"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="121" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RBO-0R-mlu">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="Hbb-ak-kwM"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="18"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                            </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <constraints>
+                                            <constraint firstItem="RBO-0R-mlu" firstAttribute="top" secondItem="Kza-q4-Vb7" secondAttribute="top" constant="24" id="FPj-LJ-fly"/>
+                                            <constraint firstAttribute="trailing" secondItem="RBO-0R-mlu" secondAttribute="trailing" constant="20" type="default" id="G5o-9x-M9H"/>
+                                            <constraint firstItem="RBO-0R-mlu" firstAttribute="leading" secondItem="Kza-q4-Vb7" secondAttribute="leading" constant="20" type="default" id="was-oD-qCJ"/>
+                                        </constraints>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
