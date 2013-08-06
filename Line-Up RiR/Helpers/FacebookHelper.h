@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <FacebookSDK/FacebookSDK.h>
 #import "AFHTTPRequestOperation.h"
+#import "FBUser.h"
 
 #define FB_PERMISSIONS @[@"publish_stream"]
 #define FB_ME_PARAMETERS_FIELDS @"id,name,username"
