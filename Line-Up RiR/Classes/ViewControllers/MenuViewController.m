@@ -145,6 +145,7 @@
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
     
     MyScheduleViewController *myScheduleViewController = [storyboard instantiateViewControllerWithIdentifier:@"MyScheduleViewController"];
+    myScheduleViewController.events = self.events;
     
     LineUpViewController *lineUpViewController = [storyboard instantiateViewControllerWithIdentifier:@"LineUpViewController"];
     lineUpViewController.event = event;

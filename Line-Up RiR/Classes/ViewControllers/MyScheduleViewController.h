@@ -8,11 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "PKRevealController.h"
+#import "Event.h"
 #import "FacebookHelper.h"
 
 @interface MyScheduleViewController : PKRevealController <UITableViewDataSource, UITableViewDelegate>
 
-
+@property (nonatomic, copy) NSArray *events;
+@property (nonatomic, strong) NSMutableArray *mySchedule;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 - (IBAction)showLeftView:(id)sender;

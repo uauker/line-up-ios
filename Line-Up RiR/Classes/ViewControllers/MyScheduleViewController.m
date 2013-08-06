@@ -10,26 +10,48 @@
 
 @interface MyScheduleViewController ()
 
-#define SHARE_MY_SCHEDULE_ON_FACEBOOK @"Essa é a minha agenda de eventos no aplicativo Line Up - Rock in Rio 2013:\n"
+@property (nonatomic) NSUserDefaults *userPreferences;
 
 @end
 
 @implementation MyScheduleViewController
+
+#define SHARE_MY_SCHEDULE_ON_FACEBOOK @"Essa é a minha agenda de eventos no aplicativo Line Up - Rock in Rio 2013:\n%@1"
 
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    [FacebookHelper openActiveSession];
+//    [FacebookHelper openActiveSession];
+//    
+//    [FacebookHelper meToAppServer];
     
-    [FacebookHelper meToAppServer];
+    self.userPreferences = [NSUserDefaults standardUserDefaults];
+    
+    if (!self.mySchedule) {
+        self.mySchedule = [[NSMutableArray alloc] init];
+    }
+    
+    [self setupMySchedule];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+
+#pragma ###################################################################################################################
+#pragma mark - Internal Methods
+
+- (void)setupMySchedule {
+    for (Event *event in self.events) {
+        if ([self.userPreferences boolForKey:event.date]) {
+            [self.mySchedule addObject:event];
+        }
+    }
 }
 
 
@@ -42,7 +64,7 @@
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1;
+    return [self.mySchedule count];
 }
 
 
@@ -58,6 +80,14 @@
     cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+
+        Event *event = [self.events objectAtIndex:[indexPath row]];
+        
+        UILabel *eventDate = (UILabel *)[cell viewWithTag:121];    
+        eventDate.text = [event name];
 }
 
 
@@ -92,7 +122,15 @@
 }
 
 - (IBAction)shareMySchedule:(id)sender {
-    [FacebookHelper post];
+    NSString *myEventDates = [[NSString alloc] init];
+    
+    for (Event *event in self.mySchedule) {
+        myEventDates = [NSString stringWithFormat:@"%@ %@\n", myEventDates, event.name];
+    }
+    
+    NSString *shareText = [SHARE_MY_SCHEDULE_ON_FACEBOOK stringByReplacingOccurrencesOfString:@"%@1" withString:myEventDates];
+    
+    [FacebookHelper shareFromViewController:self withText:shareText];
 }
 
 @end
