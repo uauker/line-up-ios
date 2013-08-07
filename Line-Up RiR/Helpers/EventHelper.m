@@ -15,6 +15,7 @@
 }
 
 + (NSArray *)bindToEventsFromFBUsers:(NSArray *)fbUsers {
+    
     NSMutableArray *eventsFromMySchedule = [[NSMutableArray alloc] init];
     
     NSArray *allEvents = [self getAllEvents];
@@ -22,6 +23,26 @@
     for (Event *event in allEvents) {
         for (FBUser *user in fbUsers) {
             if ([event.startAt isEqualToString:[user eventDate]]) {
+                [eventsFromMySchedule addObject:event];
+            }
+        }
+    }
+    
+    return eventsFromMySchedule;
+}
+
++ (NSMutableArray *)getEventsFromMySchedule {
+    
+    NSUserDefaults *userPreferences = [NSUserDefaults standardUserDefaults];
+    NSArray *eventDates = [[NSArray alloc] initWithArray:[userPreferences objectForKey:@"mySchedule"]];
+    
+    NSMutableArray *eventsFromMySchedule = [[NSMutableArray alloc] init];
+    
+    NSArray *allEvents = [self getAllEvents];
+    
+    for (Event *event in allEvents) {
+        for (NSString *eventDate in eventDates) {
+            if ([event.startAt isEqualToString:eventDate]) {
                 [eventsFromMySchedule addObject:event];
             }
         }
