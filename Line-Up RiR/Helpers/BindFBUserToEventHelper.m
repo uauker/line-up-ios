@@ -10,4 +10,8 @@
 
 @implementation BindFBUserToEventHelper
 
++ (NSArray *)bindToEventsFromFBUsers:(NSArray *)fbUsers {
+    NSMutableArray *eventsFromMySchedule = [[NSMutableArray alloc] init];
+}
+
 @end

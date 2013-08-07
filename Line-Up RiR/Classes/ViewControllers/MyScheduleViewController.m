@@ -45,11 +45,7 @@
 #pragma mark - Internal Methods
 
 - (void)setupMySchedule {
-    for (Event *event in self.events) {
-        if ([self.userPreferences boolForKey:event.date]) {
-            [self.mySchedule addObject:event];
-        }
-    }
+    self.mySchedule = [self.userPreferences objectForKey:@"mySchedule"];
 }
 
 

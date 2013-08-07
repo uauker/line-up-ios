@@ -10,4 +10,6 @@
 
 @interface BindFBUserToEventHelper : NSObject
 
++ (NSArray *)bindToEventsFromFBUsers:(NSArray *)fbUsers;
+
 @end
