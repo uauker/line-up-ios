@@ -162,14 +162,14 @@
 }
 
 
-+ (void)subscribeToAppServerWithEventDate:(NSString *)eventDate block:(FacebookHelperCallback)callback {
++ (void)subscribeToAppServerWithEventDate:(NSString *)eventDate block:(FacebookStatusHelperCallback)callback {
     if (FBSession.activeSession.isOpen) {
-        NSMutableArray *users = [[NSMutableArray alloc] init];
+        __block BOOL status = NO;
         NSDictionary *params = [NSDictionary dictionaryWithObject:FB_ME_PARAMETERS_FIELDS forKey:@"fields"];
         
         [FBRequestConnection startWithGraphPath:@"me" parameters:params HTTPMethod:@"GET" completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
             if (error) {
-                callback(users, nil);
+                callback(status, nil);
                 return ;
             }
             
@@ -184,9 +184,12 @@
             AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc]initWithRequest:request];
             
             [operation  setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-                callback(users, error);
+                NSDictionary *json = [operation.responseString objectFromJSONString];
+                status = [[json objectForKey:@"status"] isEqualToString:@"success"];
+                
+                callback(status, error);
             } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                callback(users, error);
+                callback(status, error);
             }];
             
             [operation start];
