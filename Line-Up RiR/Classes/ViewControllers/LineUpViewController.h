@@ -16,6 +16,7 @@
 #import "KxMenu.h"
 #import "ActionSheetStringPicker.h"
 #import "FacebookHelper.h"
+#import "EventHelper.h"
 
 @interface LineUpViewController : PKRevealController <UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate>
 
@@ -23,6 +24,7 @@
 @property (nonatomic, strong) Palco *palco;
 @property (nonatomic, copy) NSArray *palcos;
 @property (nonatomic, copy) NSArray *musicians;
+@property (nonatomic, copy) NSArray *mySchedule;
 @property (nonatomic, copy) NSArray *allEvents;
 @property (nonatomic, assign) BOOL hasToOpenMenu;
 @property (nonatomic, assign) BOOL eventIsInMySchedule;

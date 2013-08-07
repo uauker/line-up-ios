@@ -34,12 +34,8 @@ NSDate *rirDate;
     self.userPreferences = [NSUserDefaults standardUserDefaults];
     
     [FacebookHelper openActiveSession];
-    
-//    NSArray *mySchedule = [FacebookHelper getMyScheduleFromHeroku];
-    
-    [FacebookHelper myScheduleFromHeroku:^(NSArray *responseData, NSError *error) {
-        NSLog(@">> %i", [responseData count]);
-    }];
+        
+    self.mySchedule = [self.userPreferences objectForKey:@"mySchedule"];
     
     self.hasToOpenMenu = YES;
     
@@ -50,8 +46,6 @@ NSDate *rirDate;
     if (self.event == nil) {
         self.event = [self.allEvents objectAtIndex:0];
     }
-    
-    [self setRiRButtonBackground];
     
     self.title = [self.event date];
     
@@ -265,6 +259,11 @@ NSDate *rirDate;
 }
 
 - (void)checkIfEventIsInMySchedule {
+    
+    if ([self.mySchedule containsObject:self.event]) {
+        NSLog(@"tem o evento >>> %@", [self.event name]);
+    }
+    
     self.eventIsInMySchedule = [self.userPreferences boolForKey:self.event.date];
     
     if (!self.eventIsInMySchedule) {
