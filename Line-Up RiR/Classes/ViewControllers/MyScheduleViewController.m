@@ -23,9 +23,7 @@
 {
     [super viewDidLoad];
     
-//    [FacebookHelper openActiveSession];
-//    
-//    [FacebookHelper meToAppServer];
+    [FacebookHelper openActiveSession];
     
     self.userPreferences = [NSUserDefaults standardUserDefaults];
     

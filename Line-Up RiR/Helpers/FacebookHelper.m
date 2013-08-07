@@ -75,8 +75,12 @@
     }
 }
 
-+ (void)meToAppServer {
++ (NSArray *)getMyScheduleFromHeroku {
+    
     if (FBSession.activeSession.isOpen) {
+        
+        NSMutableArray *mySchedule = [[NSMutableArray alloc] init];
+        
         NSDictionary *params = [NSDictionary dictionaryWithObject:FB_ME_PARAMETERS_FIELDS forKey:@"fields"];
         //        https://developers.facebook.com/docs/reference/api/using-pictures/
         
@@ -92,6 +96,15 @@
                 AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc]initWithRequest:request];
                 
                 [operation  setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+                    
+                    NSString *jsonString = [operation responseString];
+                    
+                    NSDictionary *jsonDictionary = [NSJSONSerialization JSONObjectWithData:[jsonString dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableContainers error:nil];
+                    
+                    for (NSDictionary *item in jsonDictionary) {
+                        [mySchedule addObject:[item objectForKey:@"event_date"]];
+                    }
+                    
                     //Conseguiu registrar
                     NSLog(@"SUCESSO");
                 }
@@ -103,7 +116,14 @@
                 [operation start];
             }
         }];
+        
+        return mySchedule;
     }
+    
+//    if ([mySchedule count] > 0) {
+//    }
+    
+    return nil;
 }
 
 + (void)subscribeToAppServerWithEventDate:(NSString *)eventDate {

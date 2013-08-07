@@ -32,6 +32,10 @@ NSDate *rirDate;
     [super viewDidLoad];
     
     self.userPreferences = [NSUserDefaults standardUserDefaults];
+    
+    [FacebookHelper openActiveSession];
+    
+    NSArray *mySchedule = [FacebookHelper getMyScheduleFromHeroku];
         
     self.hasToOpenMenu = YES;
     

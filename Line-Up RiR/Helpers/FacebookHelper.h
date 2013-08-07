@@ -25,7 +25,7 @@
 + (void)post;
 + (void)shareFromViewController:(UIViewController *)viewController withText:(NSString *)shareText;
 
-+ (void)meToAppServer;
++ (NSArray *)getMyScheduleFromHeroku;
 + (void)subscribeToAppServerWithEventDate:(NSString *)eventDate;
 + (void)unsubscribeToAppServerWithEventDate:(NSString *)eventDate;
 + (NSArray *)friendsToAppServerWithEventDate:(NSString *)eventDate;
