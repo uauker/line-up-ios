@@ -16,7 +16,7 @@
     
     [self customizeNavBar];
     
-    [self setupMySchedule];
+//    [self setupMySchedule];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
@@ -82,7 +82,7 @@
         [FacebookHelper myScheduleFromHeroku:^(NSArray *responseData, NSError *error) {
             NSArray *mySchedule = [EventHelper bindToEventsFromFBUsers:responseData];
             NSUserDefaults *userPreferences = [NSUserDefaults standardUserDefaults];
-            [userPreferences setObject:mySchedule forKey:@"mySchedule"];
+            [userPreferences setObject:mySchedule forKey:@"myEvents"];
         }];
 
     });
