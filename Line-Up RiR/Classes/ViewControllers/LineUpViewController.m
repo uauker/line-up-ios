@@ -34,19 +34,21 @@ NSDate *rirDate;
     self.userPreferences = [NSUserDefaults standardUserDefaults];
     
     [FacebookHelper openActiveSession];
-        
-    self.mySchedule = [self.userPreferences objectForKey:@"mySchedule"];
+    
+    if (self.event == nil) {
+        self.event = [[EventHelper getAllEvents] objectAtIndex:0];
+    }
+    
+    [self setupMySchedule];
+    
+//    [self.mySchedule addObject:[self.event startAt]];
+    
+    [self checkIfEventIsInMySchedule];
     
     self.hasToOpenMenu = YES;
     
     self.buttonToSelectPalco.titleLabel.text = @"PALCO MUNDO";
-    
-    self.allEvents = [RockInRio allEvents];
-    
-    if (self.event == nil) {
-        self.event = [self.allEvents objectAtIndex:0];
-    }
-    
+        
     self.title = [self.event date];
     
     self.palcos = [self.event palcos];
@@ -142,18 +144,20 @@ NSDate *rirDate;
 - (IBAction)addToMySchedule:(id)sender {
     [self checkIfEventIsInMySchedule];
     
-    if (self.eventIsInMySchedule) {
-        [self.userPreferences setBool:NO forKey:[self.event date]];
+    NSString *eventDate = self.event.startAt;
+    
+    if (self.isEventInMySchedule) {
         [self.buttonRirEuVou setBackgroundImage:[UIImage imageNamed:@"rir_eu_vou_clicked.png"]
                                        forState:UIControlStateNormal];
         
-        [FacebookHelper unsubscribeToAppServerWithEventDate:self.event.startAt];
+        [self removeEventFromMySchedule:eventDate];
+        [FacebookHelper unsubscribeToAppServerWithEventDate:eventDate];
     } else {
-        [self.userPreferences setBool:YES forKey:[self.event date]];
         [self.buttonRirEuVou setBackgroundImage:[UIImage imageNamed:@"rir_eu_vou.png"]
                                        forState:UIControlStateNormal];
         
-        [FacebookHelper subscribeToAppServerWithEventDate:self.event.startAt];
+        [self addEventToMySchedule:eventDate];
+        [FacebookHelper subscribeToAppServerWithEventDate:eventDate];
         
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:ALERT_TITLE_SHARE_EVENT_ON_FACEBOOK
                                                         message:nil
@@ -242,6 +246,33 @@ NSDate *rirDate;
 #pragma mark - Internal Methods
 
 
+- (void)setupMySchedule {
+    
+    self.mySchedule = [[NSMutableArray alloc] init];
+    [self.mySchedule addObjectsFromArray:[self.userPreferences objectForKey:@"mySchedule"]];
+    
+    if (self.mySchedule == nil) {
+        self.mySchedule = [[NSMutableArray alloc] init];
+    }
+    
+    [self checkIfEventIsInMySchedule];
+    [self setRiRButtonBackground];
+}
+
+- (void)removeEventFromMySchedule:(NSString *)eventDate {
+    [self.mySchedule removeObject:eventDate];
+    [self updateMySchedule];
+}
+
+- (void)addEventToMySchedule:(NSString *)eventDate {
+    [self.mySchedule addObject:eventDate];
+    [self updateMySchedule];
+}
+
+- (void)updateMySchedule {
+    [self.userPreferences setObject:self.mySchedule forKey:@"mySchedule"];
+}
+
 - (void)shareEventOnFacebook {
     
     NSString *shareText = [SHARE_EVENT_ON_FACEBOOK stringByReplacingOccurrencesOfString:@"%@1" withString:[self.event date]];
@@ -253,21 +284,17 @@ NSDate *rirDate;
 - (void)setRiRButtonBackground {
     [self checkIfEventIsInMySchedule];
     
-    NSString *imgName = (self.eventIsInMySchedule) ? @"rir_eu_vou.png" : @"rir_eu_vou_clicked.png";
+    NSString *imgName = (self.isEventInMySchedule) ? @"rir_eu_vou.png" : @"rir_eu_vou_clicked.png";
     
     [self.buttonRirEuVou setBackgroundImage:[UIImage imageNamed:imgName] forState:UIControlStateNormal];
 }
 
 - (void)checkIfEventIsInMySchedule {
     
-    if ([self.mySchedule containsObject:self.event]) {
-        NSLog(@"tem o evento >>> %@", [self.event name]);
-    }
+    self.isEventInMySchedule = [self.mySchedule containsObject:[self.event startAt]];
     
-    self.eventIsInMySchedule = [self.userPreferences boolForKey:self.event.date];
-    
-    if (!self.eventIsInMySchedule) {
-        self.eventIsInMySchedule = NO;
+    if (!self.isEventInMySchedule) {
+        self.isEventInMySchedule = NO;
     }
 }
 

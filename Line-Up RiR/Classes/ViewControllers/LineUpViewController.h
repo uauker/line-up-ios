@@ -24,10 +24,9 @@
 @property (nonatomic, strong) Palco *palco;
 @property (nonatomic, copy) NSArray *palcos;
 @property (nonatomic, copy) NSArray *musicians;
-@property (nonatomic, copy) NSArray *mySchedule;
-@property (nonatomic, copy) NSArray *allEvents;
+@property (nonatomic, strong) NSMutableArray *mySchedule;
 @property (nonatomic, assign) BOOL hasToOpenMenu;
-@property (nonatomic, assign) BOOL eventIsInMySchedule;
+@property (nonatomic, assign) BOOL isEventInMySchedule;
 
 @property (weak, nonatomic) IBOutlet UIView *viewRIRTimer;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
