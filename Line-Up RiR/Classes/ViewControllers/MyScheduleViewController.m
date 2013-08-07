@@ -25,12 +25,6 @@
     
     [FacebookHelper openActiveSession];
     
-    self.userPreferences = [NSUserDefaults standardUserDefaults];
-    
-    if (!self.mySchedule) {
-        self.mySchedule = [[NSMutableArray alloc] init];
-    }
-    
     [self setupMySchedule];
 }
 
@@ -45,7 +39,7 @@
 #pragma mark - Internal Methods
 
 - (void)setupMySchedule {
-    self.mySchedule = [self.userPreferences objectForKey:@"mySchedule"];
+    self.mySchedule = [EventHelper getEventsFromMySchedule];
 }
 
 
@@ -78,7 +72,7 @@
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
 
-        Event *event = [self.events objectAtIndex:[indexPath row]];
+        Event *event = [self.mySchedule objectAtIndex:[indexPath row]];
         
         UILabel *eventDate = (UILabel *)[cell viewWithTag:121];    
         eventDate.text = [event name];
