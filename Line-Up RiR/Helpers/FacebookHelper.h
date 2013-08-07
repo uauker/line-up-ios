@@ -29,6 +29,8 @@ typedef void(^FacebookHelperCallback)(NSArray *responseData, NSError *error);
 + (void)shareFromViewController:(UIViewController *)viewController withText:(NSString *)shareText;
 
 + (void)myScheduleFromHeroku:(FacebookHelperCallback)callback;
++ (void)subscribeToAppServerWithEventDate:(NSString *)eventDate block:(FacebookHelperCallback)callback;
+
 + (NSArray *)getMyScheduleFromHeroku;
 + (void)subscribeToAppServerWithEventDate:(NSString *)eventDate;
 + (void)unsubscribeToAppServerWithEventDate:(NSString *)eventDate;

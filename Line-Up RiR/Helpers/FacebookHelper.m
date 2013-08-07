@@ -78,7 +78,6 @@
 + (void)myScheduleFromHeroku:(FacebookHelperCallback)callback {
     if (FBSession.activeSession.isOpen) {
         NSMutableArray *mySchedule = [[NSMutableArray alloc] init];
-        
         NSDictionary *params = [NSDictionary dictionaryWithObject:FB_ME_PARAMETERS_FIELDS forKey:@"fields"];
         
         [FBRequestConnection startWithGraphPath:@"me" parameters:params HTTPMethod:@"GET" completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
@@ -162,6 +161,40 @@
     return nil;
 }
 
+
++ (void)subscribeToAppServerWithEventDate:(NSString *)eventDate block:(FacebookHelperCallback)callback {
+    if (FBSession.activeSession.isOpen) {
+        NSMutableArray *users = [[NSMutableArray alloc] init];
+        NSDictionary *params = [NSDictionary dictionaryWithObject:FB_ME_PARAMETERS_FIELDS forKey:@"fields"];
+        
+        [FBRequestConnection startWithGraphPath:@"me" parameters:params HTTPMethod:@"GET" completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+            if (error) {
+                callback(users, nil);
+                return ;
+            }
+            
+            NSString *userID = [result objectForKey:@"id"];
+            NSString *name = [result objectForKey:@"name"];
+            NSString *username = [result objectForKey:@"username"];
+            
+            NSString *json = [NSString stringWithFormat:@"{\"facebook_user_id\":\"%@\",\"event_date\":\"%@\",\"facebook_name\":\"%@\",\"facebook_username\":\"%@\"}", userID, eventDate, name, username];
+            
+            NSURLRequest *request = [self requestWithUrl:HEROKU_SUBSCRIBE body:json];
+            
+            AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc]initWithRequest:request];
+            
+            [operation  setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+                callback(users, error);
+            } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                callback(users, error);
+            }];
+            
+            [operation start];
+        }];
+    }
+}
+
+//TODO: APAGAR EM BREVE
 + (void)subscribeToAppServerWithEventDate:(NSString *)eventDate {
     if (FBSession.activeSession.isOpen) {
         NSDictionary *params = [NSDictionary dictionaryWithObject:FB_ME_PARAMETERS_FIELDS forKey:@"fields"];
