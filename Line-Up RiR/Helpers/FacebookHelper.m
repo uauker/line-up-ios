@@ -80,7 +80,6 @@
         NSMutableArray *mySchedule = [[NSMutableArray alloc] init];
         
         NSDictionary *params = [NSDictionary dictionaryWithObject:FB_ME_PARAMETERS_FIELDS forKey:@"fields"];
-        //        https://developers.facebook.com/docs/reference/api/using-pictures/
         
         [FBRequestConnection startWithGraphPath:@"me" parameters:params HTTPMethod:@"GET" completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
             if (error) {
