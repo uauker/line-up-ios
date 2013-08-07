@@ -15,4 +15,6 @@
 @property (nonatomic, copy) NSString *eventDate;
 @property (nonatomic, copy) NSString *username;
 
+- (id)initWithDictionary:(NSDictionary *)dictionary;
+
 @end
