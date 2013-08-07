@@ -85,29 +85,28 @@
         [FBRequestConnection startWithGraphPath:@"me" parameters:params HTTPMethod:@"GET" completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
             if (error) {
                 callback(mySchedule, error);
+                return ;
             }
-            else {
-                NSString *urlString = [NSString stringWithFormat:HEROKU_ME, [result objectForKey:@"id"]];
+            
+            NSString *urlString = [NSString stringWithFormat:HEROKU_ME, [result objectForKey:@"id"]];
+            
+            NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:urlString]];
+            
+            AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc]initWithRequest:request];
+            
+            [operation  setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+                NSArray *json = [operation.responseString objectFromJSONString];
                 
-                NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:urlString]];
-                
-                AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc]initWithRequest:request];
-                
-                [operation  setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-                    NSArray *json = [operation.responseString objectFromJSONString];
-                    
-                    for (NSDictionary *item in json) {
-                        [mySchedule addObject:[[FBUser alloc] initWithDictionary:item]];
-                    }
-                    
-                    callback(mySchedule, nil);
+                for (NSDictionary *item in json) {
+                    [mySchedule addObject:[[FBUser alloc] initWithDictionary:item]];
                 }
-                failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                    callback(mySchedule, error);
-                }];
                 
-                [operation start];
-            }
+                callback(mySchedule, nil);
+            } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                callback(mySchedule, error);
+            }];
+            
+            [operation start];
         }];
     }
 }
