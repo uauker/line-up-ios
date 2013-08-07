@@ -10,6 +10,8 @@
 #import "PKRevealController.h"
 #import "MenuViewController.h"
 #import "LineUpViewController.h"
+#import "EventHelper.h"
+#import "FacebookHelper.h"
 
 @class PKRevealController;
 

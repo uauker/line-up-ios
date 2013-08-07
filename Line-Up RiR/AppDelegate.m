@@ -12,7 +12,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [FacebookHelper openActiveSession];
+    
     [self customizeNavBar];
+    
+    [self setupMySchedule];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
@@ -71,6 +75,17 @@
                          UITextAttributeTextShadowOffset: [NSValue valueWithUIOffset:UIOffsetMake(0.0f, 1.0f)],
                                      UITextAttributeFont: [UIFont fontWithName:@"Avenir-Black" size:20.0f]
      }];
+}
+
+- (void)setupMySchedule {
+    dispatch_async(dispatch_get_main_queue(), ^(void){
+        [FacebookHelper myScheduleFromHeroku:^(NSArray *responseData, NSError *error) {
+            NSArray *mySchedule = [EventHelper bindToEventsFromFBUsers:responseData];
+            NSUserDefaults *userPreferences = [NSUserDefaults standardUserDefaults];
+            [userPreferences setObject:mySchedule forKey:@"mySchedule"];
+        }];
+
+    });
 }
 
 @end
