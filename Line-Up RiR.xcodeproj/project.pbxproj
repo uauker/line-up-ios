@@ -110,7 +110,7 @@
 		ACF196EA17A19657003BE8CB /* NSDate+HumanInterval.m in Sources */ = {isa = PBXBuildFile; fileRef = ACF196E217A19657003BE8CB /* NSDate+HumanInterval.m */; };
 		ACF196ED17A198CF003BE8CB /* Palco.m in Sources */ = {isa = PBXBuildFile; fileRef = ACF196EC17A198CF003BE8CB /* Palco.m */; };
 		ACF196F017A198E5003BE8CB /* Musician.m in Sources */ = {isa = PBXBuildFile; fileRef = ACF196EF17A198E5003BE8CB /* Musician.m */; };
-		CE0BE3D417B1DB850015E892 /* BindFBUserToEventHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0BE3D317B1DB850015E892 /* BindFBUserToEventHelper.m */; };
+		CE0BE3D417B1DB850015E892 /* EventHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0BE3D317B1DB850015E892 /* EventHelper.m */; };
 		CE111A2A17AEABF7003AC88F /* rir_eu_vou_clicked.png in Resources */ = {isa = PBXBuildFile; fileRef = CE111A2817AEABF7003AC88F /* rir_eu_vou_clicked.png */; };
 		CE111A2B17AEABF7003AC88F /* rir_eu_vou_clicked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE111A2917AEABF7003AC88F /* rir_eu_vou_clicked@2x.png */; };
 		CE406DF617A2E86A00CF1FF8 /* AbstractActionSheetPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = CE406DEA17A2E86A00CF1FF8 /* AbstractActionSheetPicker.m */; };
@@ -279,8 +279,8 @@
 		ACF196EC17A198CF003BE8CB /* Palco.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Palco.m; sourceTree = "<group>"; };
 		ACF196EE17A198E5003BE8CB /* Musician.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Musician.h; sourceTree = "<group>"; };
 		ACF196EF17A198E5003BE8CB /* Musician.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Musician.m; sourceTree = "<group>"; };
-		CE0BE3D217B1DB850015E892 /* BindFBUserToEventHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BindFBUserToEventHelper.h; sourceTree = "<group>"; };
-		CE0BE3D317B1DB850015E892 /* BindFBUserToEventHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BindFBUserToEventHelper.m; sourceTree = "<group>"; };
+		CE0BE3D217B1DB850015E892 /* EventHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventHelper.h; sourceTree = "<group>"; };
+		CE0BE3D317B1DB850015E892 /* EventHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventHelper.m; sourceTree = "<group>"; };
 		CE111A2817AEABF7003AC88F /* rir_eu_vou_clicked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rir_eu_vou_clicked.png; sourceTree = "<group>"; };
 		CE111A2917AEABF7003AC88F /* rir_eu_vou_clicked@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rir_eu_vou_clicked@2x.png"; sourceTree = "<group>"; };
 		CE406DE917A2E86A00CF1FF8 /* AbstractActionSheetPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbstractActionSheetPicker.h; sourceTree = "<group>"; };
@@ -339,8 +339,8 @@
 			children = (
 				230262E417A8748A00C1950D /* FacebookHelper.h */,
 				230262E517A8748A00C1950D /* FacebookHelper.m */,
-				CE0BE3D217B1DB850015E892 /* BindFBUserToEventHelper.h */,
-				CE0BE3D317B1DB850015E892 /* BindFBUserToEventHelper.m */,
+				CE0BE3D217B1DB850015E892 /* EventHelper.h */,
+				CE0BE3D317B1DB850015E892 /* EventHelper.m */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -904,7 +904,7 @@
 				23BF38AA17A742C000844118 /* UIImageView+AFNetworking.m in Sources */,
 				230262E617A8748A00C1950D /* FacebookHelper.m in Sources */,
 				230262EC17A892DB00C1950D /* FBUser.m in Sources */,
-				CE0BE3D417B1DB850015E892 /* BindFBUserToEventHelper.m in Sources */,
+				CE0BE3D417B1DB850015E892 /* EventHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

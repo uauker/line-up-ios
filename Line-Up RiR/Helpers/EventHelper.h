@@ -7,9 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "RockInRio.h"
+#import "Event.h"
+#import "FBUser.h"
 
-@interface BindFBUserToEventHelper : NSObject
+@interface EventHelper : NSObject
 
++ (NSArray *)getAllEvents;
 + (NSArray *)bindToEventsFromFBUsers:(NSArray *)fbUsers;
 
 @end
