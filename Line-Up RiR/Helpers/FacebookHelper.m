@@ -78,36 +78,33 @@
 + (void)myScheduleFromHeroku:(FacebookHelperCallback)callback {
     if (FBSession.activeSession.isOpen) {
         NSMutableArray *mySchedule = [[NSMutableArray alloc] init];
-        
         NSDictionary *params = [NSDictionary dictionaryWithObject:FB_ME_PARAMETERS_FIELDS forKey:@"fields"];
-        //        https://developers.facebook.com/docs/reference/api/using-pictures/
         
         [FBRequestConnection startWithGraphPath:@"me" parameters:params HTTPMethod:@"GET" completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
             if (error) {
                 callback(mySchedule, error);
+                return ;
             }
-            else {
-                NSString *urlString = [NSString stringWithFormat:HEROKU_ME, [result objectForKey:@"id"]];
+            
+            NSString *urlString = [NSString stringWithFormat:HEROKU_ME, [result objectForKey:@"id"]];
+            
+            NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:urlString]];
+            
+            AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc]initWithRequest:request];
+            
+            [operation  setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+                NSArray *json = [operation.responseString objectFromJSONString];
                 
-                NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:urlString]];
-                
-                AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc]initWithRequest:request];
-                
-                [operation  setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-                    NSArray *json = [operation.responseString objectFromJSONString];
-                    
-                    for (NSDictionary *item in json) {
-                        [mySchedule addObject:[[FBUser alloc] initWithDictionary:item]];
-                    }
-                    
-                    callback(mySchedule, nil);
+                for (NSDictionary *item in json) {
+                    [mySchedule addObject:[[FBUser alloc] initWithDictionary:item]];
                 }
-                failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                    callback(mySchedule, error);
-                }];
                 
-                [operation start];
-            }
+                callback(mySchedule, nil);
+            } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                callback(mySchedule, error);
+            }];
+            
+            [operation start];
         }];
     }
 }
@@ -164,6 +161,43 @@
     return nil;
 }
 
+
++ (void)subscribeToAppServerWithEventDate:(NSString *)eventDate block:(FacebookStatusHelperCallback)callback {
+    if (FBSession.activeSession.isOpen) {
+        __block BOOL status = NO;
+        NSDictionary *params = [NSDictionary dictionaryWithObject:FB_ME_PARAMETERS_FIELDS forKey:@"fields"];
+        
+        [FBRequestConnection startWithGraphPath:@"me" parameters:params HTTPMethod:@"GET" completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+            if (error) {
+                callback(status, nil);
+                return ;
+            }
+            
+            NSString *userID = [result objectForKey:@"id"];
+            NSString *name = [result objectForKey:@"name"];
+            NSString *username = [result objectForKey:@"username"];
+            
+            NSString *json = [NSString stringWithFormat:@"{\"facebook_user_id\":\"%@\",\"event_date\":\"%@\",\"facebook_name\":\"%@\",\"facebook_username\":\"%@\"}", userID, eventDate, name, username];
+            
+            NSURLRequest *request = [self requestWithUrl:HEROKU_SUBSCRIBE body:json];
+            
+            AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc]initWithRequest:request];
+            
+            [operation  setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+                NSDictionary *json = [operation.responseString objectFromJSONString];
+                status = [[json objectForKey:@"status"] isEqualToString:@"success"];
+                
+                callback(status, error);
+            } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                callback(status, error);
+            }];
+            
+            [operation start];
+        }];
+    }
+}
+
+//TODO: APAGAR EM BREVE
 + (void)subscribeToAppServerWithEventDate:(NSString *)eventDate {
     if (FBSession.activeSession.isOpen) {
         NSDictionary *params = [NSDictionary dictionaryWithObject:FB_ME_PARAMETERS_FIELDS forKey:@"fields"];

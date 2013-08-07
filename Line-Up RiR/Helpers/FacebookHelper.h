@@ -21,6 +21,7 @@
 #define HEROKU_FRIENDS @"http://line-up-rails.herokuapp.com/api/facebook/v1/events/friends"
 
 typedef void(^FacebookHelperCallback)(NSArray *responseData, NSError *error);
+typedef void(^FacebookStatusHelperCallback)(BOOL status, NSError *error);
 
 @interface FacebookHelper : NSObject
 
@@ -29,6 +30,8 @@ typedef void(^FacebookHelperCallback)(NSArray *responseData, NSError *error);
 + (void)shareFromViewController:(UIViewController *)viewController withText:(NSString *)shareText;
 
 + (void)myScheduleFromHeroku:(FacebookHelperCallback)callback;
++ (void)subscribeToAppServerWithEventDate:(NSString *)eventDate block:(FacebookStatusHelperCallback)callback;
+
 + (NSArray *)getMyScheduleFromHeroku;
 + (void)subscribeToAppServerWithEventDate:(NSString *)eventDate;
 + (void)unsubscribeToAppServerWithEventDate:(NSString *)eventDate;

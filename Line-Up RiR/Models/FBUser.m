@@ -23,4 +23,9 @@
     return self;
 }
 
+//https://developers.facebook.com/docs/reference/api/using-pictures/
+- (NSString *)profileImage {
+    return [NSString stringWithFormat:@"https://graph.facebook.com/%@/picture?width=200&height=200", self.username];
+}
+
 @end
