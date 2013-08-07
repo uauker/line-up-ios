@@ -75,6 +75,44 @@
     }
 }
 
++ (void)myScheduleFromHeroku:(FacebookHelperCallback)callback {
+    if (FBSession.activeSession.isOpen) {
+        NSMutableArray *mySchedule = [[NSMutableArray alloc] init];
+        
+        NSDictionary *params = [NSDictionary dictionaryWithObject:FB_ME_PARAMETERS_FIELDS forKey:@"fields"];
+        //        https://developers.facebook.com/docs/reference/api/using-pictures/
+        
+        [FBRequestConnection startWithGraphPath:@"me" parameters:params HTTPMethod:@"GET" completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+            if (error) {
+                callback(mySchedule, error);
+            }
+            else {
+                NSString *urlString = [NSString stringWithFormat:HEROKU_ME, [result objectForKey:@"id"]];
+                
+                NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:urlString]];
+                
+                AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc]initWithRequest:request];
+                
+                [operation  setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+                    NSArray *json = [operation.responseString objectFromJSONString];
+                    
+                    for (NSDictionary *item in json) {
+                        [mySchedule addObject:[[FBUser alloc] initWithDictionary:item]];
+                    }
+                    
+                    callback(mySchedule, nil);
+                }
+                failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                    callback(mySchedule, error);
+                }];
+                
+                [operation start];
+            }
+        }];
+    }
+}
+
+//TODO: APAGAR EM BREVE
 + (NSArray *)getMyScheduleFromHeroku {
     
     if (FBSession.activeSession.isOpen) {

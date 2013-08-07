@@ -10,6 +10,7 @@
 #import <FacebookSDK/FacebookSDK.h>
 #import "AFHTTPRequestOperation.h"
 #import "FBUser.h"
+#import "JSONKit.h"
 
 #define FB_PERMISSIONS @[@"publish_stream"]
 #define FB_ME_PARAMETERS_FIELDS @"id,name,username"
@@ -19,12 +20,15 @@
 #define HEROKU_UNSUBSCRIBE @"http://line-up-rails.herokuapp.com/api/facebook/v1/events/unsubscribe"
 #define HEROKU_FRIENDS @"http://line-up-rails.herokuapp.com/api/facebook/v1/events/friends"
 
+typedef void(^FacebookHelperCallback)(NSArray *responseData, NSError *error);
+
 @interface FacebookHelper : NSObject
 
 + (void)openActiveSession;
 + (void)post;
 + (void)shareFromViewController:(UIViewController *)viewController withText:(NSString *)shareText;
 
++ (void)myScheduleFromHeroku:(FacebookHelperCallback)callback;
 + (NSArray *)getMyScheduleFromHeroku;
 + (void)subscribeToAppServerWithEventDate:(NSString *)eventDate;
 + (void)unsubscribeToAppServerWithEventDate:(NSString *)eventDate;

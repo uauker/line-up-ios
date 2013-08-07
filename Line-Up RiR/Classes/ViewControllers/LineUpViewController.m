@@ -35,8 +35,12 @@ NSDate *rirDate;
     
     [FacebookHelper openActiveSession];
     
-    NSArray *mySchedule = [FacebookHelper getMyScheduleFromHeroku];
-        
+//    NSArray *mySchedule = [FacebookHelper getMyScheduleFromHeroku];
+    
+    [FacebookHelper myScheduleFromHeroku:^(NSArray *responseData, NSError *error) {
+        NSLog(@">> %i", [responseData count]);
+    }];
+    
     self.hasToOpenMenu = YES;
     
     self.buttonToSelectPalco.titleLabel.text = @"PALCO MUNDO";
