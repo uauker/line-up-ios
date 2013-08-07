@@ -17,4 +17,6 @@
 
 - (id)initWithDictionary:(NSDictionary *)dictionary;
 
+- (NSString *)profileImage;
+
 @end
