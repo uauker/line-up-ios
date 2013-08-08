@@ -235,6 +235,37 @@
     }
 }
 
++ (void)unsubscribeFromHerokuWithEventDate:(NSString *)eventDate block:(FacebookStatusHelperCallback)callback {
+    if (FBSession.activeSession.isOpen) {
+        __block BOOL status = NO;
+        NSDictionary *params = [NSDictionary dictionaryWithObject:FB_ME_PARAMETERS_FIELDS forKey:@"fields"];
+        
+        [FBRequestConnection startWithGraphPath:@"me" parameters:params HTTPMethod:@"GET" completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+            if (error) {
+                callback(status, nil);
+                return ;
+            }
+            
+            NSString *json = [NSString stringWithFormat:@"{\"facebook_user_id\":\"%@\",\"event_date\":\"%@\"}", [result objectForKey:@"id"], eventDate];
+            
+            NSURLRequest *request = [self requestWithUrl:HEROKU_UNSUBSCRIBE body:json];
+            
+            AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc]initWithRequest:request];
+            
+            [operation  setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+                NSDictionary *json = [operation.responseString objectFromJSONString];
+                status = [[json objectForKey:@"status"] isEqualToString:@"success"];
+                
+                callback(status, error);
+            } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                callback(status, error);
+            }];
+            
+            [operation start];
+        }];
+    }
+}
+
 + (void)unsubscribeToAppServerWithEventDate:(NSString *)eventDate {
     if (FBSession.activeSession.isOpen) {
         NSDictionary *params = [NSDictionary dictionaryWithObject:FB_ME_PARAMETERS_FIELDS forKey:@"fields"];

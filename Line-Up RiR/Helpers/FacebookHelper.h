@@ -31,6 +31,7 @@ typedef void(^FacebookStatusHelperCallback)(BOOL status, NSError *error);
 
 + (void)myScheduleFromHeroku:(FacebookHelperCallback)callback;
 + (void)subscribeFromHerokuWithEventDate:(NSString *)eventDate block:(FacebookStatusHelperCallback)callback;
++ (void)unsubscribeFromHerokuWithEventDate:(NSString *)eventDate block:(FacebookStatusHelperCallback)callback;
 + (void)friendsFromHerokuWithEventDate:(NSString *)eventDate block:(FacebookHelperCallback)callback;
 
 + (NSArray *)getMyScheduleFromHeroku;
