@@ -267,12 +267,14 @@
 
 + (void)friendsFromHerokuWithEventDate:(NSString *)eventDate block:(FacebookHelperCallback)callback {
     NSMutableArray *friends = [[NSMutableArray alloc] init];
+    NSMutableArray *friendsInHeroku = [[NSMutableArray alloc] init];
+    
     NSDictionary *params = [NSDictionary dictionaryWithObject:@"id" forKey:@"fields"];
     
     if (FBSession.activeSession.isOpen) {
         [FBRequestConnection startWithGraphPath:@"me/friends" parameters:params HTTPMethod:@"GET" completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
             if (error) {
-                callback(friends, error);
+                callback(friendsInHeroku, error);
                 return ;
             }
             
@@ -291,12 +293,12 @@
                 NSArray *json = [operation.responseString objectFromJSONString];
                 
                 for (NSDictionary *item in json) {
-                    [friends addObject:[[FBUser alloc] initWithDictionary:item]];
+                    [friendsInHeroku addObject:[[FBUser alloc] initWithDictionary:item]];
                 }
                 
-                callback(friends, nil);
+                callback(friendsInHeroku, nil);
             } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                callback(friends, error);
+                callback(friendsInHeroku, error);
             }];
             
             [operation start];
