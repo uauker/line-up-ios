@@ -266,6 +266,7 @@
     }
 }
 
+//TODO: APAGAR
 + (void)unsubscribeToAppServerWithEventDate:(NSString *)eventDate {
     if (FBSession.activeSession.isOpen) {
         NSDictionary *params = [NSDictionary dictionaryWithObject:FB_ME_PARAMETERS_FIELDS forKey:@"fields"];
