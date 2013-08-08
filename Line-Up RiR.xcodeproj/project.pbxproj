@@ -121,6 +121,7 @@
 		CE406DFB17A2E86A00CF1FF8 /* DistancePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE406DF517A2E86A00CF1FF8 /* DistancePickerView.m */; };
 		CE406DFE17A324A200CF1FF8 /* MyScheduleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE406DFD17A324A200CF1FF8 /* MyScheduleViewController.m */; };
 		CE406E0217A378D200CF1FF8 /* KxMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = CE406E0117A378D200CF1FF8 /* KxMenu.m */; };
+		CE621DFB17B45B6C00C684D7 /* FriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE621DFA17B45B6C00C684D7 /* FriendsViewController.m */; };
 		CE7B04E417A1D56C009C6754 /* menu_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CE7B04E217A1D56C009C6754 /* menu_icon.png */; };
 		CE7B04E517A1D56C009C6754 /* menu_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE7B04E317A1D56C009C6754 /* menu_icon@2x.png */; };
 		CE9D39BE17AB3A16001E8254 /* rir_eu_vou.png in Resources */ = {isa = PBXBuildFile; fileRef = CE9D39BC17AB3A16001E8254 /* rir_eu_vou.png */; };
@@ -300,6 +301,8 @@
 		CE406DFD17A324A200CF1FF8 /* MyScheduleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyScheduleViewController.m; sourceTree = "<group>"; };
 		CE406E0017A378D200CF1FF8 /* KxMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KxMenu.h; sourceTree = "<group>"; };
 		CE406E0117A378D200CF1FF8 /* KxMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KxMenu.m; sourceTree = "<group>"; };
+		CE621DF917B45B6C00C684D7 /* FriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsViewController.h; sourceTree = "<group>"; };
+		CE621DFA17B45B6C00C684D7 /* FriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsViewController.m; sourceTree = "<group>"; };
 		CE7B04E217A1D56C009C6754 /* menu_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu_icon.png; sourceTree = "<group>"; };
 		CE7B04E317A1D56C009C6754 /* menu_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu_icon@2x.png"; sourceTree = "<group>"; };
 		CE9D39BC17AB3A16001E8254 /* rir_eu_vou.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rir_eu_vou.png; sourceTree = "<group>"; };
@@ -606,6 +609,8 @@
 				23FA0E5E17A1A1D000CA30CF /* MenuViewController.m */,
 				CE406DFC17A324A200CF1FF8 /* MyScheduleViewController.h */,
 				CE406DFD17A324A200CF1FF8 /* MyScheduleViewController.m */,
+				CE621DF917B45B6C00C684D7 /* FriendsViewController.h */,
+				CE621DFA17B45B6C00C684D7 /* FriendsViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -905,6 +910,7 @@
 				230262E617A8748A00C1950D /* FacebookHelper.m in Sources */,
 				230262EC17A892DB00C1950D /* FBUser.m in Sources */,
 				CE0BE3D417B1DB850015E892 /* EventHelper.m in Sources */,
+				CE621DFB17B45B6C00C684D7 /* FriendsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
