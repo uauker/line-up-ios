@@ -26,12 +26,22 @@
     [FacebookHelper openActiveSession];
     
     [self setupMySchedule];
+    
+    [self.tableView setAllowsSelection:YES];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"segueSelectedEvent"]) {
+        FriendsViewController *friendsView = [segue destinationViewController];
+        [friendsView setEvent:sender];
+    }
 }
 
 
@@ -90,7 +100,8 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:[tableView indexPathForSelectedRow] animated:NO];
     
-    [self.revealController showViewController:self.revealController.frontViewController];
+    Event *event = [self.mySchedule objectAtIndex:[indexPath row]];
+    [self performSegueWithIdentifier:@"segueSelectedEvent" sender:event];
 }
 
 

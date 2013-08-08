@@ -11,6 +11,7 @@
 #import "Event.h"
 #import "FacebookHelper.h"
 #import "EventHelper.h"
+#import "FriendsViewController.h"
 
 @interface MyScheduleViewController : PKRevealController <UITableViewDataSource, UITableViewDelegate>
 
