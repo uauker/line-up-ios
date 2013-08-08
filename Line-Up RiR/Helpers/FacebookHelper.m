@@ -162,7 +162,7 @@
 }
 
 
-+ (void)subscribeToAppServerWithEventDate:(NSString *)eventDate block:(FacebookStatusHelperCallback)callback {
++ (void)subscribeFromHerokuWithEventDate:(NSString *)eventDate block:(FacebookStatusHelperCallback)callback {
     if (FBSession.activeSession.isOpen) {
         __block BOOL status = NO;
         NSDictionary *params = [NSDictionary dictionaryWithObject:FB_ME_PARAMETERS_FIELDS forKey:@"fields"];
@@ -265,6 +265,46 @@
     }
 }
 
++ (void)friendsFromHerokuWithEventDate:(NSString *)eventDate block:(FacebookHelperCallback)callback {
+    NSMutableArray *friends = [[NSMutableArray alloc] init];
+    NSDictionary *params = [NSDictionary dictionaryWithObject:@"id" forKey:@"fields"];
+    
+    if (FBSession.activeSession.isOpen) {
+        [FBRequestConnection startWithGraphPath:@"me/friends" parameters:params HTTPMethod:@"GET" completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+            if (error) {
+                callback(friends, error);
+                return ;
+            }
+            
+            for (NSDictionary *friend in [result objectForKey:@"data"]) {
+                [friends addObject:[friend objectForKey:@"id"]];
+            }
+            
+            NSArray *f = [NSArray arrayWithArray:friends];
+            NSString *json = [NSString stringWithFormat:@"{\"facebook_users_id\":\"%@\",\"event_date\":\"%@\"}", [f componentsJoinedByString:@","], eventDate];
+            
+            NSURLRequest *request = [self requestWithUrl:HEROKU_FRIENDS body:json];
+            
+            AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc]initWithRequest:request];
+            
+            [operation  setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+                NSArray *json = [operation.responseString objectFromJSONString];
+                
+                for (NSDictionary *item in json) {
+                    [friends addObject:[[FBUser alloc] initWithDictionary:item]];
+                }
+                
+                callback(friends, nil);
+            } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                callback(friends, error);
+            }];
+            
+            [operation start];
+        }];
+    }
+}
+
+//TODO: APAGAR
 + (NSArray *)friendsToAppServerWithEventDate:(NSString *)eventDate {
     NSMutableArray *friends = [[NSMutableArray alloc] init];
     NSDictionary *params = [NSDictionary dictionaryWithObject:@"id" forKey:@"fields"];

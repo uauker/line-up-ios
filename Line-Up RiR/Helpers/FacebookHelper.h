@@ -30,7 +30,8 @@ typedef void(^FacebookStatusHelperCallback)(BOOL status, NSError *error);
 + (void)shareFromViewController:(UIViewController *)viewController withText:(NSString *)shareText;
 
 + (void)myScheduleFromHeroku:(FacebookHelperCallback)callback;
-+ (void)subscribeToAppServerWithEventDate:(NSString *)eventDate block:(FacebookStatusHelperCallback)callback;
++ (void)subscribeFromHerokuWithEventDate:(NSString *)eventDate block:(FacebookStatusHelperCallback)callback;
++ (void)friendsFromHerokuWithEventDate:(NSString *)eventDate block:(FacebookHelperCallback)callback;
 
 + (NSArray *)getMyScheduleFromHeroku;
 + (void)subscribeToAppServerWithEventDate:(NSString *)eventDate;
