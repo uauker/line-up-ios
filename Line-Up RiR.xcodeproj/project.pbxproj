@@ -125,8 +125,6 @@
 		CE621DFE17B4687B00C684D7 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE621DFD17B4687B00C684D7 /* BaseViewController.m */; };
 		CE621E0117B4692900C684D7 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE621DFF17B4691700C684D7 /* CoreData.framework */; };
 		CE621E0417B4698100C684D7 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE621E0217B4697400C684D7 /* SystemConfiguration.framework */; };
-		CE621E0A17B48A7600C684D7 /* MMReachabilityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE621E0717B48A7600C684D7 /* MMReachabilityViewController.m */; };
-		CE621E0B17B48A7600C684D7 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = CE621E0917B48A7600C684D7 /* Reachability.m */; };
 		CE7B04E417A1D56C009C6754 /* menu_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CE7B04E217A1D56C009C6754 /* menu_icon.png */; };
 		CE7B04E517A1D56C009C6754 /* menu_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE7B04E317A1D56C009C6754 /* menu_icon@2x.png */; };
 		CE9D39BE17AB3A16001E8254 /* rir_eu_vou.png in Resources */ = {isa = PBXBuildFile; fileRef = CE9D39BC17AB3A16001E8254 /* rir_eu_vou.png */; };
@@ -312,10 +310,6 @@
 		CE621DFD17B4687B00C684D7 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		CE621DFF17B4691700C684D7 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		CE621E0217B4697400C684D7 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		CE621E0617B48A7600C684D7 /* MMReachabilityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMReachabilityViewController.h; sourceTree = "<group>"; };
-		CE621E0717B48A7600C684D7 /* MMReachabilityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMReachabilityViewController.m; sourceTree = "<group>"; };
-		CE621E0817B48A7600C684D7 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
-		CE621E0917B48A7600C684D7 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		CE7B04E217A1D56C009C6754 /* menu_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu_icon.png; sourceTree = "<group>"; };
 		CE7B04E317A1D56C009C6754 /* menu_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu_icon@2x.png"; sourceTree = "<group>"; };
 		CE9D39BC17AB3A16001E8254 /* rir_eu_vou.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rir_eu_vou.png; sourceTree = "<group>"; };
@@ -660,7 +654,6 @@
 		ACF196C617A19657003BE8CB /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
-				CE621E0517B48A7600C684D7 /* Reachability */,
 				CE621E0217B4697400C684D7 /* SystemConfiguration.framework */,
 				CE621DFF17B4691700C684D7 /* CoreData.framework */,
 				2330ADEB17ADA8A800EC7019 /* CFNetwork.framework */,
@@ -756,17 +749,6 @@
 				CE406E0117A378D200CF1FF8 /* KxMenu.m */,
 			);
 			path = KxMenu;
-			sourceTree = "<group>";
-		};
-		CE621E0517B48A7600C684D7 /* Reachability */ = {
-			isa = PBXGroup;
-			children = (
-				CE621E0617B48A7600C684D7 /* MMReachabilityViewController.h */,
-				CE621E0717B48A7600C684D7 /* MMReachabilityViewController.m */,
-				CE621E0817B48A7600C684D7 /* Reachability.h */,
-				CE621E0917B48A7600C684D7 /* Reachability.m */,
-			);
-			path = Reachability;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -943,8 +925,6 @@
 				CE0BE3D417B1DB850015E892 /* EventHelper.m in Sources */,
 				CE621DFB17B45B6C00C684D7 /* FriendsViewController.m in Sources */,
 				CE621DFE17B4687B00C684D7 /* BaseViewController.m in Sources */,
-				CE621E0A17B48A7600C684D7 /* MMReachabilityViewController.m in Sources */,
-				CE621E0B17B48A7600C684D7 /* Reachability.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
