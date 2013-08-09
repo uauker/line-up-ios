@@ -36,6 +36,7 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *verticalPositionTableView;
 @property (weak, nonatomic) IBOutlet UIButton *buttonToSelectPalco;
 @property (weak, nonatomic) IBOutlet UILabel *labelRockStreet;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinnerToLoadMySchedule;
 
 @property (weak, nonatomic) IBOutlet UIButton *buttonRirEuVou;
 

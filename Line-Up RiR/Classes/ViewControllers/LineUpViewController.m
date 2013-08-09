@@ -31,6 +31,8 @@ NSDate *rirDate;
 {
     [super viewDidLoad];
     
+    [self.spinnerToLoadMySchedule setHidden:YES];
+    
     self.userPreferences = [NSUserDefaults standardUserDefaults];
     
     if (self.event == nil) {
@@ -247,9 +249,14 @@ NSDate *rirDate;
     self.mySchedule = [[NSMutableArray alloc] init];
     [self.mySchedule addObjectsFromArray:[self.userPreferences objectForKey:@"mySchedule"]];
     
-    if (self.mySchedule == nil) {
+    if ([self.mySchedule count] == 0) {
+        [self.spinnerToLoadMySchedule setHidden:NO];
+        [self.spinnerToLoadMySchedule startAnimating];
+        
         [FacebookHelper openActiveSession];
         [FacebookHelper myScheduleFromHeroku:^(NSArray *responseData, NSError *error) {
+            [self.spinnerToLoadMySchedule stopAnimating];
+            [self.spinnerToLoadMySchedule setHidden:NO];
             self.mySchedule = [EventHelper bindToEventsFromFBUsers:responseData];
             [self.userPreferences setObject:self.mySchedule forKey:@"mySchedule"];
             [self setRiRButtonBackground];
