@@ -122,6 +122,9 @@
 		CE406DFE17A324A200CF1FF8 /* MyScheduleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE406DFD17A324A200CF1FF8 /* MyScheduleViewController.m */; };
 		CE406E0217A378D200CF1FF8 /* KxMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = CE406E0117A378D200CF1FF8 /* KxMenu.m */; };
 		CE621DFB17B45B6C00C684D7 /* FriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE621DFA17B45B6C00C684D7 /* FriendsViewController.m */; };
+		CE621DFE17B4687B00C684D7 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE621DFD17B4687B00C684D7 /* BaseViewController.m */; };
+		CE621E0117B4692900C684D7 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE621DFF17B4691700C684D7 /* CoreData.framework */; };
+		CE621E0417B4698100C684D7 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE621E0217B4697400C684D7 /* SystemConfiguration.framework */; };
 		CE7B04E417A1D56C009C6754 /* menu_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CE7B04E217A1D56C009C6754 /* menu_icon.png */; };
 		CE7B04E517A1D56C009C6754 /* menu_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE7B04E317A1D56C009C6754 /* menu_icon@2x.png */; };
 		CE9D39BE17AB3A16001E8254 /* rir_eu_vou.png in Resources */ = {isa = PBXBuildFile; fileRef = CE9D39BC17AB3A16001E8254 /* rir_eu_vou.png */; };
@@ -303,6 +306,10 @@
 		CE406E0117A378D200CF1FF8 /* KxMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KxMenu.m; sourceTree = "<group>"; };
 		CE621DF917B45B6C00C684D7 /* FriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsViewController.h; sourceTree = "<group>"; };
 		CE621DFA17B45B6C00C684D7 /* FriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsViewController.m; sourceTree = "<group>"; };
+		CE621DFC17B4687B00C684D7 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		CE621DFD17B4687B00C684D7 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		CE621DFF17B4691700C684D7 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		CE621E0217B4697400C684D7 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		CE7B04E217A1D56C009C6754 /* menu_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu_icon.png; sourceTree = "<group>"; };
 		CE7B04E317A1D56C009C6754 /* menu_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu_icon@2x.png"; sourceTree = "<group>"; };
 		CE9D39BC17AB3A16001E8254 /* rir_eu_vou.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rir_eu_vou.png; sourceTree = "<group>"; };
@@ -319,6 +326,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE621E0417B4698100C684D7 /* SystemConfiguration.framework in Frameworks */,
+				CE621E0117B4692900C684D7 /* CoreData.framework in Frameworks */,
 				2330ADEC17ADA8A800EC7019 /* CFNetwork.framework in Frameworks */,
 				23BF38AC17A7441200844118 /* Security.framework in Frameworks */,
 				23FA0E6217A2BEA900CA30CF /* Social.framework in Frameworks */,
@@ -611,6 +620,8 @@
 				CE406DFD17A324A200CF1FF8 /* MyScheduleViewController.m */,
 				CE621DF917B45B6C00C684D7 /* FriendsViewController.h */,
 				CE621DFA17B45B6C00C684D7 /* FriendsViewController.m */,
+				CE621DFC17B4687B00C684D7 /* BaseViewController.h */,
+				CE621DFD17B4687B00C684D7 /* BaseViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -643,6 +654,8 @@
 		ACF196C617A19657003BE8CB /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				CE621E0217B4697400C684D7 /* SystemConfiguration.framework */,
+				CE621DFF17B4691700C684D7 /* CoreData.framework */,
 				2330ADEB17ADA8A800EC7019 /* CFNetwork.framework */,
 				23BF388E17A742C000844118 /* AFNetworking */,
 				CE406DFF17A378D200CF1FF8 /* KxMenu */,
@@ -911,6 +924,7 @@
 				230262EC17A892DB00C1950D /* FBUser.m in Sources */,
 				CE0BE3D417B1DB850015E892 /* EventHelper.m in Sources */,
 				CE621DFB17B45B6C00C684D7 /* FriendsViewController.m in Sources */,
+				CE621DFE17B4687B00C684D7 /* BaseViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
