@@ -17,6 +17,7 @@
 #import "ActionSheetStringPicker.h"
 #import "FacebookHelper.h"
 #import "EventHelper.h"
+#import "TSMessageView.h"
 
 @interface LineUpViewController : PKRevealController <UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate>
 
