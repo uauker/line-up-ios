@@ -23,7 +23,7 @@
     for (Event *event in allEvents) {
         for (FBUser *user in fbUsers) {
             if ([event.startAt isEqualToString:[user eventDate]]) {
-                [eventsFromMySchedule addObject:event];
+                [eventsFromMySchedule addObject:event.startAt];
             }
         }
     }

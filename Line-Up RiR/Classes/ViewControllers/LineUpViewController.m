@@ -34,10 +34,11 @@ NSDate *rirDate;
     self.userPreferences = [NSUserDefaults standardUserDefaults];
     
     [FacebookHelper openActiveSession];
-    [FacebookHelper friendsFromHerokuWithEventDate:@"2013-09-13" block:^(NSArray *responseData, NSError *error) {
-        NSLog(@"quantidade de amigos: %i", [responseData count]);
+    [FacebookHelper myScheduleFromHeroku:^(NSArray *responseData, NSError *error) {
+        NSArray *mySchedule = [EventHelper bindToEventsFromFBUsers:responseData];
+        [self.userPreferences setObject:mySchedule forKey:@"mySchedule"];
+        [self checkIfEventIsInMySchedule];
     }];
-    
     
     if (self.event == nil) {
         self.event = [[EventHelper getAllEvents] objectAtIndex:0];
