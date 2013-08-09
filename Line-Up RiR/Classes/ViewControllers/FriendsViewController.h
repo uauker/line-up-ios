@@ -10,8 +10,9 @@
 #import "EventHelper.h"
 #import "FBUser.h"
 #import "FacebookHelper.h"
+#import "BaseViewController.h"
 
-@interface FriendsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface FriendsViewController : BaseViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, strong) Event *event;
 @property (nonatomic, copy) NSArray *fbUsers;
