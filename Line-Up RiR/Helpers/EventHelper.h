@@ -14,7 +14,7 @@
 @interface EventHelper : NSObject
 
 + (NSArray *)getAllEvents;
-+ (NSArray *)bindToEventsFromFBUsers:(NSArray *)fbUsers;
++ (NSMutableArray *)bindToEventsFromFBUsers:(NSArray *)fbUsers;
 + (NSMutableArray *)getEventsFromMySchedule;
 
 @end

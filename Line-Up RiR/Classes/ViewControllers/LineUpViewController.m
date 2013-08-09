@@ -33,20 +33,11 @@ NSDate *rirDate;
     
     self.userPreferences = [NSUserDefaults standardUserDefaults];
     
-    [FacebookHelper openActiveSession];
-    [FacebookHelper myScheduleFromHeroku:^(NSArray *responseData, NSError *error) {
-        NSArray *mySchedule = [EventHelper bindToEventsFromFBUsers:responseData];
-        [self.userPreferences setObject:mySchedule forKey:@"mySchedule"];
-        [self checkIfEventIsInMySchedule];
-    }];
-    
     if (self.event == nil) {
         self.event = [[EventHelper getAllEvents] objectAtIndex:0];
     }
     
     [self setupMySchedule];
-    
-//    [self.mySchedule addObject:[self.event startAt]];
     
     [self checkIfEventIsInMySchedule];
     
@@ -257,10 +248,14 @@ NSDate *rirDate;
     [self.mySchedule addObjectsFromArray:[self.userPreferences objectForKey:@"mySchedule"]];
     
     if (self.mySchedule == nil) {
-        self.mySchedule = [[NSMutableArray alloc] init];
+        [FacebookHelper openActiveSession];
+        [FacebookHelper myScheduleFromHeroku:^(NSArray *responseData, NSError *error) {
+            self.mySchedule = [EventHelper bindToEventsFromFBUsers:responseData];
+            [self.userPreferences setObject:self.mySchedule forKey:@"mySchedule"];
+            [self setRiRButtonBackground];
+        }];
     }
     
-    [self checkIfEventIsInMySchedule];
     [self setRiRButtonBackground];
 }
 

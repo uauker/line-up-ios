@@ -14,7 +14,7 @@
     return [RockInRio allEvents];
 }
 
-+ (NSArray *)bindToEventsFromFBUsers:(NSArray *)fbUsers {
++ (NSMutableArray *)bindToEventsFromFBUsers:(NSArray *)fbUsers {
     
     NSMutableArray *eventsFromMySchedule = [[NSMutableArray alloc] init];
     
