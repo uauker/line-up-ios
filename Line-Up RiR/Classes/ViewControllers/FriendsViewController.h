@@ -11,6 +11,7 @@
 #import "FBUser.h"
 #import "FacebookHelper.h"
 #import "BaseViewController.h"
+#import "ErrorMessageHelper.h"
 
 @interface FriendsViewController : BaseViewController <UITableViewDataSource, UITableViewDelegate>
 

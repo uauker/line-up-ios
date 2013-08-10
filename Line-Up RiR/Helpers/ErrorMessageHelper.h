@@ -7,7 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "TSMessage.h"
 
 @interface ErrorMessageHelper : NSObject
+
++ (void)showNetworkErrorMessageInViewController:(UIViewController *)viewController;
++ (void)showFacebookErrorMessageInViewController:(UIViewController *)viewController;
 
 @end

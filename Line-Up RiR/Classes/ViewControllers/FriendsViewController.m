@@ -27,7 +27,11 @@
         self.fbUsers = responseData;
         [self.tableView reloadData];
         
-        self.labelFriendsNotFound.hidden = ([self.fbUsers count] > 0) ? YES : NO;
+        if (error) {
+            [ErrorMessageHelper showFacebookErrorMessageInViewController:self];
+        } else {
+            self.labelFriendsNotFound.hidden = ([self.fbUsers count] > 0) ? YES : NO;
+        }
     }];
 }
 
