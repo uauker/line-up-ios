@@ -17,10 +17,21 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self.spinnerFBFriends startAnimating];
 	
     [FacebookHelper friendsFromHerokuWithEventDate:self.event.startAt block:^(NSArray *responseData, NSError *error) {
+        
+        [self.spinnerFBFriends stopAnimating];
+        [self.spinnerFBFriends setHidden:YES];
+        
         self.fbUsers = responseData;
         [self.tableView reloadData];
+        
+        if (error) {
+            [ErrorMessageHelper showFacebookErrorMessageInViewController:self];
+        } else {
+            self.labelFriendsNotFound.hidden = ([self.fbUsers count] > 0) ? YES : NO;
+        }
     }];
 }
 

@@ -226,7 +226,7 @@
                         <color key="backgroundColor" red="0.27058823529999998" green="0.29803921570000003" blue="0.32156862749999998" alpha="1" colorSpace="calibratedRGB"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="Xl5-Hb-xRj" firstAttribute="centerX" secondItem="TA9-gA-4gq" secondAttribute="centerX" type="default" id="8dc-qg-nmv"/>
+                            <constraint firstItem="Xl5-Hb-xRj" firstAttribute="centerX" secondItem="TA9-gA-4gq" secondAttribute="centerX" type="default" id="Kul-sB-sAp"/>
                             <constraint firstItem="TA9-gA-4gq" firstAttribute="leading" secondItem="U2n-9Z-dJV" secondAttribute="leading" type="default" id="gt5-TT-yur"/>
                             <constraint firstItem="Xl5-Hb-xRj" firstAttribute="top" secondItem="U2n-9Z-dJV" secondAttribute="top" constant="13" type="user" id="nvu-jf-J8X"/>
                             <constraint firstItem="TA9-gA-4gq" firstAttribute="trailing" secondItem="U2n-9Z-dJV" secondAttribute="trailing" type="default" id="qRF-pO-6Aw"/>
@@ -304,13 +304,28 @@
                                     <outlet property="delegate" destination="koH-DL-8bA" id="rSS-eX-Mb8"/>
                                 </connections>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="FMb-qD-tgb"/>
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Ops! Convide seus amigos para participarem da Agenda do Rock in Rio 2013, não deixe eles ficarem de fora dessa." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="CdV-2i-9Ql">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="142" id="Xgt-L8-vlP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="22"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.27058823529999998" green="0.29803921570000003" blue="0.32156862749999998" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="UhC-cK-gxk" firstAttribute="trailing" secondItem="pkc-gN-D4J" secondAttribute="trailing" type="default" id="FGQ-Ui-fcU"/>
+                            <constraint firstItem="FMb-qD-tgb" firstAttribute="leading" secondItem="pkc-gN-D4J" secondAttribute="leading" type="default" id="ONK-iU-N17"/>
+                            <constraint firstItem="CdV-2i-9Ql" firstAttribute="leading" secondItem="pkc-gN-D4J" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Ope-Wa-mF8"/>
                             <constraint firstItem="UhC-cK-gxk" firstAttribute="leading" secondItem="pkc-gN-D4J" secondAttribute="leading" type="default" id="WWy-qM-xsf"/>
                             <constraint firstItem="UhC-cK-gxk" firstAttribute="bottom" secondItem="pkc-gN-D4J" secondAttribute="bottom" type="default" id="XNQ-DC-vqI"/>
                             <constraint firstItem="UhC-cK-gxk" firstAttribute="top" secondItem="pkc-gN-D4J" secondAttribute="top" type="default" id="jQP-2V-CWj"/>
+                            <constraint firstItem="FMb-qD-tgb" firstAttribute="centerY" secondItem="UhC-cK-gxk" secondAttribute="centerY" type="default" id="rke-R7-xwi"/>
+                            <constraint firstItem="FMb-qD-tgb" firstAttribute="bottom" secondItem="CdV-2i-9Ql" secondAttribute="bottom" type="default" id="tuv-Yc-XJ3"/>
+                            <constraint firstItem="FMb-qD-tgb" firstAttribute="trailing" secondItem="pkc-gN-D4J" secondAttribute="trailing" type="default" id="wkm-vp-pOg"/>
+                            <constraint firstAttribute="trailing" secondItem="CdV-2i-9Ql" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="yCr-zg-mjN"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Quem vai?" id="sBP-hf-bou">
@@ -333,6 +348,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="labelFriendsNotFound" destination="CdV-2i-9Ql" id="bee-ry-kiP"/>
+                        <outlet property="spinnerFBFriends" destination="FMb-qD-tgb" id="3eb-Ob-G1J"/>
                         <outlet property="tableView" destination="UhC-cK-gxk" id="dC5-8M-TJI"/>
                     </connections>
                 </viewController>
@@ -493,6 +510,8 @@
         <class className="FriendsViewController" superclassName="BaseViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/FriendsViewController.h"/>
             <relationships>
+                <relationship kind="outlet" name="labelFriendsNotFound" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="spinnerFBFriends" candidateClass="UIActivityIndicatorView"/>
                 <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
             </relationships>
         </class>

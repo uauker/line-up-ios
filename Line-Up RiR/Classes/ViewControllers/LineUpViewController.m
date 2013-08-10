@@ -143,7 +143,7 @@ NSDate *rirDate;
     [self checkIfEventIsInMySchedule];
     
     NSString *eventDate = self.event.startAt;
-    
+        
     if (self.isEventInMySchedule) {
         [FacebookHelper unsubscribeFromHerokuWithEventDate:eventDate block:^(BOOL status, NSError *error) {
             if (error == nil) {
@@ -259,11 +259,10 @@ NSDate *rirDate;
         [self.spinnerToLoadMySchedule setHidden:NO];
         [self.spinnerToLoadMySchedule startAnimating];
         
-//        [FacebookHelper openActiveSession];
         [FacebookHelper myScheduleFromHeroku:^(NSArray *responseData, NSError *error) {
             
             if (error) {
-                [self showErrorMessage];
+                [ErrorMessageHelper showNetworkErrorMessageInViewController:self];
                 [self.buttonRirEuVou setEnabled:NO];
             }
             
@@ -438,17 +437,6 @@ NSDate *rirDate;
             return 0;
             break;
     }
-}
-
-- (void)showErrorMessage {
-    NSString *notificationTitle = NSLocalizedString(@"Erro de conexão", nil);
-    NSString *notificationDescription = NSLocalizedString(@"Falha ao carregar sua agenda do Rock In Rio 2013. Tente novamente mais tarde.", nil);
-        
-    [TSMessage showNotificationInViewController:self
-                                      withTitle:notificationTitle
-                                    withMessage:notificationDescription
-                                       withType:TSMessageNotificationTypeError
-                                   withDuration:-1];
 }
 
 @end
