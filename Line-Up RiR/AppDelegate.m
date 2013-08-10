@@ -12,7 +12,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [FacebookHelper openActiveSession];
+//    [FacebookHelper openActiveSession];
     
     [self customizeNavBar];
     
@@ -53,9 +53,9 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
-//    [FBAppEvents activateApp];
-//    [FBAppCall handleDidBecomeActive];
-//    [FacebookHelper openActiveSession];
+    [FBAppEvents activateApp];
+    [FBAppCall handleDidBecomeActive];
+    [FacebookHelper openActiveSession];
 }
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
@@ -85,14 +85,14 @@
 }
 
 - (void)setupMySchedule {
-    dispatch_async(dispatch_get_main_queue(), ^(void){
+//    dispatch_async(dispatch_get_main_queue(), ^(void){
         [FacebookHelper myScheduleFromHeroku:^(NSArray *responseData, NSError *error) {
             NSArray *mySchedule = [EventHelper bindToEventsFromFBUsers:responseData];
             NSUserDefaults *userPreferences = [NSUserDefaults standardUserDefaults];
             [userPreferences setObject:mySchedule forKey:@"myEvents"];
         }];
 
-    });
+//    });
 }
 
 @end

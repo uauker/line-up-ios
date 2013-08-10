@@ -23,7 +23,7 @@
 {
     [super viewDidLoad];
     
-    [FacebookHelper openActiveSession];
+//    [FacebookHelper openActiveSession];
     
     [self setupMySchedule];
     

@@ -255,7 +255,7 @@ NSDate *rirDate;
         [self.spinnerToLoadMySchedule setHidden:NO];
         [self.spinnerToLoadMySchedule startAnimating];
         
-        [FacebookHelper openActiveSession];
+//        [FacebookHelper openActiveSession];
         [FacebookHelper myScheduleFromHeroku:^(NSArray *responseData, NSError *error) {
             
             if (error) {
