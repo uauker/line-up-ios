@@ -112,59 +112,6 @@
     }
 }
 
-//TODO: APAGAR EM BREVE
-+ (NSArray *)getMyScheduleFromHeroku {
-    
-    if (FBSession.activeSession.isOpen) {
-        
-        NSMutableArray *mySchedule = [[NSMutableArray alloc] init];
-        
-        NSDictionary *params = [NSDictionary dictionaryWithObject:FB_ME_PARAMETERS_FIELDS forKey:@"fields"];
-        //        https://developers.facebook.com/docs/reference/api/using-pictures/
-        
-        [FBRequestConnection startWithGraphPath:@"me" parameters:params HTTPMethod:@"GET" completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
-            if (error) {
-                //TODO: error ao marcar que o usuario vai no dia
-            }
-            else {
-                NSString *urlString = [NSString stringWithFormat:HEROKU_ME, [result objectForKey:@"id"]];
-                
-                NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:urlString]];
-                
-                AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc]initWithRequest:request];
-                
-                [operation  setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-                    
-                    NSString *jsonString = [operation responseString];
-                    
-                    NSDictionary *jsonDictionary = [NSJSONSerialization JSONObjectWithData:[jsonString dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableContainers error:nil];
-                    
-                    for (NSDictionary *item in jsonDictionary) {
-                        [mySchedule addObject:[item objectForKey:@"event_date"]];
-                    }
-                    
-                    //Conseguiu registrar
-                    NSLog(@"SUCESSO");
-                }
-                failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                    //erro ao registrar no nosso host
-                    NSLog(@"ERRO, %@", [error description]);
-                }];
-                
-                [operation start];
-            }
-        }];
-        
-        return mySchedule;
-    }
-    
-//    if ([mySchedule count] > 0) {
-//    }
-    
-    return nil;
-}
-
-
 + (void)subscribeFromHerokuWithEventDate:(NSString *)eventDate block:(FacebookStatusHelperCallback)callback {
     if (FBSession.activeSession.isOpen) {
         __block BOOL status = NO;
@@ -200,44 +147,6 @@
     }
 }
 
-//TODO: APAGAR EM BREVE
-+ (void)subscribeToAppServerWithEventDate:(NSString *)eventDate {
-    if (FBSession.activeSession.isOpen) {
-        NSDictionary *params = [NSDictionary dictionaryWithObject:FB_ME_PARAMETERS_FIELDS forKey:@"fields"];
-        //        https://developers.facebook.com/docs/reference/api/using-pictures/
-        
-        [FBRequestConnection startWithGraphPath:@"me" parameters:params HTTPMethod:@"GET" completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
-            if (error) {
-                //TODO: error ao marcar que o usuario vai no dia
-            }
-            else {
-                NSString *UserAndPostID = [result objectForKey:@"id"];
-                NSString *userID = [[UserAndPostID componentsSeparatedByString:@"_"] objectAtIndex:0];
-                
-                NSString *name = [result objectForKey:@"name"];
-                NSString *username = [result objectForKey:@"username"];
-                
-                NSString *json = [NSString stringWithFormat:@"{\"facebook_user_id\":\"%@\",\"event_date\":\"%@\",\"facebook_name\":\"%@\",\"facebook_username\":\"%@\"}", userID, eventDate, name, username];
-
-                NSURLRequest *request = [self requestWithUrl:HEROKU_SUBSCRIBE body:json];
-                
-                AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc]initWithRequest:request];
-                
-                [operation  setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-                    //Conseguiu registrar
-                    NSLog(@"SUCESSO");
-                }
-                failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                    //erro ao registrar no nosso host
-                    NSLog(@"ERRO, %@", [error description]);
-                }];
-                
-                [operation start];
-            }
-        }];
-    }
-}
-
 + (void)unsubscribeFromHerokuWithEventDate:(NSString *)eventDate block:(FacebookStatusHelperCallback)callback {
     if (FBSession.activeSession.isOpen) {
         __block BOOL status = NO;
@@ -265,37 +174,6 @@
             }];
             
             [operation start];
-        }];
-    }
-}
-
-//TODO: APAGAR
-+ (void)unsubscribeToAppServerWithEventDate:(NSString *)eventDate {
-    if (FBSession.activeSession.isOpen) {
-        NSDictionary *params = [NSDictionary dictionaryWithObject:FB_ME_PARAMETERS_FIELDS forKey:@"fields"];
-        
-        [FBRequestConnection startWithGraphPath:@"me" parameters:params HTTPMethod:@"GET" completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
-            if (error) {
-                //TODO: error ao marcar que o usuario vai no dia
-            }
-            else {
-                NSString *json = [NSString stringWithFormat:@"{\"facebook_user_id\":\"%@\",\"event_date\":\"%@\"}", [result objectForKey:@"id"], eventDate];
-
-                NSURLRequest *request = [self requestWithUrl:HEROKU_UNSUBSCRIBE body:json];
-                
-                AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc]initWithRequest:request];
-                
-                [operation  setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-                    //Conseguiu registrar
-                    NSLog(@"SUCESSO");
-                }
-                failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                    //erro ao registrar no nosso host
-                    NSLog(@"ERRO, %@", [error description]);
-                }];
-                
-                [operation start];
-            }
         }];
     }
 }
@@ -339,50 +217,6 @@
             [operation start];
         }];
     }
-}
-
-//TODO: APAGAR
-+ (NSArray *)friendsToAppServerWithEventDate:(NSString *)eventDate {
-    NSMutableArray *friends = [[NSMutableArray alloc] init];
-    NSDictionary *params = [NSDictionary dictionaryWithObject:@"id" forKey:@"fields"];
-    
-    if (FBSession.activeSession.isOpen) {
-        [FBRequestConnection startWithGraphPath:@"me/friends" parameters:params HTTPMethod:@"GET" completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
-            if (error) {
-                //TODO: tratar error
-            }
-            else {
-                for (NSDictionary *friend in [result objectForKey:@"data"]) {
-                    [friends addObject:[friend objectForKey:@"id"]];
-                }
-                
-                NSArray *f = [NSArray arrayWithArray:friends];
-
-                NSString *json = [NSString stringWithFormat:@"{\"facebook_users_id\":\"%@\",\"event_date\":\"%@\"}", [f componentsJoinedByString:@","], eventDate];
-                NSLog(@"%@", json);
-                
-                NSURLRequest *request = [self requestWithUrl:HEROKU_FRIENDS body:json];
-                
-                AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc]initWithRequest:request];
-                
-                [operation  setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-                    //Conseguiu registrar
-                    NSLog(@"SUCESSO: %@", operation.responseString);
-                }
-                failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                    //erro ao registrar no nosso host
-                    NSLog(@"ERRO %@", [error description]);
-                }];
-                
-                [operation start];
-            }
-            
-            NSLog(@"%@", friends);
-            NSLog(@"eu nao tenho um milhao de amigos, tenho %i amigo", [friends count]);
-        }];
-    }
-    
-    return friends;
 }
 
 + (NSURLRequest *)requestWithUrl:(NSString *)urlString body:(NSString *)body {
