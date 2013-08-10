@@ -145,24 +145,30 @@ NSDate *rirDate;
     NSString *eventDate = self.event.startAt;
     
     if (self.isEventInMySchedule) {
-        [self.buttonRirEuVou setBackgroundImage:[UIImage imageNamed:@"rir_eu_vou_clicked.png"]
-                                       forState:UIControlStateNormal];
-        
-        [self removeEventFromMySchedule:eventDate];
-        [FacebookHelper unsubscribeToAppServerWithEventDate:eventDate];
+        [FacebookHelper unsubscribeFromHerokuWithEventDate:eventDate block:^(BOOL status, NSError *error) {
+            if (error == nil) {
+                [self.buttonRirEuVou setBackgroundImage:[UIImage imageNamed:@"rir_eu_vou_clicked.png"]
+                                               forState:UIControlStateNormal];
+                
+                [self removeEventFromMySchedule:eventDate];
+            }
+        }];
     } else {
-        [self.buttonRirEuVou setBackgroundImage:[UIImage imageNamed:@"rir_eu_vou.png"]
-                                       forState:UIControlStateNormal];
-        
-        [self addEventToMySchedule:eventDate];
-        [FacebookHelper subscribeToAppServerWithEventDate:eventDate];
-        
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:ALERT_TITLE_SHARE_EVENT_ON_FACEBOOK
-                                                        message:nil
-                                                       delegate:self
-                                              cancelButtonTitle:@"Cancelar"
-                                              otherButtonTitles:@"Compartilhar", nil];
-        [alert show];
+        [FacebookHelper subscribeFromHerokuWithEventDate:eventDate block:^(BOOL status, NSError *error) {
+            if (error == nil) {
+                [self.buttonRirEuVou setBackgroundImage:[UIImage imageNamed:@"rir_eu_vou.png"]
+                                               forState:UIControlStateNormal];
+                
+                [self addEventToMySchedule:eventDate];
+                
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:ALERT_TITLE_SHARE_EVENT_ON_FACEBOOK
+                                                                message:nil
+                                                               delegate:self
+                                                      cancelButtonTitle:@"Cancelar"
+                                                      otherButtonTitles:@"Compartilhar", nil];
+                [alert show];
+            }
+        }];
     }
 }
 
@@ -289,7 +295,6 @@ NSDate *rirDate;
 }
 
 - (void)shareEventOnFacebook {
-    
     NSString *shareText = [SHARE_EVENT_ON_FACEBOOK stringByReplacingOccurrencesOfString:@"%@1" withString:[self.event date]];
     
     [FacebookHelper shareFromViewController:self withText:shareText];
