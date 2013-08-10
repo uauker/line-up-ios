@@ -16,6 +16,8 @@
 
 @property (nonatomic, strong) Event *event;
 @property (nonatomic, copy) NSArray *fbUsers;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinnerFBFriends;
+@property (weak, nonatomic) IBOutlet UILabel *labelFriendsNotFound;
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 

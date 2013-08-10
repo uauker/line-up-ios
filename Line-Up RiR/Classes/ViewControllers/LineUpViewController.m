@@ -144,6 +144,8 @@ NSDate *rirDate;
     
     NSString *eventDate = self.event.startAt;
     
+    [FacebookHelper openActiveSession];
+    
     if (self.isEventInMySchedule) {
         [self.buttonRirEuVou setBackgroundImage:[UIImage imageNamed:@"rir_eu_vou_clicked.png"]
                                        forState:UIControlStateNormal];
