@@ -41,8 +41,6 @@ NSDate *rirDate;
     
     [self setupMySchedule];
     
-    [self showErrorMessage];
-    
     [self checkIfEventIsInMySchedule];
     
     self.hasToOpenMenu = YES;
@@ -260,12 +258,15 @@ NSDate *rirDate;
             
             if (error) {
                 [self showErrorMessage];
+                [self.buttonRirEuVou setEnabled:NO];
             }
             
             [self.spinnerToLoadMySchedule stopAnimating];
             [self.spinnerToLoadMySchedule setHidden:YES];
+            
             self.mySchedule = [EventHelper bindToEventsFromFBUsers:responseData];
             [self.userPreferences setObject:self.mySchedule forKey:@"mySchedule"];
+            
             [self setRiRButtonBackground];
         }];
     }
