@@ -11,6 +11,7 @@
 #import "AFHTTPRequestOperation.h"
 #import "FBUser.h"
 #import "JSONKit.h"
+#import "AppDelegate.h"
 
 #define FB_PERMISSIONS @[@"publish_stream"]
 #define FB_ME_PARAMETERS_FIELDS @"id,name,username"

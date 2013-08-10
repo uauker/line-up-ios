@@ -20,4 +20,6 @@
 @property (nonatomic, strong, readwrite) PKRevealController *revealController;
 @property (strong, nonatomic) UIWindow *window;
 
+- (void)setupMySchedule;
+
 @end
