@@ -26,7 +26,6 @@ typedef void(^FacebookStatusHelperCallback)(BOOL status, NSError *error);
 
 @interface FacebookHelper : NSObject
 
-//+ (void)openActiveSession;
 + (void)post;
 + (void)shareFromViewController:(UIViewController *)viewController withText:(NSString *)shareText;
 
@@ -35,10 +34,5 @@ typedef void(^FacebookStatusHelperCallback)(BOOL status, NSError *error);
 + (void)subscribeFromHerokuWithEventDate:(NSString *)eventDate block:(FacebookStatusHelperCallback)callback;
 + (void)unsubscribeFromHerokuWithEventDate:(NSString *)eventDate block:(FacebookStatusHelperCallback)callback;
 + (void)friendsFromHerokuWithEventDate:(NSString *)eventDate block:(FacebookHelperCallback)callback;
-
-//+ (NSArray *)getMyScheduleFromHeroku;
-//+ (void)subscribeToAppServerWithEventDate:(NSString *)eventDate;
-//+ (void)unsubscribeToAppServerWithEventDate:(NSString *)eventDate;
-//+ (NSArray *)friendsToAppServerWithEventDate:(NSString *)eventDate;
 
 @end
