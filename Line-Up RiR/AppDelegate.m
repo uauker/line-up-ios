@@ -12,11 +12,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-//    [FacebookHelper openActiveSession];
-    
     [self customizeNavBar];
-    
-//    [self setupMySchedule];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
@@ -55,7 +51,11 @@
 {
     [FBAppEvents activateApp];
     [FBAppCall handleDidBecomeActive];
-    [FacebookHelper openActiveSession];
+    
+    [FacebookHelper openActiveSessionWithBlock:^(BOOL status, NSError *error) {
+        NSLog(@"stauts: %i", status);
+        NSLog(@"error: %@", [error description]);
+    }];
 }
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
@@ -85,14 +85,14 @@
 }
 
 - (void)setupMySchedule {
-//    dispatch_async(dispatch_get_main_queue(), ^(void){
+    dispatch_async(dispatch_get_main_queue(), ^(void){
         [FacebookHelper myScheduleFromHeroku:^(NSArray *responseData, NSError *error) {
             NSArray *mySchedule = [EventHelper bindToEventsFromFBUsers:responseData];
             NSUserDefaults *userPreferences = [NSUserDefaults standardUserDefaults];
             [userPreferences setObject:mySchedule forKey:@"myEvents"];
         }];
 
-//    });
+    });
 }
 
 @end

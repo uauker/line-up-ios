@@ -10,22 +10,19 @@
 
 @implementation FacebookHelper
 
-+ (void)openActiveSession {
++ (void)openActiveSessionWithBlock:(FacebookStatusHelperCallback)callback {
     if (!FBSession.activeSession.isOpen) {
         [FBSession openActiveSessionWithPublishPermissions:FB_PERMISSIONS defaultAudience:FBSessionDefaultAudienceEveryone allowLoginUI:YES completionHandler:^(FBSession *session, FBSessionState status, NSError *error) {
-            
-            NSLog(@"%@", [error description]);
-            NSLog(@">> %@",             [session description]);
             
             AppDelegate *app = [[UIApplication sharedApplication] delegate];
             [app setupMySchedule];
             
-            if (error != nil) {
-                //TODO: Error? o que fazer?
-                //Nem autentiaccao teve
-            }
+            callback(session.state == FBSessionStateOpen, error);
+            return ;
         }];
     }
+    
+    callback(YES, nil);
 }
 
 + (void)post {
