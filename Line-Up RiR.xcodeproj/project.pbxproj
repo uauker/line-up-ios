@@ -113,6 +113,7 @@
 		CE0BE3D417B1DB850015E892 /* EventHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0BE3D317B1DB850015E892 /* EventHelper.m */; };
 		CE111A2A17AEABF7003AC88F /* rir_eu_vou_clicked.png in Resources */ = {isa = PBXBuildFile; fileRef = CE111A2817AEABF7003AC88F /* rir_eu_vou_clicked.png */; };
 		CE111A2B17AEABF7003AC88F /* rir_eu_vou_clicked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE111A2917AEABF7003AC88F /* rir_eu_vou_clicked@2x.png */; };
+		CE1E8A0B17B6AA2500A7D6BA /* ErrorMessageHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1E8A0A17B6AA2500A7D6BA /* ErrorMessageHelper.m */; };
 		CE406DF617A2E86A00CF1FF8 /* AbstractActionSheetPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = CE406DEA17A2E86A00CF1FF8 /* AbstractActionSheetPicker.m */; };
 		CE406DF717A2E86A00CF1FF8 /* ActionSheetCustomPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = CE406DEC17A2E86A00CF1FF8 /* ActionSheetCustomPicker.m */; };
 		CE406DF817A2E86A00CF1FF8 /* ActionSheetDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = CE406DEF17A2E86A00CF1FF8 /* ActionSheetDatePicker.m */; };
@@ -314,6 +315,8 @@
 		CE0BE3D317B1DB850015E892 /* EventHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventHelper.m; sourceTree = "<group>"; };
 		CE111A2817AEABF7003AC88F /* rir_eu_vou_clicked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rir_eu_vou_clicked.png; sourceTree = "<group>"; };
 		CE111A2917AEABF7003AC88F /* rir_eu_vou_clicked@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rir_eu_vou_clicked@2x.png"; sourceTree = "<group>"; };
+		CE1E8A0917B6AA2500A7D6BA /* ErrorMessageHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ErrorMessageHelper.h; sourceTree = "<group>"; };
+		CE1E8A0A17B6AA2500A7D6BA /* ErrorMessageHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ErrorMessageHelper.m; sourceTree = "<group>"; };
 		CE406DE917A2E86A00CF1FF8 /* AbstractActionSheetPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbstractActionSheetPicker.h; sourceTree = "<group>"; };
 		CE406DEA17A2E86A00CF1FF8 /* AbstractActionSheetPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AbstractActionSheetPicker.m; sourceTree = "<group>"; };
 		CE406DEB17A2E86A00CF1FF8 /* ActionSheetCustomPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionSheetCustomPicker.h; sourceTree = "<group>"; };
@@ -410,6 +413,8 @@
 				230262E517A8748A00C1950D /* FacebookHelper.m */,
 				CE0BE3D217B1DB850015E892 /* EventHelper.h */,
 				CE0BE3D317B1DB850015E892 /* EventHelper.m */,
+				CE1E8A0917B6AA2500A7D6BA /* ErrorMessageHelper.h */,
+				CE1E8A0A17B6AA2500A7D6BA /* ErrorMessageHelper.m */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -1087,6 +1092,7 @@
 				CE621E3B17B4985E00C684D7 /* TSMessage.m in Sources */,
 				CE621E3C17B4985E00C684D7 /* HexColor.m in Sources */,
 				CE621E5317B4985E00C684D7 /* TSMessageView.m in Sources */,
+				CE1E8A0B17B6AA2500A7D6BA /* ErrorMessageHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
