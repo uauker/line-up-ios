@@ -102,6 +102,7 @@
                         <color key="backgroundColor" red="0.27058823529999998" green="0.29803921570000003" blue="0.32156862749999998" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="BK9-vi-KCu" firstAttribute="top" secondItem="17" secondAttribute="top" constant="60" id="6nP-Hb-rUa"/>
+                            <constraint firstItem="GM0-AT-qJo" firstAttribute="centerX" secondItem="BK9-vi-KCu" secondAttribute="centerX" type="default" id="9q6-dc-jem"/>
                             <constraint firstItem="BK9-vi-KCu" firstAttribute="leading" secondItem="17" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="GC0-N0-F3w"/>
                             <constraint firstItem="H2i-u4-ANN" firstAttribute="leading" secondItem="17" secondAttribute="leading" type="default" id="IDk-Y4-2h7"/>
                             <constraint firstItem="Sjy-jy-yzk" firstAttribute="centerX" secondItem="GM0-AT-qJo" secondAttribute="centerX" type="default" id="IsL-vu-OZZ"/>
@@ -110,11 +111,10 @@
                             <constraint firstItem="u0l-lY-P8P" firstAttribute="top" secondItem="17" secondAttribute="top" type="default" id="R7f-fC-xLs"/>
                             <constraint firstAttribute="trailing" secondItem="BK9-vi-KCu" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Xnj-HX-2B7"/>
                             <constraint firstAttribute="bottom" secondItem="GM0-AT-qJo" secondAttribute="bottom" constant="14" id="eYM-gK-aM8"/>
-                            <constraint firstItem="Sjy-jy-yzk" firstAttribute="centerX" secondItem="BK9-vi-KCu" secondAttribute="centerX" type="default" id="kMD-Bj-5gM"/>
-                            <constraint firstItem="Sjy-jy-yzk" firstAttribute="bottom" secondItem="GM0-AT-qJo" secondAttribute="bottom" type="default" id="l72-YI-6CH"/>
                             <constraint firstItem="u0l-lY-P8P" firstAttribute="leading" secondItem="17" secondAttribute="leading" type="default" id="lhm-mT-MqY"/>
                             <constraint firstItem="H2i-u4-ANN" firstAttribute="trailing" secondItem="17" secondAttribute="trailing" type="default" id="moa-X8-Vol"/>
                             <constraint firstItem="u0l-lY-P8P" firstAttribute="trailing" secondItem="17" secondAttribute="trailing" type="default" id="qO6-eK-ScX"/>
+                            <constraint firstAttribute="bottom" secondItem="Sjy-jy-yzk" secondAttribute="bottom" constant="12" id="zel-RB-ZUx"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="13/09" id="GvK-94-PjX">

@@ -140,21 +140,26 @@ NSDate *rirDate;
 #pragma mark - Actions
 
 - (IBAction)addToMySchedule:(id)sender {
+    [self startSpinner];
+    
     [self checkIfEventIsInMySchedule];
     
     NSString *eventDate = self.event.startAt;
         
     if (self.isEventInMySchedule) {
         [FacebookHelper unsubscribeFromHerokuWithEventDate:eventDate block:^(BOOL status, NSError *error) {
+            [self stopSpinner];
             if (error == nil) {
                 [self.buttonRirEuVou setBackgroundImage:[UIImage imageNamed:@"rir_eu_vou_clicked.png"]
                                                forState:UIControlStateNormal];
                 
                 [self removeEventFromMySchedule:eventDate];
             }
+            NSLog(@"error >>> %@", [error description]);
         }];
     } else {
         [FacebookHelper subscribeFromHerokuWithEventDate:eventDate block:^(BOOL status, NSError *error) {
+            [self stopSpinner];
             if (error == nil) {
                 [self.buttonRirEuVou setBackgroundImage:[UIImage imageNamed:@"rir_eu_vou.png"]
                                                forState:UIControlStateNormal];
@@ -168,6 +173,7 @@ NSDate *rirDate;
                                                       otherButtonTitles:@"Compartilhar", nil];
                 [alert show];
             }
+            NSLog(@"error >>> %@", [error description]);
         }];
     }
 }
@@ -249,6 +255,16 @@ NSDate *rirDate;
 #pragma ###################################################################################################################
 #pragma mark - Internal Methods
 
+
+- (void)startSpinner {
+    [self.spinnerToLoadMySchedule setHidden:NO];
+    [self.spinnerToLoadMySchedule startAnimating];
+}
+
+- (void)stopSpinner {
+    [self.spinnerToLoadMySchedule stopAnimating];
+    [self.spinnerToLoadMySchedule setHidden:YES];
+}
 
 - (void)setupMySchedule {
     
