@@ -79,8 +79,9 @@
 }
 
 + (void)myScheduleFromHeroku:(FacebookHelperCallback)callback {
+    NSMutableArray *mySchedule = [[NSMutableArray alloc] init];
+    
     if (FBSession.activeSession.isOpen) {
-        NSMutableArray *mySchedule = [[NSMutableArray alloc] init];
         NSDictionary *params = [NSDictionary dictionaryWithObject:FB_ME_PARAMETERS_FIELDS forKey:@"fields"];
         
         [FBRequestConnection startWithGraphPath:@"me" parameters:params HTTPMethod:@"GET" completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
@@ -110,6 +111,10 @@
             [operation start];
         }];
     }
+
+    NSError *error = [[NSError alloc] initWithDomain:FBErrorReauthorizeFailedReasonSessionClosed code:nil userInfo:nil];
+    
+    callback(mySchedule, error);
 }
 
 + (void)subscribeFromHerokuWithEventDate:(NSString *)eventDate block:(FacebookStatusHelperCallback)callback {
