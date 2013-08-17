@@ -272,8 +272,7 @@ NSDate *rirDate;
     [self.mySchedule addObjectsFromArray:[self.userPreferences objectForKey:@"mySchedule"]];
     
     if ([self.mySchedule count] == 0) {
-        [self.spinnerToLoadMySchedule setHidden:NO];
-        [self.spinnerToLoadMySchedule startAnimating];
+        [self startSpinner];
         
         [FacebookHelper myScheduleFromHeroku:^(NSArray *responseData, NSError *error) {
             
@@ -282,8 +281,7 @@ NSDate *rirDate;
                 [self.buttonRirEuVou setEnabled:NO];
             }
             
-            [self.spinnerToLoadMySchedule stopAnimating];
-            [self.spinnerToLoadMySchedule setHidden:YES];
+            [self stopSpinner];
             
             self.mySchedule = [EventHelper bindToEventsFromFBUsers:responseData];
             [self.userPreferences setObject:self.mySchedule forKey:@"mySchedule"];
