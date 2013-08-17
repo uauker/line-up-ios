@@ -12,6 +12,7 @@
 #import "FacebookHelper.h"
 #import "BaseViewController.h"
 #import "ErrorMessageHelper.h"
+#import "UIImageView+WebCache.h"
 
 @interface FriendsViewController : BaseViewController <UITableViewDataSource, UITableViewDelegate>
 

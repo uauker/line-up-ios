@@ -73,8 +73,13 @@
     
     FBUser *fbUser = [self.fbUsers objectAtIndex:[indexPath row]];
     
-    UILabel *eventDate = (UILabel *)[cell viewWithTag:151];
-    eventDate.text = [fbUser name];
+    UILabel *friendName = (UILabel *)[cell viewWithTag:151];
+    UIImageView *friendPicture = (UIImageView *)[cell viewWithTag:152];
+    
+//    [friendPicture setImageWithURL:[NSURL URLWithString:[fbUser profileImage]]
+//                   placeholderImage:[UIImage imageNamed:@"icon.png"]];
+    
+    friendName.text = [fbUser name];
 }
 
 

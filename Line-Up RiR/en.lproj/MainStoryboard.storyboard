@@ -42,28 +42,36 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="46" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="H2i-u4-ANN">
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="lineUpCell" rowHeight="46" id="QoE-w4-YbW">
-                                        <rect key="frame" x="0.0" y="22" width="320" height="46"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="lineUpCell" rowHeight="72" id="QoE-w4-YbW">
+                                        <rect key="frame" x="0.0" y="22" width="320" height="72"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="45"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="71"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="121" contentMode="left" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="Ghh-rs-Kvj">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="151" contentMode="left" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="228" translatesAutoresizingMaskIntoConstraints="NO" id="Ghh-rs-Kvj">
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="34" id="HXD-Qb-OSx"/>
+                                                        <constraint firstAttribute="width" constant="228" id="zdZ-5S-PkZ"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="AvenirNextCondensed-DemiBold" family="Avenir Next Condensed" pointSize="20"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" tag="152" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="43b-JB-b7R">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="40" id="Jyz-XE-paB"/>
+                                                        <constraint firstAttribute="height" constant="40" id="RvZ-vh-XQ1"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="Ghh-rs-Kvj" firstAttribute="leading" secondItem="QoE-w4-YbW" secondAttribute="leading" constant="20" type="default" id="FQz-tg-Ymk"/>
-                                            <constraint firstItem="Ghh-rs-Kvj" firstAttribute="centerY" secondItem="QoE-w4-YbW" secondAttribute="centerY" type="default" id="fvL-e8-6Ki"/>
-                                            <constraint firstAttribute="trailing" secondItem="Ghh-rs-Kvj" secondAttribute="trailing" constant="20" type="default" id="vq3-od-j7U"/>
+                                            <constraint firstItem="43b-JB-b7R" firstAttribute="leading" secondItem="QoE-w4-YbW" secondAttribute="leading" constant="16" id="KbS-iC-VdK"/>
+                                            <constraint firstItem="Ghh-rs-Kvj" firstAttribute="top" secondItem="43b-JB-b7R" secondAttribute="top" type="default" id="XWe-6v-oq5"/>
+                                            <constraint firstItem="Ghh-rs-Kvj" firstAttribute="bottom" secondItem="43b-JB-b7R" secondAttribute="bottom" type="default" id="YKT-GB-0oN"/>
+                                            <constraint firstItem="43b-JB-b7R" firstAttribute="centerY" secondItem="QoE-w4-YbW" secondAttribute="centerY" type="default" id="dK9-ex-8TY"/>
+                                            <constraint firstAttribute="trailing" secondItem="Ghh-rs-Kvj" secondAttribute="trailing" constant="20" type="default" id="eW4-aR-xfC"/>
                                         </constraints>
                                     </tableViewCell>
                                 </prototypes>
@@ -95,7 +103,7 @@
                                     <action selector="addToMySchedule:" destination="3" eventType="touchUpInside" id="47R-x8-4Bh"/>
                                 </connections>
                             </button>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Sjy-jy-yzk">
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Sjy-jy-yzk">
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </activityIndicatorView>
                         </subviews>
