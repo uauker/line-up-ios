@@ -13,6 +13,7 @@
 #import "BaseViewController.h"
 #import "ErrorMessageHelper.h"
 #import "UIImageView+WebCache.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface FriendsViewController : BaseViewController <UITableViewDataSource, UITableViewDelegate>
 

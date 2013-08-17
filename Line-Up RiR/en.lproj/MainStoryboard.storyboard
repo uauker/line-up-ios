@@ -42,36 +42,28 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="46" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="H2i-u4-ANN">
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="lineUpCell" rowHeight="72" id="QoE-w4-YbW">
-                                        <rect key="frame" x="0.0" y="22" width="320" height="72"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="lineUpCell" rowHeight="60" id="QoE-w4-YbW">
+                                        <rect key="frame" x="0.0" y="22" width="320" height="60"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="71"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="151" contentMode="left" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="228" translatesAutoresizingMaskIntoConstraints="NO" id="Ghh-rs-Kvj">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="121" contentMode="left" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="Ghh-rs-Kvj">
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="228" id="zdZ-5S-PkZ"/>
+                                                        <constraint firstAttribute="height" constant="38" id="50u-L0-oFb"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="AvenirNextCondensed-DemiBold" family="Avenir Next Condensed" pointSize="20"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" tag="152" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="43b-JB-b7R">
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="40" id="Jyz-XE-paB"/>
-                                                        <constraint firstAttribute="height" constant="40" id="RvZ-vh-XQ1"/>
-                                                    </constraints>
-                                                </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="43b-JB-b7R" firstAttribute="leading" secondItem="QoE-w4-YbW" secondAttribute="leading" constant="16" id="KbS-iC-VdK"/>
-                                            <constraint firstItem="Ghh-rs-Kvj" firstAttribute="top" secondItem="43b-JB-b7R" secondAttribute="top" type="default" id="XWe-6v-oq5"/>
-                                            <constraint firstItem="Ghh-rs-Kvj" firstAttribute="bottom" secondItem="43b-JB-b7R" secondAttribute="bottom" type="default" id="YKT-GB-0oN"/>
-                                            <constraint firstItem="43b-JB-b7R" firstAttribute="centerY" secondItem="QoE-w4-YbW" secondAttribute="centerY" type="default" id="dK9-ex-8TY"/>
+                                            <constraint firstItem="Ghh-rs-Kvj" firstAttribute="centerY" secondItem="QoE-w4-YbW" secondAttribute="centerY" type="default" id="603-5y-rBc"/>
                                             <constraint firstAttribute="trailing" secondItem="Ghh-rs-Kvj" secondAttribute="trailing" constant="20" type="default" id="eW4-aR-xfC"/>
+                                            <constraint firstItem="Ghh-rs-Kvj" firstAttribute="leading" secondItem="QoE-w4-YbW" secondAttribute="leading" constant="20" type="default" id="ljC-Ry-a7p"/>
                                         </constraints>
                                     </tableViewCell>
                                 </prototypes>
@@ -290,20 +282,28 @@
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="151" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S7c-OV-Zox">
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="21" id="yxu-NA-Ce8"/>
+                                                        <constraint firstAttribute="width" constant="232" id="nw4-dE-nHB"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="18"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" tag="152" contentMode="scaleToFill" image="icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="sRq-mc-bKw">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="40" id="HaO-In-uQX"/>
+                                                        <constraint firstAttribute="height" constant="40" id="wUb-vW-uwc"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="S7c-OV-Zox" secondAttribute="trailing" constant="20" type="default" id="3Pd-do-V3X"/>
-                                            <constraint firstItem="S7c-OV-Zox" firstAttribute="leading" secondItem="3hs-t6-j0K" secondAttribute="leading" constant="20" type="default" id="dZg-Da-jhd"/>
-                                            <constraint firstAttribute="bottom" secondItem="S7c-OV-Zox" secondAttribute="bottom" constant="20" type="default" id="f1M-uA-w0v"/>
+                                            <constraint firstItem="S7c-OV-Zox" firstAttribute="centerY" secondItem="3hs-t6-j0K" secondAttribute="centerY" type="default" id="4ib-Ju-GRH"/>
+                                            <constraint firstItem="S7c-OV-Zox" firstAttribute="top" secondItem="sRq-mc-bKw" secondAttribute="top" type="default" id="aSI-sN-IQt"/>
+                                            <constraint firstItem="sRq-mc-bKw" firstAttribute="leading" secondItem="3hs-t6-j0K" secondAttribute="leading" constant="16" id="hYI-M0-fMh"/>
+                                            <constraint firstItem="S7c-OV-Zox" firstAttribute="bottom" secondItem="sRq-mc-bKw" secondAttribute="bottom" type="default" id="j2s-tR-v27"/>
+                                            <constraint firstItem="S7c-OV-Zox" firstAttribute="leading" secondItem="3hs-t6-j0K" secondAttribute="leading" constant="72" id="wGV-i3-uW0"/>
                                         </constraints>
                                     </tableViewCell>
                                 </prototypes>
@@ -507,64 +507,11 @@
     <resources>
         <image name="back_button.png" width="44" height="44"/>
         <image name="bt_compartilhar_agenda_normal.png" width="201" height="39"/>
+        <image name="icon.png" width="57" height="57"/>
         <image name="menu_icon.png" width="25" height="19"/>
         <image name="rir_eu_vou.png" width="320" height="60"/>
         <image name="rir_eu_vou_clicked.png" width="320" height="60"/>
     </resources>
-    <classes>
-        <class className="BaseViewController" superclassName="GAITrackedViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BaseViewController.h"/>
-        </class>
-        <class className="FriendsViewController" superclassName="BaseViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FriendsViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="labelFriendsNotFound" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="spinnerFBFriends" candidateClass="UIActivityIndicatorView"/>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="GAITrackedViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GAITrackedViewController.h"/>
-        </class>
-        <class className="LineUpViewController" superclassName="PKRevealController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/LineUpViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="addToMySchedule:"/>
-                <relationship kind="action" name="selectPalco:"/>
-                <relationship kind="action" name="showLeftView:"/>
-                <relationship kind="outlet" name="buttonRirEuVou" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="buttonToSelectPalco" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="labelRockStreet" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="palcoIndicator" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="palcoSelector" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="rirTimer" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="spinnerToLoadMySchedule" candidateClass="UIActivityIndicatorView"/>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-                <relationship kind="outlet" name="verticalPositionTableView" candidateClass="NSLayoutConstraint"/>
-                <relationship kind="outlet" name="viewRIRTimer" candidateClass="UIView"/>
-            </relationships>
-        </class>
-        <class className="MenuViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MenuViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="MyScheduleViewController" superclassName="PKRevealController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MyScheduleViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="shareMySchedule:"/>
-                <relationship kind="action" name="showLeftView:"/>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="PKRevealController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PKRevealController.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

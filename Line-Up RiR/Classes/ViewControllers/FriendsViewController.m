@@ -75,9 +75,9 @@
     
     UILabel *friendName = (UILabel *)[cell viewWithTag:151];
     UIImageView *friendPicture = (UIImageView *)[cell viewWithTag:152];
-    
-//    [friendPicture setImageWithURL:[NSURL URLWithString:[fbUser profileImage]]
-//                   placeholderImage:[UIImage imageNamed:@"icon.png"]];
+        
+    [friendPicture setImageWithURL:[NSURL URLWithString:[fbUser profileImage]]
+                   placeholderImage:[UIImage imageNamed:@"icon.png"]];
     
     friendName.text = [fbUser name];
 }
