@@ -273,16 +273,16 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="UhC-cK-gxk">
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="myFriendsCell" rowHeight="60" id="3hs-t6-j0K">
-                                        <rect key="frame" x="0.0" y="22" width="320" height="60"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="myFriendsCell" rowHeight="80" id="3hs-t6-j0K">
+                                        <rect key="frame" x="0.0" y="22" width="320" height="80"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="79"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="151" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S7c-OV-Zox">
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="232" id="nw4-dE-nHB"/>
+                                                        <constraint firstAttribute="width" constant="217" id="ymO-lY-9hd"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="18"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
@@ -290,8 +290,8 @@
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" tag="152" contentMode="scaleToFill" image="icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="sRq-mc-bKw">
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="40" id="HaO-In-uQX"/>
-                                                        <constraint firstAttribute="height" constant="40" id="wUb-vW-uwc"/>
+                                                        <constraint firstAttribute="width" constant="55" id="8IO-NM-Cmm"/>
+                                                        <constraint firstAttribute="height" constant="54" id="lMA-pk-xQj"/>
                                                     </constraints>
                                                 </imageView>
                                             </subviews>
@@ -299,11 +299,11 @@
                                         </view>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="S7c-OV-Zox" firstAttribute="centerY" secondItem="3hs-t6-j0K" secondAttribute="centerY" type="default" id="4ib-Ju-GRH"/>
-                                            <constraint firstItem="S7c-OV-Zox" firstAttribute="top" secondItem="sRq-mc-bKw" secondAttribute="top" type="default" id="aSI-sN-IQt"/>
+                                            <constraint firstItem="sRq-mc-bKw" firstAttribute="top" secondItem="S7c-OV-Zox" secondAttribute="top" type="default" id="QS3-tx-Zd9"/>
+                                            <constraint firstItem="S7c-OV-Zox" firstAttribute="leading" secondItem="3hs-t6-j0K" secondAttribute="leading" constant="87" id="YYK-9c-apV"/>
                                             <constraint firstItem="sRq-mc-bKw" firstAttribute="leading" secondItem="3hs-t6-j0K" secondAttribute="leading" constant="16" id="hYI-M0-fMh"/>
-                                            <constraint firstItem="S7c-OV-Zox" firstAttribute="bottom" secondItem="sRq-mc-bKw" secondAttribute="bottom" type="default" id="j2s-tR-v27"/>
-                                            <constraint firstItem="S7c-OV-Zox" firstAttribute="leading" secondItem="3hs-t6-j0K" secondAttribute="leading" constant="72" id="wGV-i3-uW0"/>
+                                            <constraint firstItem="sRq-mc-bKw" firstAttribute="centerY" secondItem="3hs-t6-j0K" secondAttribute="centerY" type="default" id="iA1-xu-GJ5"/>
+                                            <constraint firstItem="S7c-OV-Zox" firstAttribute="bottom" secondItem="sRq-mc-bKw" secondAttribute="bottom" type="default" id="lei-j6-zao"/>
                                         </constraints>
                                     </tableViewCell>
                                 </prototypes>
@@ -512,6 +512,60 @@
         <image name="rir_eu_vou.png" width="320" height="60"/>
         <image name="rir_eu_vou_clicked.png" width="320" height="60"/>
     </resources>
+    <classes>
+        <class className="BaseViewController" superclassName="GAITrackedViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BaseViewController.h"/>
+        </class>
+        <class className="FriendsViewController" superclassName="BaseViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FriendsViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="labelFriendsNotFound" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="spinnerFBFriends" candidateClass="UIActivityIndicatorView"/>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="GAITrackedViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GAITrackedViewController.h"/>
+        </class>
+        <class className="LineUpViewController" superclassName="PKRevealController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LineUpViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="addToMySchedule:"/>
+                <relationship kind="action" name="selectPalco:"/>
+                <relationship kind="action" name="showLeftView:"/>
+                <relationship kind="outlet" name="buttonRirEuVou" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buttonToSelectPalco" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="labelRockStreet" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="palcoIndicator" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="palcoSelector" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="rirTimer" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="spinnerToLoadMySchedule" candidateClass="UIActivityIndicatorView"/>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="verticalPositionTableView" candidateClass="NSLayoutConstraint"/>
+                <relationship kind="outlet" name="viewRIRTimer" candidateClass="UIView"/>
+            </relationships>
+        </class>
+        <class className="MenuViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MenuViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="MyScheduleViewController" superclassName="PKRevealController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MyScheduleViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="shareMySchedule:"/>
+                <relationship kind="action" name="showLeftView:"/>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="PKRevealController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PKRevealController.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
