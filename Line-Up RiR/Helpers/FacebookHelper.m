@@ -111,10 +111,8 @@
             [operation start];
         }];
     }
-
-    NSError *error = [[NSError alloc] initWithDomain:FBErrorReauthorizeFailedReasonSessionClosed code:nil userInfo:nil];
     
-    callback(mySchedule, error);
+    callback(mySchedule, nil);
 }
 
 + (void)subscribeFromHerokuWithEventDate:(NSString *)eventDate block:(FacebookStatusHelperCallback)callback {
